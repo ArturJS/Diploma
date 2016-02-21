@@ -8,3 +8,4 @@ npm-debug.log
 src
 phantomjsdriver.log
 public/bower_components
+nginx-1.8.0/logs
