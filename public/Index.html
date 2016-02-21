@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      ng-app="App">
+<head>
+    <title>Chat</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="bower_components/jquery-ui/themes/vader/jquery-ui.css" rel="stylesheet"/>
+    <link href="Content/main/main.css" rel="stylesheet"/>
+    <link href="Content/main/google-map.css" rel="stylesheet"/>
+</head>
+<body ng-controller="MainCtrl">
+<div class="container">
+    <div class="chat_window">
+        <div class="top_menu">
+            <div class="buttons">
+                <div class="button close"></div>
+                <div class="button minimize"></div>
+                <div class="button maximize"></div>
+            </div>
+            <div class="title">
+                Chat
+
+                <label class="pull-right control-label">
+                    Use WS
+                    <input type="checkbox"
+                           ng-model="isWS"/>
+                </label>
+
+            </div>
+        </div>
+        <ul class="messages"
+            refresh-scroll-on-dom-change>
+            <li class="message right"
+                ng-repeat="message in messageList track by $index">
+                <div class="avatar"></div>
+                <div class="text_wrapper">
+                    <div class="text">
+                        {{message}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <form class="bottom_wrapper clearfix"
+              ng-submit="send()">
+            <div class="message_input_wrapper">
+                <input class="message_input"
+                       placeholder="Type your message here..."
+                       ng-model="newMessage"/>
+            </div>
+            <button type="submit"
+                    class="send_message">
+                <div class="text">Send</div>
+            </button>
+        </form>
+    </div>
+    <div class="google-map-container">
+        <div class="map-container"></div>
+    </div>
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+
+<script src="Scripts/google-maps.api.js"></script>
+<script src="Scripts/app.js"></script>
+<script src="Scripts/refresh-scroll-on-dom-change.js"></script>
+
+</body>
+</html>
