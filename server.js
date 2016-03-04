@@ -23,6 +23,9 @@ webSocketServer.on('connection', function (ws) {
 
     var id = Math.random();
     clients[id] = ws;
+    clients[id].send({
+        clientId: id
+    });
     console.log("новое WS соединение " + id);
 
     ws.on('message', function (message) {
@@ -64,6 +67,9 @@ function onSubscribe(req, res) {
     res.setHeader("Cache-Control", "no-cache, must-revalidate");
 
     subscribers[id] = res;
+    subscribers[id].end({
+        clientId: id
+    });
     console.log("новый XHR клиент " + id + ", клиентов:" + Object.keys(subscribers).length);
 
     req.on('close', function () {

@@ -1,8 +1,6 @@
 (function () {
 
     var socket = new WebSocket("ws://localhost:10000/ws/");
-    //var xhr;
-
 
     App.controller('MainCtrl', function ($scope, $timeout, uiGmapGoogleMapApi) {
         $scope.newMessage = '';
@@ -78,12 +76,13 @@
                 var coords = position.coords,
                     latitude = coords.latitude,
                     longitude = coords.longitude;
+
                 $scope.map = {
                     center:{
                         latitude: latitude,
                         longitude: longitude
                     },
-                    zoom: 15
+                    zoom: 16
                 };
 
                 $scope.marker = {
@@ -102,25 +101,7 @@
                console.log("Done!");
             });
 
-            //initialize(.latitude, position.coords.longitude);
         }
     });
 
-
-
-
-    /*function initialize(latitude, longitude) {
-     var myLatlng = new google.maps.LatLng(latitude, longitude),
-     myOptions = {
-     zoom: 20,
-     center: myLatlng,
-     mapTypeId: google.maps.MapTypeId.ROADMAP
-     },
-     map = new google.maps.Map(angular.element('.map-container')[0], myOptions),
-     marker = new google.maps.Marker({
-     map: map,
-     position: myLatlng,
-     title: 'You are here!'
-     });
-     }*/
 }());
