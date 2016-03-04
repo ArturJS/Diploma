@@ -18,6 +18,8 @@
     "bootstrap": "~3.3.6",
     "jquery-ui": "~1.11.4",
     "lodash": "~3.10.1",
-    "jquery": "~2.2.0"
+    "jquery": "~2.2.0",
+    "angular-google-maps": "~2.3.2",
+    "angular-simple-logger": "~0.1.7"
   }
 }

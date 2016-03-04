@@ -59,16 +59,34 @@
         </form>
     </div>
     <div class="google-map-container">
-        <div class="map-container"></div>
+        <div class="map-container">
+            <ui-gmap-google-map center="map.center"
+                                zoom="map.zoom"
+                                draggable="true"
+                                options="options"
+                                pan="true">
+
+                <ui-gmap-marker coords="marker.coords"
+                                idkey="marker.id">
+                </ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
     </div>
 </div>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/jquery-ui/jquery-ui.js"></script>
 <script src="bower_components/lodash/lodash.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
 
-<script src="Scripts/google-maps.api.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps-street-view.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps-street-view_dev_mapped.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps_dev_mapped.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+
 <script src="Scripts/app.js"></script>
+<script src="Scripts/config.js"></script>
+<script src="Scripts/MainCtrl.js"></script>
 <script src="Scripts/refresh-scroll-on-dom-change.js"></script>
 
 </body>
