@@ -11,11 +11,30 @@
     <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
     <link href="bower_components/jquery-ui/themes/vader/jquery-ui.css" rel="stylesheet"/>
     <link href="Content/main/main.css" rel="stylesheet"/>
+    <link href="Content/main/responsive-utilities/_responsive-max-1024.css" rel="stylesheet"/>
+    <link href="Content/main/responsive-utilities/_responsive-min-1024.css" rel="stylesheet"/>
     <link href="Content/main/google-map.css" rel="stylesheet"/>
 </head>
 <body ng-controller="MainCtrl">
-<div class="container">
-    <div class="chat_window">
+<div class="page-container" ng-class="{'active':isOpen}">
+    <div class="settings-container" ng-class="{'active':isOpen}">
+        <div class="settings-header clearfix">
+            <button class="btn-toggle" ng-click="toggleSettings()">
+                <i class="glyphicon glyphicon-align-justify"></i>
+            </button>
+        </div>
+        <div class="settings-body">
+            <h2>Settings list:</h2>
+            <div>
+                <select class="form-control"
+                        ng-model="updateTime"
+                        ng-change="updateTimeout()"
+                        ng-options="time as time for time in timeList">
+                </select>
+            </div>
+        </div>
+    </div>
+    <!--<div class="chat_window">
         <div class="top_menu">
             <div class="buttons">
                 <div class="button close"></div>
@@ -57,13 +76,14 @@
                 <div class="text">Send</div>
             </button>
         </form>
-    </div>
+    </div>-->
     <div class="google-map-container">
         <div class="map-container">
             <ui-gmap-google-map center="map.center"
                                 zoom="map.zoom"
                                 draggable="true"
-                                options="options"
+                                options="map.options"
+                                events='map.events'
                                 pan="true">
 
                 <ui-gmap-marker coords="marker.coords"

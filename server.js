@@ -5,7 +5,7 @@ var express = require('express'),
 app.use(express.static(__dirname));
 console.info('Server started!');
 
-app.listen(8080);
+app.listen(8088);
 
 
 //=================================WebSockets!!!!!=================
@@ -23,15 +23,16 @@ webSocketServer.on('connection', function (ws) {
 
     var id = Math.random();
     clients[id] = ws;
-    clients[id].send({
+    clients[id].send(JSON.stringify({
         clientId: id
-    });
+    }));
     console.log("новое WS соединение " + id);
 
     ws.on('message', function (message) {
         console.log('получено WS сообщение ' + message);
 
-        sendOutWS(message);
+        console.log("WS!");
+        sendOutWS(JSON.parse(message));
     });
 
     ws.on('close', function () {
@@ -43,7 +44,7 @@ webSocketServer.on('connection', function (ws) {
 
 function sendOutWS(message) {
     for (var key in clients) {
-        clients[key].send(message);
+        clients[key].send(JSON.stringify(message));
     }
 }
 
@@ -51,7 +52,7 @@ function sendOutCOMET(message) {
     for (var id in subscribers) {
         console.log("отсылаю сообщение " + id);
         var res = subscribers[id];
-        res.end(message);
+        res.end(JSON.stringify(message));
     }
 }
 
@@ -60,16 +61,23 @@ var http = require('http');
 var url = require('url');
 var subscribers = {};
 
-function onSubscribe(req, res) {
-    var id = Math.random();
+function onSubscribe(req, res, query) {
+    var id;
 
     res.setHeader('Content-Type', 'text/plain;charset=utf-8');
     res.setHeader("Cache-Control", "no-cache, must-revalidate");
 
-    subscribers[id] = res;
-    subscribers[id].end({
-        clientId: id
-    });
+    if (typeof query.clientId !== 'undefined') {
+        id = query.clientId;
+        subscribers[id] = res;
+    } else {
+        id = Math.random();
+        subscribers[id] = res;
+        subscribers[id].end(JSON.stringify({
+            clientId: id
+        }));
+    }
+
     console.log("новый XHR клиент " + id + ", клиентов:" + Object.keys(subscribers).length);
 
     req.on('close', function () {
@@ -89,15 +97,16 @@ function publish(message) {
 }
 
 function accept(req, res) {
-    var urlParsed = url.parse(req.url, true);
+    var urlParsed = url.parse(req.url, true),
+        query = urlParsed.query;
 
     // новый клиент хочет получать сообщения
     if (urlParsed.pathname == '/subscribe') {
-        onSubscribe(req, res); // собственно, подписка
+        onSubscribe(req, res, query); // собственно, подписка
         return;
     }
 
-    console.log('XHR: ' + req);
+    console.log('XHR: ' + req.data);
     console.log('XHR urlParsed.pathname ' + urlParsed.pathname);
 
     // отправка сообщения
@@ -105,10 +114,9 @@ function accept(req, res) {
         // принять POST-запрос
         req.setEncoding('utf8');
         var message = '';
-        req.on('data', function (chunk) {
-            message += chunk;
-        }).on('end', function () {
-            publish(message); // собственно, отправка
+        req.on('data', function (message) {
+            console.log("XHR!");
+            publish(JSON.parse(message)); // собственно, отправка
             res.end("ok");
         });
 

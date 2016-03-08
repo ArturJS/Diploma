@@ -1,0 +1,34 @@
+@media (min-width: 1024px) {
+    .page-container {
+        padding-left: 60px;
+        transition: padding-left .3s ease-in;
+    }
+
+    .page-container.active {
+        padding-left: 460px;
+    }
+
+    .settings-body {
+        transition: padding-left .3s ease-in;
+    }
+
+    .settings-container {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        transition: width .3s ease-in;
+    }
+
+    .settings-container .settings-body {
+        padding-left: 60px;
+    }
+
+    .settings-container.active {
+        width: 460px;
+    }
+
+    .settings-container.active .settings-body {
+        padding-left: 10px;
+    }
+}

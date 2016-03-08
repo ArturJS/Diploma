@@ -1,0 +1,21 @@
+@media (max-width: 1024px) {
+    .page-container {
+        padding-top: 60px;
+    }
+
+    .settings-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        transition: height .3s ease-in;
+    }
+
+    .settings-container.active {
+        height: 460px;
+    }
+
+    .btn-toggle {
+        float: right;
+    }
+}

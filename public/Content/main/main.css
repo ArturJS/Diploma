@@ -3,9 +3,61 @@
     outline: none;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     background-color: #edeff2;
     font-family: "Calibri", "Roboto", sans-serif;
+    height: 100%;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+.page-container {
+    height: 100%;
+}
+
+.settings-container {
+    position: fixed;
+    z-index: 100;
+    background: #252830;
+    overflow: hidden;
+}
+
+.settings-header {
+    height: 60px;
+    padding: 8px 10px;
+}
+
+.settings-body {
+    color: #ffffff;
+    white-space: nowrap;
+    padding-left: 15px;
+}
+
+.btn-toggle {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #1997C6;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #252830;
+    transition: all .1s ease-in;
+    font-size: 21px;
+    color: #1997C6;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+.btn-toggle:hover {
+    background: #434857;
+    border-color: #1BC98E;
+    color: #1BC98E;
 }
 
 .chat_window {
