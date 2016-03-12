@@ -1,39 +1,46 @@
 (function () {
 
     var socket = new WebSocket("ws://localhost:10000/ws/"),
-        wsId,
-        xhrId,
+        myId,
         myCoords;
 
-    App.controller('MainCtrl', function ($scope, $timeout, uiGmapGoogleMapApi) {
-        var intervalId,
+    App.controller('MainCtrl', function ($timeout, uiGmapGoogleMapApi) {
+        var vm = this,
+            intervalId,
             showPosition;
 
-        $scope.newMessage = '';
-        $scope.messageList = [];
-        $scope.isWS = false;
-        $scope.isOpen = false;
-        $scope.toggleSettings = toggleSettings;
+        vm.newMessage = '';
+        vm.markers = [];
+        vm.isWS = true;
+        vm.isOpen = false;
+        vm.toggleSettings = toggleSettings;
 
-        $scope.updateTime = 1000;
-        $scope.timeList = [
+        vm.updateTime = 1000;
+        vm.timeList = [
             500,
             1000,
             2000,
             5000,
             10000
         ];
-        $scope.send = send;
-        $scope.updateTimeout = updateTimeout;
+
+        vm.updateInterval = updateInterval;
         init();
 
         function init() {
-            intervalId = setInterval(getLocation, $scope.updateTime);
 
-            $scope.map = {
+            vm.marker = {
+                id: 0,
+                coords: {
+                    latitude: 51.602795099999994,
+                    longitude: 45.9934894
+                }
+            };
+
+            vm.map = {
                 zoom: 16,
                 options: {
-                    scrollwheel: false
+                    scrollwheel: true
                 },
                 events: {
                     resize: function (map) {
@@ -42,20 +49,24 @@
                 }
             };
 
-            $scope.marker = {
-                id: 1
-            };
-
         }
+        
+        socket.onopen = function () {
+            socket.send(JSON.stringify({
+                ping: true,
+                id: myId
+            }));
+        };
 
         socket.onmessage = function (event) {
             var incomingMessage = event.data;
             incomingMessage = JSON.parse(incomingMessage);
             if (incomingMessage.hasOwnProperty('clientId')) {
-                wsId = incomingMessage.clientId;
+                myId = incomingMessage.clientId;
+                intervalId = setInterval(getLocation, vm.updateTime);
             } else {
                 $timeout(function () {
-                    $scope.messageList.push(incomingMessage.text);
+                    addMarker(incomingMessage);
                 });
             }
 
@@ -77,10 +88,13 @@
                 if (status == 200) {
                     responseText = JSON.parse(responseText);
                     if (responseText.hasOwnProperty('clientId')) {
-                        xhrId = responseText.clientId;
+                        myId = responseText.clientId;
+
+                        intervalId = setInterval(getLocation, vm.updateTime);
                     } else {
                         $timeout(function () {
-                            $scope.messageList.push(responseText.text);
+                            console.log(responseText);
+                            addMarker(responseText);
                         });
                     }
                     subscribe();
@@ -93,11 +107,11 @@
 
                 setTimeout(subscribe, 1000); // попробовать ещё раз через 1 сек
             };
-            xhr.open("GET", 'http://localhost:10000/xhr/subscribe/?clientId=' + xhrId, true);
+            xhr.open("GET", 'http://localhost:10000/xhr/subscribe/?clientId=' + myId, true);
             xhr.send();
         }
 
-        (function(){
+        (function () {
             var alreadyCentered;
 
             showPosition = function (position) {
@@ -108,16 +122,21 @@
 
                     if (!alreadyCentered) {
                         alreadyCentered = true;
-                        $scope.map.center = {
+                        vm.map.center = {
                             latitude: latitude,
                             longitude: longitude
                         };
                     }
 
-                    $scope.marker.coords = {
+                    /*vm.marker.coords = {
                         latitude: latitude,
                         longitude: longitude
-                    };
+                    };*/
+
+                    send({
+                        latitude: latitude,
+                        longitude: longitude
+                    });
                 });
             }
         }());
@@ -132,17 +151,17 @@
         }
 
         function toggleSettings() {
-            $scope.isOpen = !$scope.isOpen;
+            vm.isOpen = !vm.isOpen;
 
         }
 
-        function send() {
+        function send(newCoords) {
             var message = {
-                text: $scope.newMessage
+                coords: newCoords
             };
-            message.id = $scope.isWS ? wsId : xhrId;
+            message.id = myId;
             message = JSON.stringify(message);
-            if ($scope.isWS) {
+            if (vm.isWS) {
                 socket.send(message);
             } else {
                 sendXhrMessage(message);
@@ -155,9 +174,21 @@
             xhr.send(message);
         }
 
-        function updateTimeout() {
+        function updateInterval() {
             clearInterval(intervalId);
-            intervalId = setInterval(getLocation, $scope.updateTime);
+            intervalId = setInterval(getLocation, vm.updateTime);
+        }
+
+        function addMarker(marker){
+            var oldMarker = _.find(vm.markers, function (item) {
+                return item.id === marker.id
+            });
+
+            if (!oldMarker) {
+                vm.markers.push(marker);
+            } else {
+                angular.copy(marker, oldMarker);
+            }
         }
 
         uiGmapGoogleMapApi.then(function () {

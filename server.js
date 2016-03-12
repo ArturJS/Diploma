@@ -1,17 +1,17 @@
+//==========Static server!==================
 var express = require('express'),
     app = express(),
     __dirname = './public';
 
 app.use(express.static(__dirname));
-console.info('Server started!');
-
+console.info('Static server started! Port 8088');
 app.listen(8088);
 
 
 //=================================WebSockets!!!!!=================
-
+var mapIds = [];
+var _ = require('lodash');
 var WebSocketServer = new require('ws');
-
 // подключенные клиенты
 var clients = {};
 
@@ -19,20 +19,25 @@ var clients = {};
 var webSocketServer = new WebSocketServer.Server({
     port: 8081
 });
-webSocketServer.on('connection', function (ws) {
 
-    var id = Math.random();
+webSocketServer.on('connection', function (ws) {
+    var id = _.uniqueId('ws_');
     clients[id] = ws;
-    clients[id].send(JSON.stringify({
-        clientId: id
-    }));
     console.log("новое WS соединение " + id);
 
     ws.on('message', function (message) {
         console.log('получено WS сообщение ' + message);
+        message = JSON.parse(message);
 
-        console.log("WS!");
-        sendOutWS(JSON.parse(message));
+        if (message.ping && typeof message.id === 'undefined') {
+            clients[id].send(JSON.stringify({
+                clientId: _.uniqueId('')
+            }));
+        } else {
+            console.log("WS!");
+            sendOutWS(message);
+        }
+
     });
 
     ws.on('close', function () {
@@ -67,14 +72,13 @@ function onSubscribe(req, res, query) {
     res.setHeader('Content-Type', 'text/plain;charset=utf-8');
     res.setHeader("Cache-Control", "no-cache, must-revalidate");
 
+    id = _.uniqueId('xhr_');
     if (typeof query.clientId !== 'undefined') {
-        id = query.clientId;
         subscribers[id] = res;
     } else {
-        id = Math.random();
         subscribers[id] = res;
         subscribers[id].end(JSON.stringify({
-            clientId: id
+            clientId: _.uniqueId('')
         }));
     }
 
@@ -88,7 +92,6 @@ function onSubscribe(req, res, query) {
 }
 
 function publish(message) {
-
     console.log("есть сообщение, клиентов:" + Object.keys(subscribers).length);
 
     sendOutCOMET(message);
@@ -129,7 +132,7 @@ function accept(req, res) {
 
 if (!module.parent) {
     http.createServer(accept).listen(8082);
-    console.log('Сервер запущен на порту 8082');
+    console.log('XHR Сервер запущен на порту 8082');
 } else {
     exports.accept = accept;
 }

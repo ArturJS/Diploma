@@ -15,21 +15,22 @@
     <link href="Content/main/responsive-utilities/_responsive-min-1024.css" rel="stylesheet"/>
     <link href="Content/main/google-map.css" rel="stylesheet"/>
 </head>
-<body ng-controller="MainCtrl">
-<div class="page-container" ng-class="{'active':isOpen}">
-    <div class="settings-container" ng-class="{'active':isOpen}">
+<body ng-controller="MainCtrl as main">
+<div class="page-container" ng-class="{'active':main.isOpen}">
+    <div class="settings-container" ng-class="{'active':main.isOpen}">
         <div class="settings-header clearfix">
-            <button class="btn-toggle" ng-click="toggleSettings()">
+            <button class="btn-toggle" ng-click="main.toggleSettings()">
                 <i class="glyphicon glyphicon-align-justify"></i>
             </button>
         </div>
         <div class="settings-body">
             <h2>Settings list:</h2>
+
             <div>
                 <select class="form-control"
-                        ng-model="updateTime"
-                        ng-change="updateTimeout()"
-                        ng-options="time as time for time in timeList">
+                        ng-model="main.updateTime"
+                        ng-change="main.updateTimeout()"
+                        ng-options="time as time for time in main.timeList">
                 </select>
             </div>
         </div>
@@ -79,14 +80,15 @@
     </div>-->
     <div class="google-map-container">
         <div class="map-container">
-            <ui-gmap-google-map center="map.center"
-                                zoom="map.zoom"
+            <ui-gmap-google-map center="main.map.center"
+                                zoom="main.map.zoom"
                                 draggable="true"
-                                options="map.options"
-                                events='map.events'
+                                options="main.map.options"
+                                events='main.map.events'
                                 pan="true">
 
-                <ui-gmap-marker coords="marker.coords"
+                <ui-gmap-marker ng-repeat="marker in main.markers track by marker.id"
+                                coords="marker.coords"
                                 idkey="marker.id">
                 </ui-gmap-marker>
             </ui-gmap-google-map>
