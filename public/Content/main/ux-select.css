@@ -1,0 +1,82 @@
+.ux-select-container {
+    display: inline-block;
+    position: relative;
+    min-width: 150px;
+    height: 35px;
+    border-bottom: 2px solid #1BC98E;
+    border-right: 2px solid #1BC98E;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24px;
+}
+
+.ux-select-header {
+    cursor: pointer;
+}
+
+.ux-select-header .arrow {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 21px;
+    transform-origin: center;
+    transition: transform .2s;
+    border-radius: 12px;
+    border: 1px solid #1BC98E;
+    color: #1BC98E;
+}
+
+.ux-select-header .arrow.open {
+    transform: rotate(180deg);
+}
+
+.ux-select-container .ux-select-value {
+    display: inline-block;
+}
+
+.ux-select-container .ux-select-list-wrapper {
+    position: absolute;
+    overflow: hidden;
+    top: 35px;
+    width: calc(100% + 2px);
+}
+
+.ux-select-list-wrapper .ux-select-list {
+    /*background: #434857;*/
+    border-bottom: 2px solid #1BC98E;
+    border-right: 2px solid #1BC98E;
+    transform: translateY(-100%);
+    transition: transform .2s ease-in;
+}
+
+.ux-select-list-wrapper .ux-select-list.open {
+    transform: translateY(0);
+}
+
+.ux-select-list li {
+    cursor: pointer;
+}
+
+.ux-select-list li .item {
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s linear, color .2s linear;
+    position: relative;
+}
+
+.ux-select-list li:hover .item {
+    border-bottom: 2px solid #1BC98E;
+    color: #1BC98E;
+}
+
+.ux-select-list li.selected .item:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid #1BC98E;
+    border-right: 2px solid #1BC98E;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 12px;
+    left: -20px;
+}

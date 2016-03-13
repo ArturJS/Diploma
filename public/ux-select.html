@@ -1,0 +1,21 @@
+<div class="ux-select-container">
+    <div class="ux-select-header"
+         ng-click="toggleOpen()">
+        <div class="ux-select-value">
+            {{value}}
+        </div>
+        <i class="glyphicon glyphicon-menu-down arrow"
+           ng-class="{'open':isOpen}"></i>
+    </div>
+
+    <div class="ux-select-list-wrapper">
+        <ul class="ux-select-list"
+            ng-class="{'open':isOpen}">
+            <li ng-repeat="item in list track by $index"
+                ng-class="{'selected': selected($index)}"
+                ng-click="selectItem($index)">
+                <span class="item">{{item}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

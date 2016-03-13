@@ -9,7 +9,7 @@
     }
 
     .settings-body {
-        transition: padding-left .3s ease-in;
+        transition: transform .3s ease-in;
     }
 
     .settings-container {
@@ -21,7 +21,7 @@
     }
 
     .settings-container .settings-body {
-        padding-left: 60px;
+        transform: translateX(60px);
     }
 
     .settings-container.active {
@@ -29,6 +29,6 @@
     }
 
     .settings-container.active .settings-body {
-        padding-left: 10px;
+        transform: translateX(10px);
     }
 }

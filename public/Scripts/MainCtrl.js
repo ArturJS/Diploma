@@ -128,11 +128,6 @@
                         };
                     }
 
-                    /*vm.marker.coords = {
-                        latitude: latitude,
-                        longitude: longitude
-                    };*/
-
                     send({
                         latitude: latitude,
                         longitude: longitude

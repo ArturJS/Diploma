@@ -3,6 +3,15 @@
     outline: none;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
 html {
     height: 100%;
 }
@@ -11,6 +20,10 @@ body {
     background-color: #edeff2;
     font-family: "Calibri", "Roboto", sans-serif;
     height: 100%;
+}
+
+.row {
+    margin-bottom: 15px;
 }
 
 .cp {

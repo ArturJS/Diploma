@@ -11,6 +11,7 @@
     <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
     <link href="bower_components/jquery-ui/themes/vader/jquery-ui.css" rel="stylesheet"/>
     <link href="Content/main/main.css" rel="stylesheet"/>
+    <link href="Content/main/ux-select.css" rel="stylesheet"/>
     <link href="Content/main/responsive-utilities/_responsive-max-1024.css" rel="stylesheet"/>
     <link href="Content/main/responsive-utilities/_responsive-min-1024.css" rel="stylesheet"/>
     <link href="Content/main/google-map.css" rel="stylesheet"/>
@@ -26,12 +27,11 @@
         <div class="settings-body">
             <h2>Settings list:</h2>
 
-            <div>
-                <select class="form-control"
-                        ng-model="main.updateTime"
-                        ng-change="main.updateTimeout()"
-                        ng-options="time as time for time in main.timeList">
-                </select>
+            <div class="row">
+                <ux-select list="main.timeList"
+                           value="main.updateTime"
+                           on-change="main.updateInterval()"
+                           class="col-xs-12"></ux-select>
             </div>
         </div>
     </div>
@@ -110,6 +110,7 @@
 <script src="Scripts/config.js"></script>
 <script src="Scripts/MainCtrl.js"></script>
 <script src="Scripts/refresh-scroll-on-dom-change.js"></script>
+<script src="Scripts/ux-select.js"></script>
 
 </body>
 </html>
