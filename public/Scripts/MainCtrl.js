@@ -15,7 +15,7 @@
         vm.isOpen = false;
         vm.toggleSettings = toggleSettings;
 
-        vm.updateTime = 1000;
+        vm.updateTime = 5000;
         vm.timeList = [
             500,
             1000,
@@ -61,10 +61,19 @@
         socket.onmessage = function (event) {
             var incomingMessage = event.data;
             incomingMessage = JSON.parse(incomingMessage);
+            /*console.log(incomingMessage);
+            console.log(typeof incomingMessage);
+            console.log('================');*/
+            if (isJson(incomingMessage)){
+                incomingMessage = JSON.parse(incomingMessage);
+            }
             if (incomingMessage.hasOwnProperty('clientId')) {
                 myId = incomingMessage.clientId;
                 intervalId = setInterval(getLocation, vm.updateTime);
+            } else if (incomingMessage.hasOwnProperty('removeClientId')) {
+                removeMarker(incomingMessage.removeClientId);
             } else {
+                console.log(incomingMessage);
                 $timeout(function () {
                     addMarker(incomingMessage);
                 });
@@ -72,9 +81,9 @@
 
         };
 
-        subscribe();
+        //subscribe();
 
-        function subscribe() {
+        function subscribe() {//bug with removeClientId !!!
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function (event) {
                 var target = event.target,
@@ -87,10 +96,15 @@
                 console.log(this);
                 if (status == 200) {
                     responseText = JSON.parse(responseText);
+                    if (isJson(responseText)){
+                        responseText = JSON.parse(responseText);
+                    }
                     if (responseText.hasOwnProperty('clientId')) {
                         myId = responseText.clientId;
 
                         intervalId = setInterval(getLocation, vm.updateTime);
+                    } else if (responseText.hasOwnProperty('removeClientId')) {
+                        removeMarker(responseText.removeClientId);
                     } else {
                         $timeout(function () {
                             console.log(responseText);
@@ -184,6 +198,21 @@
             } else {
                 angular.copy(marker, oldMarker);
             }
+        }
+
+        function removeMarker(id) {
+            _.remove(vm.markers, function (marker) {
+                return marker.id === id;
+            });
+        }
+
+        function isJson(str) {
+            try {
+                JSON.parse(str);
+            } catch (e) {
+                return false;
+            }
+            return true;
         }
 
         uiGmapGoogleMapApi.then(function () {

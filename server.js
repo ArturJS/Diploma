@@ -9,7 +9,7 @@ app.listen(8088);
 
 
 //=================================WebSockets!!!!!=================
-var mapIds = [];
+var wsMapIds = {};
 var _ = require('lodash');
 var WebSocketServer = new require('ws');
 // подключенные клиенты
@@ -26,14 +26,19 @@ webSocketServer.on('connection', function (ws) {
     console.log("новое WS соединение " + id);
 
     ws.on('message', function (message) {
+        var mapId;
         console.log('получено WS сообщение ' + message);
         message = JSON.parse(message);
 
         if (message.ping && typeof message.id === 'undefined') {
+            mapId =  _.uniqueId('');
+            wsMapIds[id] = mapId;
             clients[id].send(JSON.stringify({
-                clientId: _.uniqueId('')
+                clientId: mapId
             }));
         } else {
+
+            wsMapIds[id] = message.id;
             console.log("WS!");
             sendOutWS(message);
         }
@@ -43,6 +48,9 @@ webSocketServer.on('connection', function (ws) {
     ws.on('close', function () {
         console.log('соединение WS закрыто ' + id);
         delete clients[id];
+        sendOutWS(JSON.stringify({
+            removeClientId: wsMapIds[id]
+        }));
     });
 
 });
@@ -65,9 +73,11 @@ function sendOutCOMET(message) {
 var http = require('http');
 var url = require('url');
 var subscribers = {};
+var xhrMapIds = {};
 
 function onSubscribe(req, res, query) {
-    var id;
+    var id,
+        mapId;
 
     res.setHeader('Content-Type', 'text/plain;charset=utf-8');
     res.setHeader("Cache-Control", "no-cache, must-revalidate");
@@ -75,10 +85,13 @@ function onSubscribe(req, res, query) {
     id = _.uniqueId('xhr_');
     if (typeof query.clientId !== 'undefined') {
         subscribers[id] = res;
+        xhrMapIds[id] = query.clientId;
     } else {
+        mapId = _.uniqueId('');
+        xhrMapIds[id] = mapId;
         subscribers[id] = res;
         subscribers[id].end(JSON.stringify({
-            clientId: _.uniqueId('')
+            clientId: mapId
         }));
     }
 
@@ -87,6 +100,10 @@ function onSubscribe(req, res, query) {
     req.on('close', function () {
         delete subscribers[id];
         console.log("XHR клиент " + id + " отсоединился, клиентов:" + Object.keys(subscribers).length);
+
+        sendOutCOMET(JSON.stringify({
+            removeClientId: xhrMapIds[id]
+        }));
     });
 
 }
