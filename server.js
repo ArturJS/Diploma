@@ -29,15 +29,14 @@ webSocketServer.on('connection', function (ws) {
         var mapId;
         console.log('получено WS сообщение ' + message);
         message = JSON.parse(message);
-
-        if (message.ping && typeof message.id === 'undefined') {
-            mapId =  _.uniqueId('');
+        if (message.type === 'ping' && typeof message.id === 'undefined') {
+            mapId = _.uniqueId('');
             wsMapIds[id] = mapId;
             clients[id].send(JSON.stringify({
+                type: 'newClient',
                 clientId: mapId
             }));
         } else {
-
             wsMapIds[id] = message.id;
             console.log("WS!");
             sendOutWS(message);
@@ -48,24 +47,29 @@ webSocketServer.on('connection', function (ws) {
     ws.on('close', function () {
         console.log('соединение WS закрыто ' + id);
         delete clients[id];
-        sendOutWS(JSON.stringify({
+        sendOutWS({
+            type: 'removeClient',
             removeClientId: wsMapIds[id]
-        }));
+        });
     });
 
 });
 
 function sendOutWS(message) {
-    for (var key in clients) {
-        clients[key].send(JSON.stringify(message));
+    var key;
+    message = JSON.stringify(message);
+    for (key in clients) {
+        clients[key].send(message);
     }
 }
 
 function sendOutCOMET(message) {
-    for (var id in subscribers) {
-        console.log("отсылаю сообщение " + id);
-        var res = subscribers[id];
-        res.end(JSON.stringify(message));
+    var id,
+        res;
+    message = JSON.stringify(message);
+    for (id in subscribers) {
+        res = subscribers[id];
+        res.end(message);
     }
 }
 
@@ -91,6 +95,7 @@ function onSubscribe(req, res, query) {
         xhrMapIds[id] = mapId;
         subscribers[id] = res;
         subscribers[id].end(JSON.stringify({
+            type: 'newClient',
             clientId: mapId
         }));
     }
@@ -101,14 +106,16 @@ function onSubscribe(req, res, query) {
         delete subscribers[id];
         console.log("XHR клиент " + id + " отсоединился, клиентов:" + Object.keys(subscribers).length);
 
-        sendOutCOMET(JSON.stringify({
+        sendOutCOMET({
+            type: 'removeClient',
             removeClientId: xhrMapIds[id]
-        }));
+        });
     });
 
 }
 
 function publish(message) {
+    console.log(JSON.stringify(message));
     console.log("есть сообщение, клиентов:" + Object.keys(subscribers).length);
 
     sendOutCOMET(message);

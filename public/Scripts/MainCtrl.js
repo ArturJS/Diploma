@@ -11,7 +11,7 @@
 
         vm.newMessage = '';
         vm.markers = [];
-        vm.isWS = true;
+        vm.isWS = false;
         vm.isOpen = false;
         vm.toggleSettings = toggleSettings;
 
@@ -29,13 +29,13 @@
 
         function init() {
 
-            vm.marker = {
-                id: 0,
-                coords: {
-                    latitude: 51.602795099999994,
-                    longitude: 45.9934894
-                }
-            };
+            /*vm.marker = {
+             id: 0,
+             coords: {
+             latitude: 51.602795099999994,
+             longitude: 45.9934894
+             }
+             };*/
 
             vm.map = {
                 zoom: 16,
@@ -50,67 +50,36 @@
             };
 
         }
-        
+
         socket.onopen = function () {
             socket.send(JSON.stringify({
-                ping: true,
+                type: 'ping',
                 id: myId
             }));
         };
 
         socket.onmessage = function (event) {
-            var incomingMessage = event.data;
-            incomingMessage = JSON.parse(incomingMessage);
-            /*console.log(incomingMessage);
-            console.log(typeof incomingMessage);
-            console.log('================');*/
-            if (isJson(incomingMessage)){
-                incomingMessage = JSON.parse(incomingMessage);
-            }
-            if (incomingMessage.hasOwnProperty('clientId')) {
-                myId = incomingMessage.clientId;
-                intervalId = setInterval(getLocation, vm.updateTime);
-            } else if (incomingMessage.hasOwnProperty('removeClientId')) {
-                removeMarker(incomingMessage.removeClientId);
-            } else {
-                console.log(incomingMessage);
-                $timeout(function () {
-                    addMarker(incomingMessage);
-                });
-            }
-
+            var data = JSON.parse(event.data);
+            processData(data);
         };
 
-        //subscribe();
+        subscribe();
 
-        function subscribe() {//bug with removeClientId !!!
+        function subscribe() {
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function (event) {
                 var target = event.target,
                     status = target.status,
                     statusText = target.statusText,
                     readyState = target.readyState,
-                    responseText = target.responseText;
+                    data = target.responseText;
                 if (readyState != 4) return;
 
                 console.log(this);
                 if (status == 200) {
-                    responseText = JSON.parse(responseText);
-                    if (isJson(responseText)){
-                        responseText = JSON.parse(responseText);
-                    }
-                    if (responseText.hasOwnProperty('clientId')) {
-                        myId = responseText.clientId;
+                    data = JSON.parse(data);
+                    processData(data);
 
-                        intervalId = setInterval(getLocation, vm.updateTime);
-                    } else if (responseText.hasOwnProperty('removeClientId')) {
-                        removeMarker(responseText.removeClientId);
-                    } else {
-                        $timeout(function () {
-                            console.log(responseText);
-                            addMarker(responseText);
-                        });
-                    }
                     subscribe();
                     return;
                 }
@@ -160,15 +129,18 @@
         }
 
         function toggleSettings() {
-            vm.isOpen = !vm.isOpen;
-
+            vm.isOpen ^= 1;
         }
 
         function send(newCoords) {
+            if (!myId) {
+                return;
+            }
             var message = {
+                type: 'coords',
+                id: myId,
                 coords: newCoords
             };
-            message.id = myId;
             message = JSON.stringify(message);
             if (vm.isWS) {
                 socket.send(message);
@@ -183,21 +155,27 @@
             xhr.send(message);
         }
 
-        function updateInterval() {
+        function updateInterval(newId) {
+            if (angular.isDefined(newId)) {
+                myId = newId;
+            }
+
             clearInterval(intervalId);
             intervalId = setInterval(getLocation, vm.updateTime);
         }
 
-        function addMarker(marker){
+        function addMarker(marker) {
             var oldMarker = _.find(vm.markers, function (item) {
-                return item.id === marker.id
+                return item.id === marker.id;
             });
 
-            if (!oldMarker) {
-                vm.markers.push(marker);
-            } else {
-                angular.copy(marker, oldMarker);
-            }
+            $timeout(function () {
+                if (!oldMarker) {
+                    vm.markers.push(marker);
+                } else {
+                    angular.copy(marker, oldMarker);
+                }
+            });
         }
 
         function removeMarker(id) {
@@ -206,13 +184,18 @@
             });
         }
 
-        function isJson(str) {
-            try {
-                JSON.parse(str);
-            } catch (e) {
-                return false;
+        function processData(data) {
+            switch (data.type) {
+                case 'newClient' :
+                    updateInterval(data.clientId);
+                    break;
+                case 'removeClient' :
+                    removeMarker(data.removeClientId);
+                    break;
+                case 'coords' :
+                    addMarker(data);
+                    break;
             }
-            return true;
         }
 
         uiGmapGoogleMapApi.then(function () {
