@@ -18,6 +18,7 @@
         bottom: 0;
         width: 60px;
         transition: width .3s ease-in;
+        border-right: 2px solid #1997C6;
     }
 
     .settings-container .settings-body {

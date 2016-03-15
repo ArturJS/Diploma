@@ -9,6 +9,7 @@
         right: 0;
         height: 60px;
         transition: height .3s ease-in;
+        border-bottom: 2px solid #1997C6;
     }
 
     .settings-container.active {

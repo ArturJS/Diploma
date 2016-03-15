@@ -13,6 +13,7 @@
         vm.markers = [];
         vm.isWS = false;
         vm.isOpen = false;
+        vm.mapLoaded = false;
         vm.toggleSettings = toggleSettings;
 
         vm.updateTime = 5000;
@@ -199,7 +200,7 @@
         }
 
         uiGmapGoogleMapApi.then(function () {
-            console.log("Done!");
+            vm.mapLoaded = true;
         });
     });
 
