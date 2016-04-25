@@ -1,0 +1,1 @@
+nodemon ws-server.js

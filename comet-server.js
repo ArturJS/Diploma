@@ -1,83 +1,8 @@
-//==========Static server!==================
-var express = require('express'),
-    app = express(),
-    __dirname = './public';
-
-app.use(express.static(__dirname));
-console.info('Static server started! Port 8088');
-app.listen(8088);
-
-
-//=================================WebSockets!!!!!=================
-var wsMapIds = {};
-var _ = require('lodash');
-var WebSocketServer = new require('ws');
-// подключенные клиенты
-var clients = {};
-
-// WebSocket-сервер на порту 8081
-var webSocketServer = new WebSocketServer.Server({
-    port: 8081
-});
-
-webSocketServer.on('connection', function (ws) {
-    var id = _.uniqueId('ws_');
-    clients[id] = ws;
-    console.log("новое WS соединение " + id);
-
-    ws.on('message', function (message) {
-        var mapId;
-        console.log('получено WS сообщение ' + message);
-        message = JSON.parse(message);
-        if (message.type === 'ping' && typeof message.id === 'undefined') {
-            mapId = _.uniqueId('');
-            wsMapIds[id] = mapId;
-            clients[id].send(JSON.stringify({
-                type: 'newClient',
-                clientId: mapId
-            }));
-        } else {
-            wsMapIds[id] = message.id;
-            console.log("WS!");
-            sendOutWS(message);
-        }
-
-    });
-
-    ws.on('close', function () {
-        console.log('соединение WS закрыто ' + id);
-        delete clients[id];
-        sendOutWS({
-            type: 'removeClient',
-            removeClientId: wsMapIds[id]
-        });
-    });
-
-});
-
-function sendOutWS(message) {
-    var key;
-    message = JSON.stringify(message);
-    for (key in clients) {
-        clients[key].send(message);
-    }
-}
-
-function sendOutCOMET(message) {
-    var id,
-        res;
-    message = JSON.stringify(message);
-    for (id in subscribers) {
-        res = subscribers[id];
-        res.end(message);
-    }
-}
-
-//======================== COMET===================
-var http = require('http');
-var url = require('url');
-var subscribers = {};
-var xhrMapIds = {};
+﻿var http = require('http'),
+    url = require('url'),
+    _ = require('lodash'),
+    subscribers = {},
+    xhrMapIds = {};
 
 function onSubscribe(req, res, query) {
     var id,
@@ -120,7 +45,7 @@ function publish(message) {
 
     sendOutCOMET(message);
 
-    subscribers = {};
+    //subscribers = {};
 }
 
 function accept(req, res) {
@@ -140,17 +65,26 @@ function accept(req, res) {
     if (urlParsed.pathname == '/publish' && req.method == 'POST') {
         // принять POST-запрос
         req.setEncoding('utf8');
-        var message = '';
+
         req.on('data', function (message) {
             console.log("XHR!");
             publish(JSON.parse(message)); // собственно, отправка
             res.end("ok");
         });
-
-        return;
     }
 }
 
+function sendOutCOMET(message) {
+    var id,
+        res;
+    message = JSON.stringify(message);
+    for (id in subscribers) {
+        if (subscribers.hasOwnProperty(id)) {
+            res = subscribers[id];
+            res.end(message);
+        }
+    }
+}
 
 // -----------------------------------
 

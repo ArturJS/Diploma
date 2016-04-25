@@ -86,7 +86,7 @@
                 }
 
                 if (status != 404) { // 404 может означать, что сервер перезагружается
-                    console.log(this.statusText); // показать ошибку
+                    console.log(statusText); // показать ошибку
                 }
 
                 setTimeout(subscribe, 1000); // попробовать ещё раз через 1 сек
