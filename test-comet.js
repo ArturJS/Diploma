@@ -9,7 +9,7 @@ var request = require('request'),
 
 function subscribe() {
     lastTime = new Date();
-    
+
     request
         .get('http://localhost:8082/subscribe?clientId=' + myId)
         .on('response', function (response) {
@@ -20,6 +20,7 @@ function subscribe() {
             console.log(response.headers['content-type']);
 
             if (iteration > 100) {
+                console.log('Save statistic!');
                 saveStatistic();
                 process.exit(0);
             }
@@ -53,9 +54,17 @@ subscribe();
 function saveStatistic() {
     var maxResponceTime = _.max(responseTimeList),
         copyResponseTimeList = responseTimeList.slice(),
-        medianTime = findMedian(copyResponseTimeList);
+        medianTime = findMedian(copyResponseTimeList),
+        fileName = 'comet-statistic-',
+        fullFileName,
+        fileNumber = 0;
 
-    fs.writeFileSync('comet-statistic.txt', pushArray([
+    do {
+        fileNumber++;
+        fullFileName = [fileName, fileNumber, '.txt'].join('');
+    } while (fileExists(fullFileName));
+
+    fs.writeFileSync(fullFileName, pushArray([
         'Max responce time = ' + maxResponceTime,
         'Median time = ' + medianTime
     ], responseTimeList).join('\r\n'));
@@ -86,4 +95,14 @@ function findMedian(data) {
 function pushArray(arr, arr2) {
     Array.prototype.push.apply(arr, arr2);
     return arr;
+}
+
+function fileExists(fileName) {
+    try {
+        fs.statSync(fileName).isFile();
+    } catch (e) {
+        return false;
+    }
+
+    return true;
 }

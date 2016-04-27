@@ -27,6 +27,7 @@ client.on('connect', function (connection) {
         console.log("Received: '" + message.utf8Data.toString() + "'");
 
         if (iteration > 100) {
+            console.log('Save statistic!');
             saveStatistic();
             process.exit(0);
         }
@@ -55,9 +56,17 @@ client.connect('ws://localhost:8081/', 'echo-protocol');
 function saveStatistic() {
     var maxResponceTime = _.max(responseTimeList),
         copyResponseTimeList = responseTimeList.slice(),
-        medianTime = findMedian(copyResponseTimeList);
+        medianTime = findMedian(copyResponseTimeList),
+        fileName = 'ws-statistic-',
+        fullFileName,
+        fileNumber = 0;
 
-    fs.writeFileSync('ws-statistic.txt', pushArray([
+    do {
+        fileNumber++;
+        fullFileName = [fileName, fileNumber, '.txt'].join('');
+    } while (fileExists(fullFileName));
+
+    fs.writeFileSync(fullFileName, pushArray([
         'Max responce time = ' + maxResponceTime,
         'Median time = ' + medianTime
     ], responseTimeList).join('\r\n'));
@@ -88,4 +97,14 @@ function findMedian(data) {
 function pushArray(arr, arr2) {
     Array.prototype.push.apply(arr, arr2);
     return arr;
+}
+
+function fileExists(fileName) {
+    try {
+        fs.statSync(fileName).isFile();
+    } catch (e) {
+        return false;
+    }
+
+    return true;
 }
