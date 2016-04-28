@@ -5,7 +5,27 @@ var request = require('request'),
     iteration = 0,
     responseTimeList = [],
     lastTime,
-    sendIntervalId;
+    sendIntervalId,
+    sendMessage,
+    sendStatistic;
+
+sendMessage = send.bind({}, 'http://localhost:8082/publish', 'POST', {
+    id: myId,
+    data: 'Message for comet!'
+});
+
+sendStatistic = send.bind({}, 'http://localhost:3000/sendStatistic', 'POST', {
+    id: myId,
+    data: responseTimeList
+});
+
+getId = send.bind({}, 'http://localhost:3000/getId', 'GET', {}, function (error, response, body) {
+    myId = body;
+    console.log(body);
+    subscribe();
+});
+
+getId();
 
 function subscribe() {
     lastTime = new Date();
@@ -21,35 +41,47 @@ function subscribe() {
 
             if (iteration > 100) {
                 console.log('Save statistic!');
-                saveStatistic();
-                process.exit(0);
+                sendStatistic();
+                //saveStatistic();
+                //process.exit(0);
+                clearInterval(sendIntervalId);
+                return;
             }
             //clearInterval(sendIntervalId);
-            //send();
+            console.log('');
             subscribe();
+
         });
 }
 
-function send() {
+/*function sendMessage() {
+
+ request({
+ uri: 'http://localhost:8082/publish',
+ method: 'POST',
+ json: {
+ "id": myId,
+ "data": 'Message for comet!'
+ }
+ }, function (error, response, body) {
+ if (!error && response.statusCode == 200) {
+ console.log("Send done! Body = " + body);
+ }
+ });
+ }*/
+
+//sendIntervalId = setInterval(sendMessage, 0);
+
+
+function send(uri, method, data, callback) {
+    callback = callback || function () {};
 
     request({
-        uri: 'http://localhost:8082/publish',
-        method: 'POST',
-        json: {
-            "id": myId,
-            "data": 'Message for comet!'
-        }
-    }, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            console.log("Send done! Body = " + body);
-        }
-    });
+        uri: uri,
+        method: method,
+        json: data
+    }, callback);
 }
-
-sendIntervalId = setInterval(send, 0);
-
-subscribe();
-
 
 function saveStatistic() {
     var maxResponceTime = _.max(responseTimeList),
@@ -68,6 +100,7 @@ function saveStatistic() {
         'Max responce time = ' + maxResponceTime,
         'Median time = ' + medianTime
     ], responseTimeList).join('\r\n'));
+
 }
 
 function showAllData(obj) {

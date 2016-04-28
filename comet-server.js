@@ -13,6 +13,7 @@ function onSubscribe(req, res, query) {
 
     id = _.uniqueId('xhr_');
     if (typeof query.clientId !== 'undefined') {
+        id = query.clientId;
         subscribers[id] = res;
         xhrMapIds[id] = query.clientId;
     } else {
