@@ -5,7 +5,7 @@ var WebSocketClient = require('websocket').client,
     client = new WebSocketClient(),
     iteration = 0,
     responseTimeList = [],
-    lastTime,
+    lastTime = new Date(),
     sendStatistic,
     myId,
     getId;
@@ -37,6 +37,7 @@ client.on('connect', function (connection) {
                                         lastTime.toLocaleTimeString(),
                                         lastTime.getMilliseconds()].join(' ');
         iteration++;
+        lastTime = new Date();
 
         console.log("Received: '" + message.utf8Data.toString() + "'");
 

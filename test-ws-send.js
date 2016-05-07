@@ -1,5 +1,6 @@
 var WebSocketClient = require('websocket').client,
-    client = new WebSocketClient();
+    client = new WebSocketClient(),
+    sendIntervalId;
 
 client.on('connectFailed', function (error) {
     console.log('Connect Error: ' + error.toString());
@@ -7,6 +8,8 @@ client.on('connectFailed', function (error) {
 
 client.on('connect', function (connection) {
     console.log('WebSocket Client Sender Connected');
+
+    sendIntervalId = setInterval(sendData, 0);
 
     function sendData() {
         var data;
@@ -18,8 +21,6 @@ client.on('connect', function (connection) {
             }));
         }
     }
-
-    sendData();
 });
 
 client.connect('ws://localhost:8081/', 'echo-protocol');

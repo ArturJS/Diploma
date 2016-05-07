@@ -25,7 +25,7 @@ app.post('/sendStatistic', function (req, res) {
 });
 
 app.listen(3000, function () {
-    console.log('Test balancer listening on port 3000!');
+    console.log('Test helper util listening on port 3000!');
 });
 
 initFile();
