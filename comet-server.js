@@ -12,6 +12,7 @@ function onSubscribe(req, res, query) {
     res.setHeader("Cache-Control", "no-cache, must-revalidate");
 
     id = _.uniqueId('xhr_');
+
     if (typeof query.clientId !== 'undefined') {
         id = query.clientId;
         subscribers[id] = res;
@@ -89,9 +90,5 @@ function sendOutCOMET(message) {
 
 // -----------------------------------
 
-if (!module.parent) {
-    http.createServer(accept).listen(8082);
-    console.log('XHR Сервер запущен на порту 8082');
-} else {
-    exports.accept = accept;
-}
+http.createServer(accept).listen(8082);
+console.log('XHR Сервер запущен на порту 8082');
