@@ -36,7 +36,7 @@ function subscribe() {
     lastTime = new Date();
 
     request
-        .get('http://localhost:8082/subscribe?clientId=' + myId)
+        .get('http://localhost:10000/xhr/subscribe/?clientId=' + myId)
         .on('response', function (response) {
             var timeDiff = (new Date()) - lastTime;
 

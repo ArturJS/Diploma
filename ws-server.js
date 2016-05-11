@@ -1,6 +1,9 @@
 var WebSocketServer = new require('ws'),
+    WebSocketClient = require('websocket').client,
+    wsClient = new WebSocketClient(),
     processId = process.pid,
     request = require('request'),
+    emitToCluster,
     _ = require('lodash'),
     clients = {},
     wsMapIds = {};
@@ -15,6 +18,8 @@ function init() {
         port = parseInt(port, 10);
 
         initServer(port);
+
+        initServerInstancesCommunications();
     });
 }
 
@@ -60,6 +65,7 @@ function initServer(port) {
 
     function sendOutWS(message) {
         var key;
+        emitToCluster(message);
         message = JSON.stringify(message);
         for (key in clients) {
             if (clients.hasOwnProperty(key)) {
@@ -69,5 +75,21 @@ function initServer(port) {
     }
 }
 
+function initServerInstancesCommunications() {
+    wsClient.on('connectFailed', function (error) {
+        console.log('Connect Error: ' + error.toString());
+    });
 
+    wsClient.on('connect', function (connection) {
+        console.log('WebSocket Client Sender Connected');
+
+        emitToCluster = function (data) {
+            if (connection.connected) {
+                connection.send(JSON.stringify(data));
+            }
+        }
+    });
+
+    wsClient.connect('ws://localhost:4010/?processId=' + processId, 'echo-protocol');
+}
 

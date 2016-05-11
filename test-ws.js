@@ -50,7 +50,7 @@ client.on('connect', function (connection) {
 
 });
 
-client.connect('ws://localhost:8081/', 'echo-protocol');
+client.connect('ws://localhost:10000/ws/', 'echo-protocol');
 
 function initSendFunctions() {
     sendStatistic = send.bind({}, 'http://localhost:3000/sendStatistic', 'POST', {

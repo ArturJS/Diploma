@@ -21,10 +21,12 @@ app.get('/getPort:type', function (req, res) {
     switch (req.params.type) {
         case ':comet':
             cometNum++;
+            console.log('Taken comet port 809' + cometNum);
             res.send('809' + cometNum);
             break;
         case ':ws':
             wsNum++;
+            console.log('Taken ws port 808' + wsNum);
             res.send('808' + wsNum);
             break;
         default:
@@ -51,6 +53,8 @@ webSocketServer.on('connection', function (ws) {
     ws.on('message', function (message) {
         var key;
 
+        console.log('New message for cluster');
+        console.dir(JSON.parse(message));
         for (key in subscribers) {//here id is available
             if (subscribers.hasOwnProperty(key) && key !== id) {
                 subscribers[key].send(message);

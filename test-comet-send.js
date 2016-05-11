@@ -4,7 +4,7 @@ var request = require('request'),
     sendIntervalId,
     sendMessage;
 
-sendMessage = send.bind({}, 'http://localhost:8082/publish', 'POST', {
+sendMessage = send.bind({}, 'http://localhost:10000/xhr/publish/', 'POST', {
     id: myId,
     data: 'Message for comet!'
 });

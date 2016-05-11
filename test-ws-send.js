@@ -23,4 +23,4 @@ client.on('connect', function (connection) {
     }
 });
 
-client.connect('ws://localhost:8081/', 'echo-protocol');
+client.connect('ws://localhost:10000/ws/', 'echo-protocol');

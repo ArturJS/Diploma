@@ -1,5 +1,8 @@
 ﻿var http = require('http'),
     request = require('request'),
+    WebSocketClient = require('websocket').client,
+    wsClient = new WebSocketClient(),
+    emitToCluster,
     processId = process.pid,
     url = require('url'),
     _ = require('lodash'),
@@ -18,6 +21,7 @@ function init() {
         port = parseInt(port, 10);
 
         http.createServer(accept).listen(port);
+        initServerInstancesCommunications();
         console.log('XHR Сервер запущен на порту ' + port);
     });
 }
@@ -98,6 +102,7 @@ function accept(req, res) {
 function sendOutCOMET(message) {
     var id,
         res;
+    emitToCluster(message);
     message = JSON.stringify(message);
     for (id in subscribers) {
         if (subscribers.hasOwnProperty(id)) {
@@ -106,3 +111,23 @@ function sendOutCOMET(message) {
         }
     }
 }
+
+
+function initServerInstancesCommunications() {
+    wsClient.on('connectFailed', function (error) {
+        console.log('Connect Error: ' + error.toString());
+    });
+
+    wsClient.on('connect', function (connection) {
+        console.log('WebSocket Client Sender Connected');
+
+        emitToCluster = function (data) {
+            if (connection.connected) {
+                connection.send(JSON.stringify(data));
+            }
+        }
+    });
+
+    wsClient.connect('ws://localhost:4010/?processId=' + processId, 'echo-protocol');
+}
+
