@@ -1,8 +1,27 @@
 ﻿var http = require('http'),
+    request = require('request'),
+    processId = process.pid,
     url = require('url'),
     _ = require('lodash'),
     subscribers = {},
     xhrMapIds = {};
+
+
+// -----------------------------------
+init();
+
+function init() {
+    request({
+        uri: 'http://localhost:4000/getPort:comet',
+        method: 'GET'
+    }, function (port) {
+        port = parseInt(port, 10);
+
+        http.createServer(accept).listen(port);
+        console.log('XHR Сервер запущен на порту ' + port);
+    });
+}
+
 
 function onSubscribe(req, res, query) {
     var id,
@@ -87,8 +106,3 @@ function sendOutCOMET(message) {
         }
     }
 }
-
-// -----------------------------------
-
-http.createServer(accept).listen(8082);
-console.log('XHR Сервер запущен на порту 8082');

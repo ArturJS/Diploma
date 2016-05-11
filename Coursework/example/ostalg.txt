@@ -1,0 +1,53 @@
+// обычный алгоритм Евклида через остатки
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+#include "windows.h"
+
+using namespace std;
+
+unsigned long long int gcd(unsigned long long int a, unsigned long long int b)
+{
+    while (a && b) //пока оба числа не равны нулю
+        if (a >= b)//если a больше или равно b
+           a %= b; //a присваиваем остаток от деления его на b
+        else 	   //иначе
+           b %= a; //b присваиваем остаток от деления его на a    
+    return a | b;  //возвращаем a + b
+}
+
+int main()
+{ 	
+	//объявление переменных, предназначенных
+	//для вычисления времени работы программы
+	LARGE_INTEGER start, finish, freq;
+
+	unsigned long long int a, b, nod;
+	//a,b - исходные числа
+	//nod - наибольший общий делитель
+	cin >> a >> b;
+
+	// запоминаем частоту операций
+	
+	QueryPerformanceFrequency( &freq );
+	
+	// засекаем начало работы алгоритма
+	
+	QueryPerformanceCounter( &start );
+
+	nod = gcd(a,b);
+
+	cout << nod << endl;//наибольший общий делитель	
+
+	cout << a*b/nod << endl;//наименьшее общее кратное
+
+	// time - время в секундах
+	
+	double time = (finish.QuadPart - start.QuadPart) / (double)freq.QuadPart;
+	
+	cout << time << endl;  
+	
+	getch();
+   	return 0;
+}

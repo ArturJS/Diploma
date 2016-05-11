@@ -1,0 +1,98 @@
+\begin{thebibliography}{10}
+
+\bibitem{Arslan-Orailoglu}
+Baris Arslan and Alex Orailoglu.
+\newblock Fault dictionary size reduction through test response superposition.
+\newblock In {\em Proc. of the 2002 IEEE International Conference on Computer
+  Design: VLSI in Computers (ICCD'02)}, pages 480--485, 2002.
+
+\bibitem{Speran-book}
+A.~S. Barashko, Y.~A. Skobtsov, and D.~V. Speranskiy.
+\newblock {\em Simulation and testing of discrete systems}.
+\newblock Naukova dumka, Kiev.
+\newblock in russian.
+
+\bibitem{Boppana-HF}
+V.~Boppana, I.~Hartanto, and W.~K. Fuchs.
+\newblock Full fault dictionary storage based on labeled tree encoding.
+\newblock In {\em Proc. of 14th VLSI Test Symposium}, pages 174--179, 1996.
+
+\bibitem{Boppana-F}
+Vamsi Boppana and W.~Kent Fuchs.
+\newblock Fault dictionary compaction by output sequence removal.
+\newblock In {\em Proc. of the 1994 IEEE/ACM international conference on
+  Computer-aided design (ICCAD '94)}, pages 576--579, 1994.
+
+\bibitem{Chess-L}
+Brian Chess and Tracy Larrabee.
+\newblock Creating small fault dictionaries.
+\newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
+  Circuits and Systems}, 18(3):346--356, March 1999.
+
+\bibitem{Chipulis-75-2}
+V.~P. Chipulis.
+\newblock Diagnostic information analysis in problems of control and fault
+  localization for discrete devices.
+\newblock {\em Avtomatika i telemekhanika}, (8):150--157, 1975.
+\newblock in russian.
+
+\bibitem{Chipulis-75-1}
+V.~P. Chipulis.
+\newblock Methods minimizing the resolution of diagnosys data.
+\newblock {\em Avtomatika i telemekhanika}, (3):133--141, 1975.
+\newblock in russian.
+
+\bibitem{Chipulis-77}
+V.~P. Chipulis.
+\newblock Preprocessing methods and formats of diagnostic data for digital
+  units.
+\newblock {\em Avtomatika i telemekhanika}, (4):165--175, 1977.
+\newblock in russian.
+
+\bibitem{Malyshenko-Razdobreev}
+Y.~V. Malyshenko and A.~Kh. Razdobriev.
+\newblock A method for reducing the amount of diagnostic data for
+  troubleshooting.
+\newblock {\em Avtomatika i telemekhanika}, (4):160--164, 1977.
+\newblock in russian.
+
+\bibitem{HITEC}
+T.~M. Niermann and J.~H. Patel.
+\newblock {HITEC: A Test Generation Package for Sequential Circuits}.
+\newblock In {\em Proc. of the European Design Automation Conference (EDAC)},
+  pages 214--218, 1991.
+
+\bibitem{Pomeranz-Reddy}
+Irith Pomeranz and Sudhakar~M. Reddy.
+\newblock On the generation of small dictionaries for fault location.
+\newblock In {\em Proc. of the 1992 IEEE/ACM international conference on
+  Computer-aided design (ICCAD '92)}, pages 272--279, 1992.
+
+\bibitem{Ryan-Fuchs-Pomeranz}
+P.~G. Ryan, W.~K. Fuchs, and I.~Pomeranz.
+\newblock Fault dictionary compression and equivalence class computation for
+  sequential circuits.
+\newblock In {\em Proc. {IEEE} International Conference on Computer-Aided
+  Design ({ICCAD}'93)}, pages 508--511, 1993.
+
+\bibitem{Sharshunov-73}
+S.~G. Sharshunov.
+\newblock On some specifics in diagnostics of multi-output plants by using
+  tables.
+\newblock {\em Avtomatika i telemekhanika}, (12):161--168, 1973.
+\newblock in russian.
+
+\bibitem{Speranskiy-84}
+D.~V. Speranskiy.
+\newblock On one approach to reducing the amount of diagnostic information.
+\newblock {\em Avtomatika i telemekhanika}, (3):151--160, 1984.
+\newblock in russian.
+
+\bibitem{Speranskiy-Shatokhina-85}
+D.~V. Speranskiy and N.~K. Shatokhina.
+\newblock The approximate methods of optimization of diagnostic resolution.
+\newblock In {\em Mnogoprocessornye vichislitelnye structury}, pages 70--72.
+  Izd-vo TRTI, Taganrog, USSR, 1985.
+\newblock in russian.
+
+\end{thebibliography}

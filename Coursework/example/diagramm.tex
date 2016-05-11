@@ -1,0 +1,240 @@
+\documentclass[oneside]{book}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{caption}
+\usepackage[14pt]{extsizes}
+\usepackage[
+      a5paper,
+%    mag=1000, includefoot,
+  left=1.14cm, right=1.46cm, top=1.14cm, bottom=1.14cm, headsep=0.2cm, footskip=0.6cm, bindingoffset=0cm
+]{geometry}
+\usepackage{amssymb}
+\usepackage{pgfplots, pgfplotstable}
+
+
+
+\begin{document}
+
+\begin{tikzpicture}
+\pgfplotstableread{ % Read the data into a table macro
+Label   First   Second  Third
+10      0.1     0.3     0.3
+20      0.2     0.3     0.3
+30      0.3     0.4     0.5
+40      0.3     0.5     0.8
+160     0.5     0.9     1.5
+}\datatable
+
+\begin{axis}[
+    xbar stacked,   % Stacked horizontal bars
+    xmin=0,         % Start x axis at 0
+    ytick=data,     % Use as many tick labels as y coordinates
+    yticklabels from table={\datatable}{Label}  % Get the labels from the Label column of the \datatable
+]
+\addplot [fill=yellow] table [x=First, y expr=\coordindex] {\datatable};    % Plot the "First" column against the data index
+\addplot [fill=green!70!blue]table [x=Second, y expr=\coordindex] {\datatable};
+\addplot [fill=red!80!yellow] table [x=Third, y expr=\coordindex] {\datatable};
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+
+\begin{axis}[%
+scale only axis,
+width=5cm,
+height=4cm,
+xmin=-3, xmax=3,
+ymin=0, ymax=1,
+axis on top]
+\addplot[
+  ybar,
+  bar width=0.102874cm,
+  bar shift=0cm,
+  fill=red,
+  draw=black]
+  plot coordinates{
+    (-2.9,0.00022263) (-2.7,0.000682328) (-2.5,0.00193045) (-2.3,0.00504176)
+    (-2.1,0.0121552) (-1.9,0.0270518) (-1.7,0.0555762) (-1.5,0.105399)
+    (-1.3,0.18452) (-1.1,0.298197) (-0.9,0.444858) (-0.7,0.612626)
+    (-0.5,0.778801) (-0.3,0.913931) (-0.1,0.99005) (0.1,0.99005)
+    (0.3,0.913931) (0.5,0.778801) (0.7,0.612626) (0.9,0.444858)
+    (1.1,0.298197) (1.3,0.18452) (1.5,0.105399) (1.7,0.0555762)
+    (1.9,0.0270518) (2.1,0.0121552) (2.3,0.00504176) (2.5,0.00193045)
+    (2.7,0.000682328) (2.9,0.00022263)
+  };
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    every axis plot post/.style={/pgf/number format/fixed},
+    ybar=5pt,
+    bar width=12pt,
+    x=3cm,
+    ymin=0,
+    axis on top,
+    ymax=12,
+    xtick=data,
+    enlarge x limits=0.2,
+    symbolic x coords={A,B,C},
+    restrict y to domain*=0:14, % Cut values off at 14
+    visualization depends on=rawy\as\rawy, % Save the unclipped values
+    after end axis/.code={ % Draw line indicating break
+            \draw [ultra thick, white, decoration={snake, amplitude=1pt}, decorate] (rel axis cs:0,1.05) -- (rel axis cs:1,1.05);
+        },
+    nodes near coords={%
+            \pgfmathprintnumber{\rawy}% Print unclipped values
+        },
+    axis lines*=left,
+    clip=false
+    ]
+\addplot coordinates {(A,2) (B,0.5) (C,10)};
+\addplot coordinates {(A,20) (B,30) (C,1)};
+\addplot coordinates {(A,6) (B,11) (C,7)};
+\end{axis}
+
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    tick label style={font=\small},
+    tickpos=left,
+    xticklabels={double, 20 digits,7 digits, 6 digits, 5 digits},
+    xtick={1,2,3,4,5},
+    ymin=0,
+    legend entries={entry1,entry2},
+    legend image code/.code={%
+      \draw[#1] (0cm,-0.1cm) rectangle (0.6cm,0.1cm);
+    }
+    ]
+    \addplot +[bar shift=-.2cm] coordinates {(1,3103533) (2,571651) (3,240729)  (4,218595)     (5,207303)};
+
+    \addplot  +[bar shift=.2cm]coordinates {(1,519042) (2,86885) (3,46461) (4,  44745) (5,43960)};
+
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+    %small,
+    ybar,%=8pt, % configures ‘bar shift’
+    enlargelimits=0.15,
+    ylabel={index},
+    symbolic x coords={1982, 1990, 1999, 2006},
+    %xtick=data,
+    %tick label style={font=\footnotesize},
+    legend style={at={(0.5,-0.15)},
+    anchor=north,legend columns=-1},
+    nodes near coords,
+    %every node near coord/.style={font=\footnotesize},
+    nodes near coords align={vertical},
+    ]
+\addplot coordinates {(1982, 1.78) (1990, 1.71) (1999, 1.68) (2006, 1.62)};
+\addplot coordinates {(1982,  1.70) (1990, 1.62) (1999, 1.59) (2006, 1.64)};
+\addplot coordinates {(1982, 2.04) (1990, 1.96) (1999, 1.95) (2006, 1.91)};
+\legend{USA, Netherlands, {(West-)Germany}}
+
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel={$f(x) = x^2 - x +4$}
+]
+% use TeX as calculator:
+\addplot {x^2 - x +4};
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=Cost,
+ylabel=Error]
+\addplot[color=red,mark=x] coordinates {
+(2,-2.8559703)
+(3,-3.5301677)
+(4,-4.3050655)
+(5,-5.1413136)
+(6,-6.0322865)
+(7,-6.9675052)
+(8,-7.9377747)
+};
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[view={60}{30}]
+\addplot3[surf,shader=flat,
+samples=40,
+domain=-1:0,y domain=0:2*pi,
+z buffer=sort]
+({sqrt(1-x^2) * cos(deg(y))},
+{sqrt( 1-x^2 ) * sin(deg(y))},
+x);
+\end{axis}
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\begin{axis}
+\addplot3[surf,domain=0:360,samples=30]
+{sin(x)*sin(y)};
+\end{axis}
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+x tick label style={
+/pgf/number format/1000 sep=},
+ylabel=Population,
+enlargelimits=0.15,
+legend style={at={(0.5,-0.15)},
+anchor=north,legend columns=-1},
+ybar,
+bar width=7pt,
+]
+\addplot
+coordinates {(1930,50e6) (1940,33e6)
+(1950,40e6) (1960,50e6) (1970,70e6)};
+\addplot
+coordinates {(1930,38e6) (1940,42e6)
+(1950,43e6) (1960,45e6) (1970,65e6)};
+\addplot
+coordinates {(1930,15e6) (1940,12e6)
+(1950,13e6) (1960,25e6) (1970,35e6)};
+\legend{Far,Near,Here}
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[axis equal=false,grid=major]
+\addplot[blue] expression[domain=0:2*pi,samples=300] {sin(deg(x))*sin(2*deg(x))};
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+minor tick num=1,
+axis x line=middle,
+axis y line=middle,
+every inner x axis line/.append style=
+{|->>},
+every inner y axis line/.append style=
+{|->>},
+xlabel=$x$,ylabel=$y^3$
+]
+\addplot[blue,domain=-3:5] {x^3};
+\end{axis}
+\end{tikzpicture}
+
+
+\end{document} 

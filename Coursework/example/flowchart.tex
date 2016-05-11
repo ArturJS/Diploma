@@ -1,0 +1,65 @@
+\documentclass[oneside]{book}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{caption}
+\usepackage[12pt]{extsizes}
+\usepackage[
+      a5paper,
+%    mag=1000, includefoot,
+  left=1.14cm, right=1.46cm, top=1.14cm, bottom=1.14cm, headsep=0.2cm, footskip=0.6cm, bindingoffset=0cm
+]{geometry}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,shapes}
+
+
+\begin{document}
+
+\def\blockwidth{6em}
+\def\inputblockwidth{3.5em}
+\def\ifblockwidth{4.5em}
+
+\tikzstyle{startstop} = [rectangle, draw,  inner sep=0.2em,
+    text width=5em, text centered, rounded corners=0.7em, minimum height=1.4em]
+\tikzstyle{if} = [diamond, draw, aspect=1.7,
+    text width=\ifblockwidth, text badly centered, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw,
+    text width=\blockwidth, text centered, minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{connection} = [circle, draw, inner sep=0.2em, minimum height=1.4em]
+\tikzstyle{userinterface} = [draw,trapezium, trapezium left angle=60,
+    trapezium right angle=120, text width=\inputblockwidth, minimum height=2em,
+    text centered]
+\tikzstyle{printblock} = [tape, draw, tape bend top=none, text width = \inputblockwidth,
+                 text badly centered, minimum height=3em,]
+\tikzstyle{dot}=[fill=black, circle, inner sep=0.9pt]
+
+
+\def\blockwidth{7em}
+\def\inputblockwidth{4.5em}
+
+\begin{tikzpicture}[node distance = 10em, auto]
+    % Place nodes
+    \node [startstop] (start) {Õ¿◊¿ÀŒ};
+    \node [userinterface, below of=start, node distance = 3.5em] (input) {¬‚Ó‰ $n$};
+    \node [block, below of=input, ,node distance = 4em] (init) {\raggedleft $x_p=0$, $x_t=1$, $i=0$};
+    \node [dot, below of = init, node distance = 3em] (node) {};
+    \node [if, below of=node, node distance = 3em] (decide) {$i=n$};
+    \node [block, below of=decide, node distance = 6em] (iterate) {$tmp=x_p+x_t$, $x_p=x_t$, $x_t=tmp$, $i=i+1$};
+    \node [userinterface, left of=iterate] (output) {¬˚‚Ó‰ $x_p$};
+    \node [right of=iterate] (node2) {};
+    \node [connection, below of=output, node distance = 5em] (1o) {1};
+    \node [connection, below of=node2, node distance = 3em] (1i) {1};
+    \node [startstop, below of=1i, node distance = 3em] (stop) { ŒÕ≈÷};
+    % Draw edges
+    \path [line] (start) -- (input);
+    \path [line] (input) -- (init);
+    \path [line] (init) -- (decide);
+    \path [line] (decide) -| node [above, near start] {‰‡} (output);
+    \path [line] (decide) -- node {ÌÂÚ} (iterate);
+    \path [line] (iterate) -- (node2.center)  |- (node);
+    \path [line] (output) -- (1o);
+    \path [line] (1i) -- (stop);
+\end{tikzpicture}
+
+\end{document}

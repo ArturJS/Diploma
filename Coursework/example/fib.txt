@@ -1,0 +1,75 @@
+program fib;//алгоритм для нахождения чисел Фибоначчи
+	    //использующий длинную арифметику
+{$APPTYPE CONSOLE}
+uses
+  SysUtils;
+
+  Const MaxDig = 1000;//максимальная длина числа
+        Osn = 10000;  //основание системы счисления
+  Type TLong = Array[0..MaxDig] Of LongInt;
+  Var i, j, n : LongInt;
+      a, b, c : TLong;
+
+  //процедура для сложения a и b
+  Procedure SumLongTwo(A, B : TLong; Var C : TLong);
+   Var i, k : LongInt;
+   Begin
+     FillChar(C, SizeOf (C), 0);//заполняем массив С нулями
+
+     //присваиваем k наибольшее из длин чисел a и b
+     If A[0] > B[0] Then k := A[0]
+     Else k := B[0];
+
+     For i := 1 To k Do // С присваиваем A + B  
+               Begin
+                 C[i+1] := (C[i] + A[i] + B[i]) Div Osn;
+                 C[i] := (C[i] + A[i] + B[i]) Mod Osn;
+               End;
+
+     //уточняем длину числа C
+     If C[k+1] = 0 Then C[0] := k
+     Else C[0] := k + 1
+   End;
+
+  //процедура для вывода на экран длинного числа
+  Procedure WriteLong(Const A : TLong);
+   Var ls, s : String;
+       i : LongInt;
+   Begin
+     //преобразуем число Osn Div 10
+     //в строку ls		
+     Str(Osn Div 10, ls);
+
+     Write(A[A[0]]); {выводим старшие цифры числа}
+
+     For i := A[0] - 1 DownTo 1 Do
+      Begin
+        Str(A[i], s); {преобразуем чило A[i] в строку s}
+
+	{дополняем незначащими нулями}
+        While Length(s) < Length(ls) Do s := '0' + s;
+        
+        Write(s)
+      End;
+   End;
+
+Begin
+  ReadLn(n);
+
+  //присваиваем a, b, c значение 1
+  a[0] := 1;  a[1] := 1;
+  b := a;  c := a;
+
+  //вычисляем n-ое число Фибоначчи
+  For i := 3 To n Do
+   Begin 
+     SumLongTwo(a,b,c);
+     a := b;
+     b := c;
+   End;
+
+  //вывод n-го числа Фибоначчи
+  WriteLong(c);
+
+  ReadLn;
+End.

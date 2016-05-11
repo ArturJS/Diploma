@@ -19,11 +19,11 @@ app.get('/getId', function (req, res) {
 app.get('/getPort:type', function (req, res) {
 
     switch (req.params.type) {
-        case 'comet':
+        case ':comet':
             cometNum++;
             res.send('809' + cometNum);
             break;
-        case 'ws':
+        case ':ws':
             wsNum++;
             res.send('808' + wsNum);
             break;

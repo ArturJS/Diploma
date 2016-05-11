@@ -1,0 +1,191 @@
+\documentclass[pdf, intlimits, unicode, S6, presentation]{beamer}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usetheme{Warsaw}
+\usefonttheme[onlysmall]{structurebold}
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{dynamic}
+\setbeamercovered{transparent}
+\setbeamerfont{institute}{size=\normalsize}
+%\setbeamertemplate{background canvas}[vertical shading][bottom=red!10,top=blue!10]
+\setbeamertemplate{theorems}[unnumbered]
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\setbeamercolor{bluetext_color}{fg=blue}
+\newcommand{\bluetext}[1]{{\usebeamercolor[fg]{bluetext_color}#1}}
+
+\usepackage{beamerthemesplit}
+\usepackage{dsfont}
+\usepackage{pgfplots}
+%\usepackage{graphics}
+
+\newcounter{sli}
+\newcommand{\slnumber}{\hfill {\color{lightgray} \refstepcounter{sli}\arabic{sli}}}
+\renewcommand{\nod}{\mathop{\text{НОД}}}
+\renewcommand{\nok}{\mathop{\text{НОК}}}
+
+\title[ФЯиГ]
+{Алгоритмы для нахождения наибольшего общего делителя и наименьшего общего кратного}
+\author{Курсовая работа \\
+    студента 111 группы А.~С.~Низамутдинова}
+\institute{{Саратовский государственный университет} \\
+    им.~Н.~Г.~Чернышевского \\[5pt]
+Кафедра математической кибернетики\\ и компьютерных наук\\[5pt]
+Научный руководитель: к.~ф.-м.~н., доцент Миронов~С.~В.
+}
+\date{2013г.}
+
+
+\begin{document}
+
+% Титульный лист - обязательный слайд
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Постановка задачи - обязательный слайд
+\begin{frame}
+    \frametitle{Постановка задачи \slnumber}
+    \Large
+    \begin{enumerate}
+        \item Рассмотреть понятия НОД и НОК;
+        \item Рассмотреть алгоритмы для их нахождения;
+        \item Подробно описать эти алгоритмы;
+        \item Сравнить эффективность алгоритмов для их нахождения.
+    \end{enumerate}
+\end{frame}
+
+
+% Описание курсовой работы
+\begin{frame}
+    \frametitle{Основные понятия  \slnumber}
+    \Large
+   Наибольший общий делитель и наименьшее общее кратное:
+    \begin{enumerate}
+        \item Наибольший общий делитель целых $a$, $b$ "--- это такой их общий делитель, который делится на любой общий делитель этих чисел.        
+       
+        \item  Наименьшее общее кратное целых $a$, $b$ --- это такое наименьшее натуральное число, которое делится на $a$ и $b$.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Алгоритмы для нахождения наибольшего общего делителя  \slnumber}
+    \Large
+    Для вычисления $\nod$ двух натуральных чисел существуют следующие алгоритмы:
+    \begin{enumerate}
+         \item Античный алгоритм Евклида (через разности); 
+         \item Алгоритм Евклида (через остатки);
+         \item Нахождение $\nod$ методом перебора;
+         \item Бинарный алгоритм Стейна.
+    \end{enumerate}
+    $\nok$ можно вычислить при помощи следующей формулы 
+    \[\nok=\frac{a  b}{\nod(a,b)}.\]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Античный алгоритм Евклида  \slnumber}
+    \Large
+    \begin{center}
+	\includegraphics[width=4.5cm]{antich_evklid.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Алгоритм Евклида  \slnumber}
+    \Large
+    \begin{center}
+	\includegraphics[width=4.5cm]{evklid.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Алгоритм нахождения НОД методом перебора  \slnumber}
+    \Large
+    \begin{center}
+	\includegraphics[width=4.5cm]{perebor.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Бинарный алгоритм Стейна  \slnumber}
+    \Large
+    \begin{center}
+	\includegraphics[width=9cm]{binar.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Результаты экспериментов  \slnumber}
+    \Large
+    \centering
+    \begin{figure}[!ht]
+    	\centering
+    	\includegraphics[width=10.5cm]{alg2.png}
+    %	\caption{}
+    \end{figure}
+\end{frame}
+
+% Описание результатов курсовой работы - обязательный слайд
+\begin{frame}
+    \frametitle{Результаты курсовой работы  \slnumber}
+    \large
+    Эксперименты показали:
+    \begin{enumerate}
+        \item на первом, третьем и четвертом тесте алгоритм Евклида показывает лучшее время относительно других алгоритмов;
+        \item на втором тесте время работы алгоритма Евклида равно времени выполнения бинарного алгоритма
+        Стейна и античного алгоритма Евклида.
+    \end{enumerate}   
+    Из этого следует, что алгоритм Евклида является наиболее эффективным из
+    рассмотренных. 
+\end{frame}
+
+%% список литературы - обязательно
+%\begin{frame}
+%    \frametitle{Список использованных источников  \slnumber}
+%    \small
+%    \begin{thebibliography}{9}
+%        \setbeamertemplate{bibliography item}[article]
+%    	\bibitem{Liagushki-art}
+%            Д.~А.~Шабанов, С.~Н.~Литвинчук
+%    		\newblock
+%    		Зелёные лягушки: жизнь без правил или особый способ эволюции?
+%      		\newblock\emph{Природа}. "---
+%    		2010. "--- 
+%    		\No~3. "---
+%    		С.~29--36.
+%        \setbeamertemplate{bibliography item}[online]
+%        \bibitem{el-Rana-temporaria}
+%            \verb"http://www.ecosystema.ru/08nature/amf/35.htm"
+%            \newblock Травяная лягушка — Rana temporaria Linnaeus
+%        \setbeamertemplate{bibliography item}[article]
+%        \bibitem{Monte-Carlo-art}
+%            N.~Metropolis, S.~Ulam
+%            \newblock The Monte Carlo Method
+%            \newblock \emph{J. Amer. statistical assoc.}. "---
+%            2049. "--- 
+%            Vol.~44, \No~247. "---
+%            Pp.~335--341.
+%        \setbeamertemplate{bibliography item}[book]
+%        \bibitem{Monte-Carlo-book}
+%            J.~M.~Hammersley, D.~C.~Handscomb
+%            \newblock Monte Carlo methods
+%            \newblock Methuen: 1964. "---
+%            178~p.
+%        \setbeamertemplate{bibliography item}[online]
+%        \bibitem{el-Pi-Monte-Carlo}
+%            \verb"http://habrahabr.ru/post/128454/"
+%            \newblock Вычисление числа Пи методом Монте-Карло
+%    \end{thebibliography}
+%\end{frame}
+
+
+
+\begin{frame}
+	\begin{beamercolorbox}[ht=7ex, dp=4ex, center, shadow=true, rounded=true]{title in head/foot}
+	\centerline{\LARGE{СПАСИБО ЗА ВНИМАНИЕ!}}
+	\end{beamercolorbox}
+\end{frame}
+
+\end{document} 

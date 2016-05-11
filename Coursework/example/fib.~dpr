@@ -1,0 +1,74 @@
+program fib;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+  Const MaxDig = 1000;
+        Osn = 10000;
+
+  Type TLong = Array[0..MaxDig] Of LongInt;
+
+  Var i, j, n : LongInt;
+      a, b, c : TLong;
+
+  Procedure SumLongTwo(A, B : TLong; Var C : TLong);
+   Var i, k : LongInt;
+   Begin
+     FillChar(C, SizeOf (C), 0);
+
+     If A[0] > B[0] Then k := A[0]
+     Else k := B[0];
+
+     For i := 1 To k Do
+               Begin
+                 C[i+1] := (C[i] + A[i] + B[i]) Div Osn;
+                 C[i] := (C[i] + A[i] + B[i]) Mod Osn
+                           {Есть ли в этих операторах ошибка?}
+               End;
+
+     If C[k+1] = 0 Then C[0] := k
+     Else C[0] := k + 1
+   End;
+
+  Procedure WriteLong(Const A : TLong);
+   Var ls, s : String;
+       i : LongInt;
+   Begin
+     Str(Osn Div 10, ls);
+
+     Write(A[A[0]]); {выводим старшие цифры числа}
+
+     For i := A[0] - 1 DownTo 1 Do
+      Begin
+        Str(A[i], s);
+        While Length(s) < Length(ls) Do s := '0' + s;
+        {дополняем незначащими нулями}
+        Write(s)
+      End;
+   End;
+
+
+Begin
+
+  ReadLn(n);
+
+  a[0] := 1;
+  a[1] := 1;
+
+  b := a;
+  c := a;
+
+  For i := 3 To n Do
+   Begin
+     SumLongTwo(a,b,c);
+     a := b;
+     b := c;
+   End;
+
+
+  WriteLong(c);
+
+  ReadLn;
+End.

@@ -1,55 +1,73 @@
 var WebSocketServer = new require('ws'),
+    processId = process.pid,
+    request = require('request'),
     _ = require('lodash'),
     clients = {},
     wsMapIds = {};
 
-// WebSocket-сервер на порту 8081
-var webSocketServer = new WebSocketServer.Server({
-    port: 8081
-});
+init();
 
-webSocketServer.on('connection', function (ws) {
-    var id = _.uniqueId('ws_');
-    clients[id] = ws;
-    console.log("новое WS соединение " + id);
+function init() {
+    request({
+        uri: 'http://localhost:4000/getPort:ws',
+        method: 'GET'
+    }, function (port) {
+        port = parseInt(port, 10);
 
-    ws.on('message', function (message) {
-        var mapId;
-        console.log('получено WS сообщение ' + message);
-        message = JSON.parse(message);
-        if (message.type === 'ping' && typeof message.id === 'undefined') {
-            mapId = _.uniqueId('');
-            wsMapIds[id] = mapId;
-            clients[id].send(JSON.stringify({
-                type: 'newClient',
-                clientId: mapId
-            }));
-        } else {
-            wsMapIds[id] = message.id;
-            console.log("WS!");
-            sendOutWS(message);
-        }
+        initServer(port);
+    });
+}
 
+function initServer(port) {
+    var webSocketServer = new WebSocketServer.Server({
+        port: port
     });
 
-    ws.on('close', function () {
-        console.log('соединение WS закрыто ' + id);
-        delete clients[id];
-        sendOutWS({
-            type: 'removeClient',
-            removeClientId: wsMapIds[id]
+    webSocketServer.on('connection', function (ws) {
+        var id = _.uniqueId('ws_');
+        clients[id] = ws;
+        console.log("новое WS соединение " + id);
+
+        ws.on('message', function (message) {
+            var mapId;
+            console.log('получено WS сообщение ' + message);
+            message = JSON.parse(message);
+            if (message.type === 'ping' && typeof message.id === 'undefined') {
+                mapId = _.uniqueId('');
+                wsMapIds[id] = mapId;
+                clients[id].send(JSON.stringify({
+                    type: 'newClient',
+                    clientId: mapId
+                }));
+            } else {
+                wsMapIds[id] = message.id;
+                console.log("WS!");
+                sendOutWS(message);
+            }
+
         });
+
+        ws.on('close', function () {
+            console.log('соединение WS закрыто ' + id);
+            delete clients[id];
+            sendOutWS({
+                type: 'removeClient',
+                removeClientId: wsMapIds[id]
+            });
+        });
+
     });
 
-});
-
-function sendOutWS(message) {
-    var key;
-    message = JSON.stringify(message);
-    for (key in clients) {
-        if (clients.hasOwnProperty(key)) {
-            clients[key].send(message);
+    function sendOutWS(message) {
+        var key;
+        message = JSON.stringify(message);
+        for (key in clients) {
+            if (clients.hasOwnProperty(key)) {
+                clients[key].send(message);
+            }
         }
     }
 }
+
+
 

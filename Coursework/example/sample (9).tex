@@ -1,0 +1,267 @@
+ \documentclass{article}
+\usepackage{amssymb}
+\usepackage{srcltx}
+\usepackage{amsmath}
+\usepackage[14pt]{extsizes}
+\usepackage[mag=1000,a4paper,   	
+    left=2cm , right=2cm, top=2cm, bottom=2cm,
+	]{geometry}
+\usepackage[sort,compress]{cite}
+\usepackage[english]{babel}
+
+\begin{document}
+
+
+\title {One approach to fault dictionary size
+reduction}
+
+
+\maketitle
+
+\begin{abstract}
+    This paper describes  an approach to reduction of a diagnostic
+    information with a help of masks of fault dictionaries. The
+    new algorithm for finding of a mask is proposed. The new
+    algorithm has appropriate time characteristics and small
+    memory requirements. The experimental results show an
+    effectiveness of proposed algorithm on  fault dictionaries of
+    circuits in ISCAS'89 benchmark set.
+
+    {\it Keywords:} Diagnosis, fault dictionary, diagnostic
+    information reduction.
+
+    \emph{SS3: Dependability and Testing of Digital Systems}
+
+    \emph{SoC and NoC Dependability and Testing}
+
+\end{abstract}
+
+
+\section{Introduction}
+
+Fault dictionaries are the  most widely  used technique for
+testing circuits. Pre-computed fault dictionaries stores the
+signature of each fault under a fault model. Diagnosis using a
+fault dictionary compares a signature derived from the circuit
+under test to pre-stored ones. Pre-stored fault in the dictionary
+most similar to the considered one will be the final conclusion.
+
+The simplest fault signature that can be obtained is a full
+response of circuit to a test set in the presence of the fault
+under a fault model. The \emph{full response dictionary} is a
+fault dictionary that consists of such signatures.
+
+The main objection to the usage of full response dictionaries
+consists of their extremely large size. Such dictionary can
+require Gbits of storage for today's integrated circuits.
+
+But often dictionaries  contain redundant information and can be
+made significantly smaller \cite{Ryan-Fuchs-Pomeranz, Speran-book,
+Boppana-HF, Boppana-F, Arslan-Orailoglu, Pomeranz-Reddy, Chess-L}.
+In order to reduce the space needed to store this data set, many
+techniques have been proposed.
+
+Some of the techniques for dictionary size reduction is based on
+using of so-called ``masks'' \cite{Speran-book, Chipulis-75-1,
+Chipulis-75-2, Chipulis-77, Malyshenko-Razdobreev, Sharshunov-73,
+Speranskiy-84, Speranskiy-Shatokhina-85}, when fault dictionary
+stores ``masked'' fault reaction to the test sequence as a fault
+signature.
+
+The mask for full response dictionary can be represented as a
+bit-vector, where each bit corresponds to the position of full
+reaction of circuit to the test sequence. Zero bits of the mask
+show the redundant positions of the full reaction. The
+output-compacted signature of a fault is the result of application
+of the mask to the full response of circuit to a test set in the
+presence of the fault under a fault model. It consists of  values
+taken from the positions of full reaction corresponding to nonzero
+positions of the mask. Therefore, a number of nonzero bits in the
+mask is responsible for reduction of the fault dictionary size.
+
+Diagnosis using a mask extracts a fault signature from full
+response of a circuit under test and compares it with pre-computed
+signatures in the fault dictionary.
+
+Fault dictionary compression with use of mask may be essential in
+the other techniques of dictionary size reduction.
+
+A \emph{pass-fail dictionary} is a matrix where one bit of
+information per pair (fault, test vector) stored~--- a 1 if the
+circuit will fail the test in the presence of fault and 0 if it
+will pass. A diagnostic resolution of pass-fail dictionary may be
+worse than the diagnostic resolution of full response dictionary,
+but its size at least $r$ times less than the size of full
+response dictionary, where $r$ is the number of circuit primary
+outputs.
+
+In practice the size of pass-fail dictionary can be reduced with
+the help of mask. In this case the records for each fault in
+pass-fail dictionary are used as the initial data for method of
+finding of a mask.
+
+Pomeranz and Reddy's \cite{Pomeranz-Reddy} proposed to use a
+greedy algorithm to choose columns from the full response
+dictionary to augment a pass-fail dictionary. The aim is to get
+\emph{Compact dictionary} with little or no erosion of diagnostic
+resolution for the modelled faults. The mentioned greedy algorithm
+is, as the matter of fact, an algorithm of finding of a mask.
+
+Arslan and Orailoglu \cite{Arslan-Orailoglu} offered a method
+where test vector set partitioned into blocks and a fault
+dictionary stores a combined signature for each test vector
+partition instead of pass-fail information for each test vector.
+The second phase of this method consist of finding of a mask for
+the XORed pass-fail dictionary obtained after the first phase.
+
+Boppana, Hartanto and Fuchs \cite{Boppana-HF} proposed a
+dictionary organization where entry for each fault contain a
+delimited list of only faulty primary outputs for each test
+vector. Such dictionary can be more compact if it is created from
+a pre-found masked full-response dictionary, i.~e. if it does not
+include excess faulty outputs.
+
+The ideal mask provides a maximal reduction of a fault dictionary
+volume with the best diagnostic resolution. The problem of finding
+of such mask is NP hard and implies memory- and time-consuming
+computations.
+
+Initial data for finding of a mask is fault dictionary (full
+response dictionary or pass-fail dictionary). Originally, for even
+moderate volume of  fault dictionary the problem of finding a mask
+must be solved with the aid of suboptimal heuristic methods.
+
+In this work we offer a new algorithm of this type. This
+algorithm, by definition, do not ensure that the result is
+optimal, but algorithm's result can be close enough to ideal.
+Moreover the timing data of algorithm and its memory requirements
+can be reckoned in advantage of its using.
+
+
+\section{Preliminaries}
+Further we are using following notations.
+
+Consider a  circuit with $N$ modelled faults
+$\{f_1,f_2,\dots,f_N\}$. Denote $F=\{f_i\mid 1 \leqslant
+i\leqslant N\}$. Let's the fault dictionary is  the matrix
+$D=\|d_{ij}\|_{N\times M}$, where $i$-th row is a signature of
+$i$-th modelled fault.
+
+Let $R$ is the number of pairs of distinguishable rows in $D$ and
+$P=N(N-1)/2$ is  the total number of row pairs.  We use the value
+$R/P$ as the diagnostic resolution of fault dictionary $D$.
+
+Any mask $H$ for dictionary $D$ is a bit-vector of length $M$. We
+define a volume of mask $H$ as a number of its non-zero bits. The
+result of application of mask $H$ to a $D$ is a new fault
+dictionary $D_{H}$. Matrix $D_H$ is received from a matrix $D$ by
+removal of the columns corresponding to zero bits in mask $H$.
+
+In general, we can state the problem of finding mask as following:
+for given fault dictionary $D$ it is necessary to find mask $H$ of
+minimal volume preserving the diagnostic resolution of $D$ for
+$D_H$. In other words  it is necessary to find such set of columns
+of matrix $D$, that provides the same number of pairs of
+distinguishable rows.
+
+%When the aim of dictionary reduction is the dictionary of some
+%particular size it can be stated as following: for given fault
+%dictionary $D$ it is necessary to find a mask $H$ of given volume
+%providing maximal diagnostic resolution.
+
+
+\section{Algorithm}
+Each column of $D$ partitions set of faults $F$ into subsets
+according to values in this column. The collection of these
+subsets can be further partitioned by the other columns of $D$. If
+diagnostic resolution of $D$ is equal to 1 then set $F$
+consequently partitioned by each columns of $D$ will lead to
+singleton set.
+
+In this terms, to find a mask of $D$ means to find a subset of
+columns of $D$, that provide the same partitioning of $F$ as $D$
+do.
+
+To choose a columns for best partitioning we use the following
+ideas.
+
+Let we have the set of faults $F'\subseteq F$ and $|F'|$ is the
+cardinality of $F'$. Then value
+\begin{equation}\label{eq:01}
+    I(F')=\log_2|F'|
+\end{equation}
+indicates an average quantity of information needed for the
+identification of a fault from set $F'$. When $F'$ is partitioned
+into $\{F'_1, \ldots, F'_{z_k}\}$ according to the values of
+$k$-th column the expression
+\begin{equation}\label{eq:02}
+    I_k(F')=\sum\limits_{j=1}^{z_k}\frac {|F'_j|}{|F'|}\cdot I(F'_j)
+\end{equation}
+indicates the quantity of information needed for the
+identification after the partition.
+
+Therefore,  for the best partitioning it is necessary to choose a
+column which delivers the maximal information gain
+\begin{equation}\label{eq:03}
+    G(k,F')=I(F')-I_k(F').
+\end{equation}
+
+As after the first partition of $F$ we have a collection of sets
+it would be more preferably to choose such column of a matrix $D$
+which would deliver the best partitioning for the whole
+collection.
+
+Let $\widetilde F$ is a collection of subsets of $F$. Then value
+\begin{equation}\label{eq:04}
+    I'(\widetilde F)=\sum\limits_{F'\in \widetilde F}\frac
+    {|F'|}{|F|}\cdot I(F')
+\end{equation}
+is an average quantity of information still needed for the
+identification of any fault from $F$. When collection $\widetilde
+F$ is partitioned according to the values of $k$-th column the
+value
+\begin{equation}\label{eq:05}
+    I_k(\widetilde F)=\sum\limits_{F'\in \widetilde F}\frac
+    {|F'|}{|F|}\cdot I_k(F')
+\end{equation}
+is the quantity of information needed for the identification after
+the partition.
+
+In this terms for the best result it is necessary to choose a
+column which provides the maximal information gain
+\begin{equation}\label{eq:06}
+    G'(k,\widetilde F)=I'(\widetilde F)-I'_k(\widetilde F).
+\end{equation}
+
+If $\widetilde F$ consist of sets of undistinguishable faults then
+$G'(k,\widetilde F)=0$ for any $k$. This fact may be accepted as a
+termination criteria for partitioning.
+
+
+
+\section{Experimental results}
+The proposed algorithm  has been applied to fault dictionaries of
+circuits in ISCAS'89 benchmark set. For each benchmark circuit we
+created a maximal resolution full response dictionary for HITEC
+test vectors \cite{HITEC} and single stuck-at faults. We used PC
+with Celeron 1700 MHz processor and 256 MB of RAM.
+
+
+
+\section{Conclusion}
+
+In this paper one approach to fault dictionary reduction with the
+help of masks is proposed. A new algorithm for finding of a mask
+of a fault dictionary is presented. The given results show that
+the algorithm finds acceptable masks in short time and with small
+memory requirements.
+
+The sets of experiments on the ISCAS'89 benchmark circuits
+demonstrate the significant dictionary reduction using masks found
+with the offered algorithm.
+
+\bibliographystyle{plain}
+\bibliography{my}
+
+
+\end{document}

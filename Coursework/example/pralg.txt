@@ -1,0 +1,53 @@
+// јлгоритм дл€ нахождени€ Ќќƒ методом перебора
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+#include "windows.h"
+
+using namespace std;
+
+int main()
+{   
+	//объ€вление переменных, предназначенных
+	//дл€ вычислени€ времени работы программы
+	LARGE_INTEGER start, finish, freq;
+
+	unsigned long long int a, b, gcd;
+	//a,b - исходные числа
+	//gcd - наибольший общий делитель
+
+	cin >> a >> b;
+
+	// запоминаем частоту операций
+	
+	QueryPerformanceFrequency( &freq );
+	
+	// засекаем начало работы алгоритма
+	
+	QueryPerformanceCounter( &start );
+
+	if (a >= b) gcd = a; //выбираем max(a,b)
+	else gcd = b;
+
+	
+	//пока a и b не кратны gcd, уменьшаем значение 
+	//gcd на единицу
+	while (a % gcd != 0 || b % gcd != 0) gcd--;
+
+	// засекаем окончание работы алгоритма
+	QueryPerformanceCounter( &finish );
+	
+
+	cout << gcd << endl;//наибольший общий делитель а и b
+
+	cout << a*b/gcd << endl;//наименьшее общее кратное а и b
+	// time - врем€ в секундах
+	
+	double time = (finish.QuadPart - start.QuadPart) / (double)freq.QuadPart;
+	
+	cout << time << endl;
+
+	getch();
+        return 0;
+}
