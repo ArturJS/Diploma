@@ -15,7 +15,7 @@ getId();
 
 
 function initSendFunctions() {
-    sendMessage = send.bind({}, 'http://localhost:8082/publish', 'POST', {
+    sendMessage = send.bind({}, 'http://localhost:10000/publish', 'POST', {
         id: myId,
         data: 'Message for comet!'
     });
