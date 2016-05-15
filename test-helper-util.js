@@ -43,6 +43,8 @@ function saveStatistic(data) {
 function initFile() {
     if (!fileExists(fileName)) {
         fs.writeFileSync(fileName, {});
+    } else {
+        fs.appendFileSync(fileName, "\r\n=====================Another test=====================\r\n");
     }
 }
 

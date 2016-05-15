@@ -17,7 +17,7 @@ function init() {
     request({
         uri: 'http://localhost:4000/getPort:comet',
         method: 'GET'
-    }, function (port) {
+    }, function (error, message, port) {
         port = parseInt(port, 10);
 
         http.createServer(accept).listen(port);

@@ -21,12 +21,12 @@ app.get('/getPort:type', function (req, res) {
     switch (req.params.type) {
         case ':comet':
             cometNum++;
-            console.log('Taken comet port 809' + cometNum);
+            console.log('Taken comet port 809' + oneOrTwo(cometNum));
             res.send('809' + cometNum);
             break;
         case ':ws':
             wsNum++;
-            console.log('Taken ws port 808' + wsNum);
+            console.log('Taken ws port 808' + oneOrTwo(wsNum));
             res.send('808' + wsNum);
             break;
         default:
@@ -69,4 +69,8 @@ webSocketServer.on('connection', function (ws) {
 
 function urlToProcessId(url) {
     return url.substring(url.indexOf('processId=') + 10);
+}
+
+function oneOrTwo(number) {
+    return number % 2 + 1;
 }
