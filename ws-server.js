@@ -5,6 +5,7 @@ var WebSocketServer = new require('ws'),
     request = require('request'),
     emitToCluster,
     _ = require('lodash'),
+    serverPort,
     clients = {},
     wsMapIds = {};
 
@@ -15,7 +16,7 @@ function init() {
         uri: 'http://localhost:4000/getPort:ws',
         method: 'GET'
     }, function (error, message, port) {
-        port = parseInt(port, 10);
+        serverPort = port = parseInt(port, 10);
 
         initServer(port);
 
@@ -31,11 +32,11 @@ function initServer(port) {
     webSocketServer.on('connection', function (ws) {
         var id = _.uniqueId('ws_');
         clients[id] = ws;
-        console.log("новое WS соединение " + id);
+        log("новое WS соединение " + id);
 
         ws.on('message', function (message) {
             var mapId;
-            console.log('получено WS сообщение ' + message);
+            log('получено WS сообщение ' + message);
             message = JSON.parse(message);
             if (message.type === 'ping' && typeof message.id === 'undefined') {
                 mapId = _.uniqueId('');
@@ -46,14 +47,14 @@ function initServer(port) {
                 }));
             } else {
                 wsMapIds[id] = message.id;
-                console.log("WS!");
+                log("WS!");
                 sendOutWS(message);
             }
 
         });
 
         ws.on('close', function () {
-            console.log('соединение WS закрыто ' + id);
+            log('соединение WS закрыто ' + id);
             delete clients[id];
             sendOutWS({
                 type: 'removeClient',
@@ -63,33 +64,55 @@ function initServer(port) {
 
     });
 
-    function sendOutWS(message) {
-        var key;
-        emitToCluster(message);
-        message = JSON.stringify(message);
-        for (key in clients) {
-            if (clients.hasOwnProperty(key)) {
-                clients[key].send(message);
-            }
+}
+
+
+function sendOutWS(message) {
+    var key;
+    emitToCluster(message);
+    message = JSON.stringify(message);
+    for (key in clients) {
+        if (clients.hasOwnProperty(key)) {
+            clients[key].send(message);
+        }
+    }
+}
+
+
+function sendOutWS_withoutCluster(message) {
+    var key;
+    message = JSON.stringify(message);
+    for (key in clients) {
+        if (clients.hasOwnProperty(key)) {
+            clients[key].send(message);
         }
     }
 }
 
 function initServerInstancesCommunications() {
     wsClient.on('connectFailed', function (error) {
-        console.log('Connect Error: ' + error.toString());
+        log('Connect Error: ' + error.toString());
     });
 
     wsClient.on('connect', function (connection) {
-        console.log('WebSocket Client Sender Connected');
+        log('WebSocket Client Sender Connected');
 
         emitToCluster = function (data) {
             if (connection.connected) {
                 connection.send(JSON.stringify(data));
             }
         }
+
+        connection.on('message', function (message) {
+            log('(' + processId + ') Got message ');
+            console.dir(message);
+            sendOutWS_withoutCluster(message);
+        });
     });
 
     wsClient.connect('ws://localhost:4010/?processId=' + processId, 'echo-protocol');
 }
 
+function log(msg) {
+    console.log('\n\nws-server.js on port ' + serverPort + ' : ' + msg);
+}

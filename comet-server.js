@@ -6,6 +6,7 @@
     processId = process.pid,
     url = require('url'),
     _ = require('lodash'),
+    serverPort,
     subscribers = {},
     xhrMapIds = {};
 
@@ -18,11 +19,11 @@ function init() {
         uri: 'http://localhost:4000/getPort:comet',
         method: 'GET'
     }, function (error, message, port) {
-        port = parseInt(port, 10);
+        serverPort = port = parseInt(port, 10);
 
         http.createServer(accept).listen(port);
         initServerInstancesCommunications();
-        console.log('XHR Сервер запущен на порту ' + port);
+        log('XHR Сервер запущен на порту ' + port);
     });
 }
 
@@ -50,11 +51,11 @@ function onSubscribe(req, res, query) {
         }));
     }
 
-    console.log("новый XHR клиент " + id + ", клиентов:" + Object.keys(subscribers).length);
+    log("новый XHR клиент " + id + ", клиентов:" + Object.keys(subscribers).length);
 
     req.on('close', function () {
         delete subscribers[id];
-        console.log("XHR клиент " + id + " отсоединился, клиентов:" + Object.keys(subscribers).length);
+        log("XHR клиент " + id + " отсоединился, клиентов:" + Object.keys(subscribers).length);
 
         sendOutCOMET({
             type: 'removeClient',
@@ -65,8 +66,8 @@ function onSubscribe(req, res, query) {
 }
 
 function publish(message) {
-    console.log(JSON.stringify(message));
-    console.log("есть сообщение, клиентов:" + Object.keys(subscribers).length);
+    log(JSON.stringify(message));
+    log("есть сообщение, клиентов:" + Object.keys(subscribers).length);
 
     sendOutCOMET(message);
 
@@ -83,8 +84,8 @@ function accept(req, res) {
         return;
     }
 
-    console.log('XHR: ' + req.data);
-    console.log('XHR urlParsed.pathname ' + urlParsed.pathname);
+    log('XHR: ' + req.data);
+    log('XHR urlParsed.pathname ' + urlParsed.pathname);
 
     // отправка сообщения
     if (urlParsed.pathname == '/publish' && req.method == 'POST') {
@@ -92,7 +93,7 @@ function accept(req, res) {
         req.setEncoding('utf8');
 
         req.on('data', function (message) {
-            console.log("XHR!");
+            log("XHR!");
             publish(JSON.parse(message)); // собственно, отправка
             res.end("ok");
         });
@@ -112,22 +113,43 @@ function sendOutCOMET(message) {
     }
 }
 
+function sendOutCOMET_withoutCluster(message) {
+    var id,
+        res;
+    message = JSON.stringify(message);
+    for (id in subscribers) {
+        if (subscribers.hasOwnProperty(id)) {
+            res = subscribers[id];
+            res.end(message);
+        }
+    }
+}
+
 
 function initServerInstancesCommunications() {
     wsClient.on('connectFailed', function (error) {
-        console.log('Connect Error: ' + error.toString());
+        log('Connect Error: ' + error.toString());
     });
 
     wsClient.on('connect', function (connection) {
-        console.log('WebSocket Client Sender Connected');
+        log('WebSocket Client Sender Connected');
 
         emitToCluster = function (data) {
             if (connection.connected) {
                 connection.send(JSON.stringify(data));
             }
-        }
+        };
+
+        connection.on('message', function (message) {
+            log('(' + processId + ') Got message ');
+            console.dir(message);
+            sendOutCOMET_withoutCluster(message);
+        });
     });
 
     wsClient.connect('ws://localhost:4010/?processId=' + processId, 'echo-protocol');
 }
 
+function log(msg) {
+    console.log('\n\ncomet-server.js on port ' + serverPort + ' : ' + msg);
+}

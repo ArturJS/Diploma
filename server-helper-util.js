@@ -21,12 +21,12 @@ app.get('/getPort:type', function (req, res) {
     switch (req.params.type) {
         case ':comet':
             cometNum++;
-            console.log('Taken comet port 809' + oneOrTwo(cometNum));
+            log('Taken comet port 809' + oneOrTwo(cometNum));
             res.send('809' + cometNum);
             break;
         case ':ws':
             wsNum++;
-            console.log('Taken ws port 808' + oneOrTwo(wsNum));
+            log('Taken ws port 808' + oneOrTwo(wsNum));
             res.send('808' + wsNum);
             break;
         default:
@@ -35,7 +35,8 @@ app.get('/getPort:type', function (req, res) {
 });
 
 app.listen(4000, function () {
-    console.log('Server helper util listening on port 4000!');
+    log('Server helper util listening on port 4000!');
+    process.send('done');
 });
 
 
@@ -53,7 +54,8 @@ webSocketServer.on('connection', function (ws) {
     ws.on('message', function (message) {
         var key;
 
-        console.log('New message for cluster');
+        log('New message for cluster');
+        console.dir(Object.keys(subscribers));
         console.dir(JSON.parse(message));
         for (key in subscribers) {//here id is available
             if (subscribers.hasOwnProperty(key) && key !== id) {
@@ -73,4 +75,13 @@ function urlToProcessId(url) {
 
 function oneOrTwo(number) {
     return number % 2 + 1;
+}
+
+function log(msg) {
+    console.log('\n\nserver-helper-util.js : ' + msg);
+}
+
+function dir(msg) {
+    console.log('\n\nserver-helper-util.js : ');
+    console.dir(msg);
 }

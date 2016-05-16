@@ -23,4 +23,10 @@ client.on('connect', function (connection) {
     }
 });
 
+
+log('Try to connect ws://localhost:10000/ws/...');
 client.connect('ws://localhost:10000/ws/', 'echo-protocol');
+
+function log(msg) {
+    console.log('\n\n ( SEND ) test-ws-send.js : ' + msg);
+}

@@ -22,11 +22,13 @@ function initSendFunctions() {
 
     sendStatistic = send.bind({}, 'http://localhost:3000/sendStatistic', 'POST', {
         data: responseTimeList
+    }, function () {
+        log('Statistic has been sent!');
     });
 
     getId = send.bind({}, 'http://localhost:3000/getId', 'GET', {}, function (error, response, body) {
         myId = body;
-        console.log(body);
+        log(body);
         subscribe();
     });
 }
@@ -40,19 +42,19 @@ function subscribe() {
         .on('response', function (response) {
             var timeDiff = (new Date()) - lastTime;
 
-            responseTimeList[iteration] = [ 'comet',
-                                            myId,
-                                            timeDiff,
-                                            lastTime.toLocaleTimeString(),
-                                            lastTime.getMilliseconds()].join(' ');
+            responseTimeList[iteration] = ['comet',
+                myId,
+                timeDiff,
+                lastTime.toLocaleTimeString(),
+                lastTime.getMilliseconds()].join(' ');
             iteration++;
 
-            console.log('\n\n statusCode = ' + response.statusCode + '\n');
-            console.log(response.headers['content-type']);
+            log('\n\n statusCode = ' + response.statusCode + '\n');
+            log(response.headers['content-type']);
 
             if (iteration > 100) {
                 iteration = 0;
-                console.log('Send statistic!');
+                log('Send statistic!');
                 sendStatistic();
             }
 
@@ -70,4 +72,9 @@ function send(uri, method, data, callback) {
         method: method,
         json: data
     }, callback);
+}
+
+
+function log(msg) {
+    console.log('\n\n (' + myId + ') test-comet.js : ' + msg);
 }
