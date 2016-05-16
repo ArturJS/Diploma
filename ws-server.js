@@ -1,5 +1,8 @@
 var WebSocketServer = new require('ws'),
     WebSocketClient = require('websocket').client,
+    log4js = require('log4js'),
+    log4jsConfig = require('./config/config.js').log4js,
+    loggererror,
     wsClient = new WebSocketClient(),
     processId = process.pid,
     request = require('request'),
@@ -12,6 +15,9 @@ var WebSocketServer = new require('ws'),
 init();
 
 function init() {
+    log4js.configure(log4jsConfig);
+    loggererror = log4js.getLogger('error');
+
     request({
         uri: 'http://localhost:4000/getPort:ws',
         method: 'GET'
@@ -101,7 +107,7 @@ function initServerInstancesCommunications() {
             if (connection.connected) {
                 connection.send(JSON.stringify(data));
             }
-        }
+        };
 
         connection.on('message', function (message) {
             log('(' + processId + ') Got message ');
@@ -116,3 +122,15 @@ function initServerInstancesCommunications() {
 function log(msg) {
     console.log('\n\nws-server.js on port ' + serverPort + ' : ' + msg);
 }
+
+process.on('uncaughtException', function (err) {
+    var messages = ['comet-server.js on port ' + serverPort,
+        'uncaughtException: ',
+        err.message, '\r\n',
+        err.stack].join('');
+
+    loggererror.info(messages);
+
+    console.error('uncaughtException: ', err.message);
+    console.error(err.stack);
+});
