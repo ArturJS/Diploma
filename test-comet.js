@@ -34,31 +34,41 @@ function initSendFunctions() {
 }
 
 
-function subscribe() {
-    lastTime = new Date();
+function subscribe(error) {
+    if (!error) {
+        lastTime = new Date();
+    }
 
     request
         .get('http://localhost:10000/xhr/subscribe/?clientId=' + myId)
         .on('response', function (response) {
-            var timeDiff = (new Date()) - lastTime;
-
-            responseTimeList[iteration] = ['comet',
-                myId,
-                timeDiff,
-                lastTime.toLocaleTimeString(),
-                lastTime.getMilliseconds()].join(' ');
-            iteration++;
+            var timeDiff;
 
             log('\n\n statusCode = ' + response.statusCode + '\n');
             log(response.headers['content-type']);
 
-            if (iteration > 100) {
-                iteration = 0;
-                log('Send statistic!');
-                sendStatistic();
+            if (response.statusCode === 200) {
+                timeDiff = (new Date()) - lastTime;
+
+                responseTimeList[iteration] = ['comet',
+                    myId,
+                    timeDiff,
+                    lastTime.toLocaleTimeString(),
+                    lastTime.getMilliseconds()].join(' ');
+                iteration++;
+
+                if (iteration > 100) {
+                    iteration = 0;
+                    log('Send statistic!');
+                    sendStatistic();
+                }
+
+                subscribe();
             }
 
-            subscribe();
+            setTimeout(function () {
+                subscribe(true);
+            }, 1000);
 
         });
 }
