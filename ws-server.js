@@ -3,6 +3,7 @@ var WebSocketServer = new require('ws'),
     log4js = require('log4js'),
     log4jsConfig = require('./config/config.js').log4js,
     loggererror,
+    loggerlog,
     wsClient = new WebSocketClient(),
     processId = process.pid,
     request = require('request'),
@@ -17,6 +18,7 @@ init();
 function init() {
     log4js.configure(log4jsConfig);
     loggererror = log4js.getLogger('error');
+    loggerlog = log4js.getLogger('info');
 
     request({
         uri: 'http://localhost:4000/getPort:ws',
@@ -26,8 +28,26 @@ function init() {
 
         initServer(port);
 
+        initLogInterval(10000);
         initServerInstancesCommunications();
     });
+}
+
+function initLogInterval(time) {
+    time = parseInt(time, 10) || 10000;
+
+    log('Log interval has been started!');
+    setInterval(function () {
+        var messages = ['ws-server.js on port ',
+            serverPort,
+            ' Connections ',
+            Object.keys(clients).length,
+            ' Memory usage: ',
+            JSON.stringify(process.memoryUsage())].join('');
+
+        loggerlog.info(messages);
+        log('Logged info message: ' + messages);
+    }, time);
 }
 
 function initServer(port) {

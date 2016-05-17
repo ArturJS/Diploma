@@ -3,6 +3,7 @@
     log4js = require('log4js'),
     log4jsConfig = require('./config/config.js').log4js,
     loggererror,
+    loggerlog,
     WebSocketClient = require('websocket').client,
     wsClient = new WebSocketClient(),
     emitToCluster,
@@ -20,6 +21,7 @@ init();
 function init() {
     log4js.configure(log4jsConfig);
     loggererror = log4js.getLogger('error');
+    loggerlog = log4js.getLogger('info');
 
     request({
         uri: 'http://localhost:4000/getPort:comet',
@@ -29,8 +31,26 @@ function init() {
 
         http.createServer(accept).listen(port);
         initServerInstancesCommunications();
+        initLogInterval(10000);
         log('XHR Сервер запущен на порту ' + port);
     });
+}
+
+function initLogInterval(time) {
+    time = parseInt(time, 10) || 10000;
+
+    log('Log interval has been started!');
+    setInterval(function () {
+        var messages = ['comet-server.js on port ',
+            serverPort,
+            ' Connections ',
+            Object.keys(subscribers).length,
+            ' Memory usage: ',
+            JSON.stringify(process.memoryUsage())].join('');
+
+        loggerlog.info(messages);
+        log('Logged info message: ' + messages);
+    }, time);
 }
 
 
