@@ -39,7 +39,7 @@ gulp.task('test-comet', function () {
         }
     });
 
-    function initSubscribers() {
+    function initSubscribers() {//TODO create generic solution
         var activeSubscribers = 0,
             i;
 
@@ -77,7 +77,7 @@ gulp.task('test-ws', function () {
         }
     });
 
-    function initSubscribers() {
+    function initSubscribers() {//TODO create generic solution
         var activeSubscribers = 0,
             i;
 
