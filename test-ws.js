@@ -63,6 +63,7 @@ function initSendFunctions() {
     getId = send.bind({}, 'http://localhost:3000/getId', 'GET', {}, function (error, response, body) {
         myId = body;
         log(body);
+        process.send('done');
     });
 }
 

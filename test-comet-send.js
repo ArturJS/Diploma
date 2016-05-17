@@ -9,7 +9,7 @@ sendMessage = send.bind({}, 'http://localhost:10000/xhr/publish/', 'POST', {
     data: 'Message for comet!'
 });
 
-sendIntervalId = setInterval(sendMessage, 0);
+sendIntervalId = setInterval(sendMessage, 100);
 
 function send(uri, method, data, callback) {
     callback = callback || function () {};

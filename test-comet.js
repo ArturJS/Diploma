@@ -30,6 +30,7 @@ function initSendFunctions() {
         myId = body;
         log(body);
         subscribe();
+        process.send('done');
     });
 }
 
@@ -64,11 +65,13 @@ function subscribe(error) {
                 }
 
                 subscribe();
-            }
+            } else {
+                dir('\n\n' + JSON.stringify(response));
 
-            setTimeout(function () {
-                subscribe(true);
-            }, 1000);
+                setTimeout(function () {
+                    subscribe(true);
+                }, 1000);
+            }
 
         });
 }
@@ -87,4 +90,10 @@ function send(uri, method, data, callback) {
 
 function log(msg) {
     console.log('\n\n (' + myId + ') test-comet.js : ' + msg);
+}
+
+
+function dir(msg) {
+    console.log('\n\n (' + myId + ') test-comet.js : ');
+    console.dir(msg);
 }

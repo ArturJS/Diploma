@@ -1,4 +1,3 @@
-'use strict';
 var gulp = require('gulp'),
     exec = require('child_process').exec,
     fork = require('child_process').fork,
@@ -11,25 +10,24 @@ gulp.task('serve', function () {
     var serverHelper;
     stopNginx = true;
 
-    exec('start restart-nginx.bat',       callback);
+    exec('start restart-nginx.bat', callback);
     serverHelper = fork('server-helper-util.js', {maxBuffer: maxBufferSize}, callback);
 
     serverHelper.on('message', function (msg) {
         if (msg === 'done') {
             fork('static-server.js', {maxBuffer: maxBufferSize}, callback);
-            fork('ws-server.js',     {maxBuffer: maxBufferSize}, callback);
-            fork('ws-server.js',     {maxBuffer: maxBufferSize}, callback);
-            fork('comet-server.js',  {maxBuffer: maxBufferSize}, callback);
-            fork('comet-server.js',  {maxBuffer: maxBufferSize}, callback);
+            fork('ws-server.js', {maxBuffer: maxBufferSize}, callback);
+            fork('ws-server.js', {maxBuffer: maxBufferSize}, callback);
+            fork('comet-server.js', {maxBuffer: maxBufferSize}, callback);
+            fork('comet-server.js', {maxBuffer: maxBufferSize}, callback);
         }
     });
 
 });
 
 gulp.task('test-comet', function () {
-    var numberOfSubscribers = process.argv.slice(4)[0] || 1,
-        testHelper,
-        i;
+    var numberOfSubscribers = parseInt(process.argv.slice(4)[0], 10) || 1,
+        testHelper;
 
     console.log('Start of ' + numberOfSubscribers + ' test instances...');
 
@@ -37,19 +35,35 @@ gulp.task('test-comet', function () {
 
     testHelper.on('message', function (msg) {
         if (msg === 'done') {
-            fork('test-comet-send.js');
-
-            for (i = 0; i < numberOfSubscribers; i++) {
-                fork('test-comet.js');
-            }
-            //exec('pm2 start test-comet.js -i' + numberOfSubscribers + ' --no-autorestart', callback.bind({msg: 'Started!'}));
+            initSubscribers();
         }
     });
+
+    function initSubscribers() {
+        var activeSubscribers = 0,
+            i;
+
+        for (i = 0; i < numberOfSubscribers; i++) {
+            console.log('Starting ' + i + ' test-comet.js');
+
+            fork('test-comet.js').on('message', function (message) {
+                if (message === 'done') {
+                    activeSubscribers++;
+                    console.log('Active subscribers: ' + activeSubscribers);
+
+                    if (activeSubscribers === numberOfSubscribers) {
+                        console.log('Starting test-comet-send.js');
+                        fork('test-comet-send.js');
+                    }
+                }
+            });
+        }
+    }
 
 });
 
 gulp.task('test-ws', function () {
-    var numberOfSubscribers = process.argv.slice(4)[0] || 1,
+    var numberOfSubscribers = parseInt(process.argv.slice(4)[0], 10) || 1,
         testHelper,
         i;
 
@@ -59,14 +73,30 @@ gulp.task('test-ws', function () {
 
     testHelper.on('message', function (msg) {
         if (msg === 'done') {
-            fork('test-ws-send.js');
-
-            for (i = 0; i < numberOfSubscribers; i++) {
-                fork('test-ws.js');
-            }
-            //exec('pm2 start test-ws.js -i' + numberOfSubscribers + ' --no-autorestart', callback.bind({msg: 'Started!'}));
+            initSubscribers();
         }
     });
+
+    function initSubscribers() {
+        var activeSubscribers = 0,
+            i;
+
+        for (i = 0; i < numberOfSubscribers; i++) {
+            console.log('Starting ' + i + ' test-ws.js');
+
+            fork('test-ws.js').on('message', function (message) {
+                if (message === 'done') {
+                    activeSubscribers++;
+                    console.log('Active subscribers: ' + activeSubscribers);
+
+                    if (activeSubscribers === numberOfSubscribers) {
+                        console.log('Starting test-ws-send.js');
+                        fork('test-ws-send.js');
+                    }
+                }
+            });
+        }
+    }
 
 });
 
