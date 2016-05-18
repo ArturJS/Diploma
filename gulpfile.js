@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     exec = require('child_process').exec,
     fork = require('child_process').fork,
+    tcpPortUsed = require('tcp-port-used'),
     maxBufferSize = 1024 * 50000,
     stopNginx = false;
 
@@ -27,78 +28,83 @@ gulp.task('serve', function () {
 
 gulp.task('test-comet', function () {
     var numberOfSubscribers = parseInt(process.argv.slice(4)[0], 10) || 1,
+        initCometSubscribers = initSubscribers.bind({}, numberOfSubscribers, 'test-comet.js', 'test-comet-send.js'),
         testHelper;
 
     console.log('Start of ' + numberOfSubscribers + ' test instances...');
 
-    testHelper = fork('test-helper-util.js');
+    check3000Port(function (inUse) {
+        if (inUse) {
+            initCometSubscribers();
+        } else {
+            testHelper = fork('test-helper-util.js');
 
-    testHelper.on('message', function (msg) {
-        if (msg === 'done') {
-            initSubscribers();
-        }
-    });
-
-    function initSubscribers() {//TODO create generic solution
-        var activeSubscribers = 0,
-            i;
-
-        for (i = 0; i < numberOfSubscribers; i++) {
-            console.log('Starting ' + i + ' test-comet.js');
-
-            fork('test-comet.js').on('message', function (message) {
-                if (message === 'done') {
-                    activeSubscribers++;
-                    console.log('Active subscribers: ' + activeSubscribers);
-
-                    if (activeSubscribers === numberOfSubscribers) {
-                        console.log('Starting test-comet-send.js');
-                        fork('test-comet-send.js');
-                    }
+            testHelper.on('message', function (msg) {
+                if (msg === 'done') {
+                    initCometSubscribers();
                 }
             });
         }
-    }
+    });
+
 
 });
 
 gulp.task('test-ws', function () {
     var numberOfSubscribers = parseInt(process.argv.slice(4)[0], 10) || 1,
         testHelper,
+        initWsSubscribers = initSubscribers.bind({}, numberOfSubscribers, 'test-ws.js', 'test-ws-send.js'),
         i;
 
     console.log('Start of ' + numberOfSubscribers + ' test instances...');
 
-    testHelper = fork('test-helper-util.js');
+    check3000Port(function (inUse) {
+        if (inUse) {
+            initWsSubscribers();
+        } else {
+            testHelper = fork('test-helper-util.js');
 
-    testHelper.on('message', function (msg) {
-        if (msg === 'done') {
-            initSubscribers();
-        }
-    });
-
-    function initSubscribers() {//TODO create generic solution
-        var activeSubscribers = 0,
-            i;
-
-        for (i = 0; i < numberOfSubscribers; i++) {
-            console.log('Starting ' + i + ' test-ws.js');
-
-            fork('test-ws.js').on('message', function (message) {
-                if (message === 'done') {
-                    activeSubscribers++;
-                    console.log('Active subscribers: ' + activeSubscribers);
-
-                    if (activeSubscribers === numberOfSubscribers) {
-                        console.log('Starting test-ws-send.js');
-                        fork('test-ws-send.js');
-                    }
+            testHelper.on('message', function (msg) {
+                if (msg === 'done') {
+                    initWsSubscribers();
                 }
             });
         }
-    }
+    });
+
 
 });
+
+function initSubscribers(numberOfSubscribers, listenerJS, publisherJS) {
+    var activeSubscribers = 0,
+        i;
+
+    for (i = 0; i < numberOfSubscribers; i++) {
+        console.log('Starting ' + i + ' ' + listenerJS);
+
+        fork(listenerJS).on('message', function (message) {
+            if (message === 'done') {
+                activeSubscribers++;
+                console.log('Active subscribers: ' + activeSubscribers);
+
+                if (activeSubscribers === numberOfSubscribers) {
+                    console.log('Starting ' + publisherJS);
+
+                    if (publisherJS !== 'test-ws-send.js') {
+                        fork(publisherJS);
+                    }
+                }
+            }
+        });
+    }
+}
+
+function check3000Port(callback) {
+    tcpPortUsed.check(3000, '127.0.0.1')
+        .then(callback, function (err) {
+            console.error('Error on check:', err.message);
+        });
+}
 
 function callback(error, stdout, stderr) {
     if (error) {
