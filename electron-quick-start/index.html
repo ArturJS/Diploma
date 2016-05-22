@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-controller="MainCtrl as main">
+<div class="container">
+    <h1>Statistics!</h1>
+<div class="chart-container" ng-repeat="chart in main.statisticList track by $index">
+<highchart id="chart1" config="chart.config"></highchart>
+</div>
+</div>
+
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/highcharts/highcharts.src.js"></script>
+<!--<script src="bower_components/highcharts/highstock.src.js"></script>
+<script src="bower_components/highcharts/adapters/standalone-framework.src.js"></script>-->
+
+<script src="bower_components/angular/angular.js"></script>
+<!--<script src="http://code.highcharts.com/highcharts.js"></script>-->
+<script src="https://rawgit.com/pablojim/highcharts-ng/master/src/highcharts-ng.js"></script>
+<!--<script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>-->
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="app/app.js"></script>
+<script src="app/main.ctrl.js"></script>
+
+</body>
+</html>

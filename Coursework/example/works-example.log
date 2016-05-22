@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.14)  24 APR 2016 13:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.14)  18 MAY 2016 20:42
 entering extended mode
 **works-example.tex
-(C:\temp\Diplom\Coursework\example\works-example.tex
+(C:\temp\Diplom\Diploma\Coursework\example\works-example.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\temp\Diplom\Coursework\example\SCWorks.cls
+(C:\temp\Diplom\Diploma\Coursework\example\SCWorks.cls
 (C:\PortableTex\MiKTeX\tex\latex\base\article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (C:\PortableTex\MiKTeX\tex\latex\base\size10.clo
@@ -437,7 +437,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \c@lem=\count126
 
-(C:\temp\Diplom\Coursework\example\works-example.aux)
+(C:\temp\Diplom\Diploma\Coursework\example\works-example.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
@@ -532,8 +532,8 @@ LaTeX Info: Redefining \ref on input line 38.
 LaTeX Info: Redefining \pageref on input line 38.
 LaTeX Info: Redefining \nameref on input line 38.
 
-(C:\temp\Diplom\Coursework\example\works-example.out)
-(C:\temp\Diplom\Coursework\example\works-example.out)
+(C:\temp\Diplom\Diploma\Coursework\example\works-example.out)
+(C:\temp\Diplom\Diploma\Coursework\example\works-example.out)
 \@outlinefile=\write4
 LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 
@@ -546,8 +546,8 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
-{C:/PortableTex/MiKTeX/pdftex/config/pdftex.map}] (C:\temp\Diplom\Coursework\ex
-ample\works-example.toc
+{C:/PortableTex/MiKTeX/pdftex/config/pdftex.map}]
+(C:\temp\Diplom\Diploma\Coursework\example\works-example.toc
 LaTeX Font Info:    Try loading font information for OT1+ftm on input line 1.
 
 (C:\PortableTex\localtexmf\tex\latex\pscyr\ot1ftm.fd
@@ -560,76 +560,81 @@ File: ot1ftm.fd 2001/03/03 Fontinst v1.801 font definitions for OT1/ftm.
 
 ] [4
 
+] [5
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 166--169
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
 
  []
 
-[5
+[6
 
-] [6
+] [7
 
-] [7] <antich_evklid.png, id=178, 264.99pt x 440.39531pt>
+] [8] <antich_evklid.png, id=192, 264.99pt x 440.39531pt>
 File: antich_evklid.png Graphic file (type png)
 
 <use antich_evklid.png>
-Package pdftex.def Info: antich_evklid.png used on input line 236.
+Package pdftex.def Info: antich_evklid.png used on input line 252.
 (pdftex.def)             Requested size: 199.16928pt x 331.00797pt.
- <evkl_prost.png, id=181, 509.65407pt x 267.24844pt>
+ <evkl_prost.png, id=195, 509.65407pt x 267.24844pt>
 File: evkl_prost.png Graphic file (type png)
 
 <use evkl_prost.png>
-Package pdftex.def Info: evkl_prost.png used on input line 244.
+Package pdftex.def Info: evkl_prost.png used on input line 260.
 (pdftex.def)             Requested size: 284.52756pt x 149.20546pt.
- <evklid.png, id=184, 266.49562pt x 436.63126pt>
+ <evklid.png, id=198, 266.49562pt x 436.63126pt>
 File: evklid.png Graphic file (type png)
 
 <use evklid.png>
-Package pdftex.def Info: evklid.png used on input line 264.
+Package pdftex.def Info: evklid.png used on input line 280.
 (pdftex.def)             Requested size: 199.16928pt x 326.33336pt.
- <evkl_ost.png, id=186, 509.65407pt x 258.21469pt>
+ <evkl_ost.png, id=200, 509.65407pt x 258.21469pt>
 File: evkl_ost.png Graphic file (type png)
 
 <use evkl_ost.png>
-Package pdftex.def Info: evkl_ost.png used on input line 273.
+Package pdftex.def Info: evkl_ost.png used on input line 289.
 (pdftex.def)             Requested size: 284.52756pt x 144.16188pt.
- [8
+ [9
 
-] <perebor.png, id=201, 316.18124pt x 514.92375pt>
+] <perebor.png, id=215, 316.18124pt x 514.92375pt>
 File: perebor.png Graphic file (type png)
 
 <use perebor.png>
-Package pdftex.def Info: perebor.png used on input line 291.
+Package pdftex.def Info: perebor.png used on input line 307.
 (pdftex.def)             Requested size: 199.16928pt x 324.36438pt.
- <perebor_alg.png, id=203, 508.90125pt x 258.21469pt>
+ <perebor_alg.png, id=217, 508.90125pt x 258.21469pt>
 File: perebor_alg.png Graphic file (type png)
 
 <use perebor_alg.png>
-Package pdftex.def Info: perebor_alg.png used on input line 300.
+Package pdftex.def Info: perebor_alg.png used on input line 316.
 (pdftex.def)             Requested size: 284.52756pt x 144.37465pt.
- [9 <C:/temp/Diplom/Coursework/example/antich_evklid.png> <C:/temp/Diplom/Cours
-ework/example/evkl_prost.png>]
-<binar.png, id=212, 682.80093pt x 541.27219pt>
+ [10 <C:/temp/Diplom/Diploma/Coursework/example/antich_evklid.png> <C:/temp/Dip
+lom/Diploma/Coursework/example/evkl_prost.png>]
+<binar.png, id=226, 682.80093pt x 541.27219pt>
 File: binar.png Graphic file (type png)
  <use binar.png>
-Package pdftex.def Info: binar.png used on input line 317.
+Package pdftex.def Info: binar.png used on input line 333.
 (pdftex.def)             Requested size: 426.79134pt x 338.33557pt.
- [10 <C:/temp/Diplom/Coursework/example/evklid.png> <C:/temp/Diplom/Coursework/
-example/evkl_ost.png>] <stein.png, id=220, 510.40688pt x 258.21469pt>
+ [11 <C:/temp/Diplom/Diploma/Coursework/example/evklid.png> <C:/temp/Diplom/Dip
+loma/Coursework/example/evkl_ost.png>] <stein.png, id=234, 510.40688pt x 258.21
+469pt>
 File: stein.png Graphic file (type png)
- <use stein.png>
-Package pdftex.def Info: stein.png used on input line 326.
+
+<use stein.png>
+Package pdftex.def Info: stein.png used on input line 342.
 (pdftex.def)             Requested size: 284.52756pt x 143.94913pt.
- [11 <C:/temp/Diplom/Coursework/example/perebor.png> <C:/temp/Diplom/Coursework
-/example/perebor_alg.png>] [12 <C:/temp/Diplom/Coursework/example/binar.png> <C
-:/temp/Diplom/Coursework/example/stein.png>]
-<alg2.png, id=235, 655.69969pt x 443.40656pt>
+ [12 <C:/temp/Diplom/Diploma/Coursework/example/perebor.png> <C:/temp/Diplom/Di
+ploma/Coursework/example/perebor_alg.png>] [13 <C:/temp/Diplom/Diploma/Coursewo
+rk/example/binar.png> <C:/temp/Diplom/Diploma/Coursework/example/stein.png>] <a
+lg2.png, id=250, 655.69969pt x 443.40656pt>
 File: alg2.png Graphic file (type png)
  <use alg2.png>
-Package pdftex.def Info: alg2.png used on input line 380.
+Package pdftex.def Info: alg2.png used on input line 396.
 (pdftex.def)             Requested size: 426.79134pt x 288.61003pt.
- [13] [14 <C:/temp/Diplom/Coursework/example/alg2.png>]
-(C:\temp\Diplom\Coursework\example\works-example.bbl [15
+
+[14] [15 <C:/temp/Diplom/Diploma/Coursework/example/alg2.png>]
+(C:\temp\Diplom\Diploma\Coursework\example\works-example.bbl [16
 
 ]
 LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 37.
@@ -643,35 +648,35 @@ Underfull \hbox (badness 7649) in paragraph at lines 34--39
  ru / univer / problem . php ? contest =$
  []
 
-) [16
+) [17
 
-] [17
+] [18
 
-] [18] [19
+] [19] [20
 
-] [20] [21
+] [21] [22
 
-] [22] [23
+] [23] [24
 
-] [24] [25] [26
+] [25] [26] [27
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 478.
- [27]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 478.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 494.
+ [28]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 494.
 
-(C:\temp\Diplom\Coursework\example\works-example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 478.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 478.
+(C:\temp\Diplom\Diploma\Coursework\example\works-example.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 494.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 494.
 Package rerunfilecheck Info: File `works-example.out' has not changed.
-(rerunfilecheck)             Checksum: 4C324724D055C65F50EFB773ACAEA32C;7749.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 478.
+(rerunfilecheck)             Checksum: 998BB25762E214355CA6F42B46AC5AF4;8266.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 494.
  ) 
 Here is how much of TeX's memory you used:
- 12748 strings out of 493921
- 180581 string characters out of 3149748
- 254169 words of memory out of 3000000
- 15798 multiletter control sequences out of 15000+200000
+ 12753 strings out of 493921
+ 180774 string characters out of 3149748
+ 254171 words of memory out of 3000000
+ 15800 multiletter control sequences out of 15000+200000
  15634 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  43i,6n,40p,946b,504s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -687,9 +692,9 @@ b><C:/PortableTex/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Por
 tableTex/localtexmf/fonts/type1/public/pscyr/times.pfb><C:/PortableTex/localtex
 mf/fonts/type1/public/pscyr/timesbd.pfb><C:/PortableTex/localtexmf/fonts/type1/
 public/pscyr/timesi.pfb>
-Output written on works-example.pdf (27 pages, 382839 bytes).
+Output written on works-example.pdf (28 pages, 387269 bytes).
 PDF statistics:
- 510 PDF objects out of 1000 (max. 8388607)
- 72 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 526 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 
