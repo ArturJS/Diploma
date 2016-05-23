@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.23)  23 MAY 2016 15:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.23)  23 MAY 2016 18:31
 entering extended mode
 **works-example.tex
 
@@ -800,7 +800,13 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 LaTeX Font Info:    Try loading font information for OT1+ftm on input line 1.
  (C:\PortableTEX\localtexmf\tex\latex\pscyr\ot1ftm.fd
 File: ot1ftm.fd 2001/03/03 Fontinst v1.801 font definitions for OT1/ftm.
-))
+)
+Overfull \hbox (28.42422pt too wide) in paragraph at lines 7--7
+ [][] [][]\T2A/ftm/m/n/14.4 ќформление и пе-ре-да-ча дан-ных с ис-поль-зо-ва-ни
+-ем WebSocket 
+ []
+
+)
 \tf@toc=\write6
  [3
 
@@ -814,72 +820,76 @@ Overfull \hbox (27.08345pt too wide) in paragraph at lines 138--139
 
 ] [5
 
-] [6
+]
+Overfull \hbox (43.26483pt too wide) in paragraph at lines 178--187
+\T2A/ftm/m/n/14.4 Upgrade Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ== Origin: h
+ttp://example.com
+ []
 
-] [7] <antich_evklid.png, id=180, 264.99pt x 440.39531pt>
+[6
+
+] [7] [8] <antich_evklid.png, id=177, 264.99pt x 440.39531pt>
 File: antich_evklid.png Graphic file (type png)
 
 <use antich_evklid.png>
-Package pdftex.def Info: antich_evklid.png used on input line 246.
+Package pdftex.def Info: antich_evklid.png used on input line 291.
 (pdftex.def)             Requested size: 199.16928pt x 331.00797pt.
- <evkl_prost.png, id=183, 509.65407pt x 267.24844pt>
+ <evkl_prost.png, id=180, 509.65407pt x 267.24844pt>
 File: evkl_prost.png Graphic file (type png)
 
 <use evkl_prost.png>
-Package pdftex.def Info: evkl_prost.png used on input line 254.
+Package pdftex.def Info: evkl_prost.png used on input line 299.
 (pdftex.def)             Requested size: 284.52756pt x 149.20546pt.
- <evklid.png, id=186, 266.49562pt x 436.63126pt>
+ <evklid.png, id=183, 266.49562pt x 436.63126pt>
 File: evklid.png Graphic file (type png)
 
 <use evklid.png>
-Package pdftex.def Info: evklid.png used on input line 274.
+Package pdftex.def Info: evklid.png used on input line 319.
 (pdftex.def)             Requested size: 199.16928pt x 326.33336pt.
- <evkl_ost.png, id=188, 509.65407pt x 258.21469pt>
+ <evkl_ost.png, id=185, 509.65407pt x 258.21469pt>
 File: evkl_ost.png Graphic file (type png)
 
 <use evkl_ost.png>
-Package pdftex.def Info: evkl_ost.png used on input line 283.
+Package pdftex.def Info: evkl_ost.png used on input line 328.
 (pdftex.def)             Requested size: 284.52756pt x 144.16188pt.
- [8
-
-] <perebor.png, id=202, 316.18124pt x 514.92375pt>
-File: perebor.png Graphic file (type png)
-
-<use perebor.png>
-Package pdftex.def Info: perebor.png used on input line 301.
-(pdftex.def)             Requested size: 199.16928pt x 324.36438pt.
- <perebor_alg.png, id=204, 508.90125pt x 258.21469pt>
-File: perebor_alg.png Graphic file (type png)
-
-<use perebor_alg.png>
-Package pdftex.def Info: perebor_alg.png used on input line 310.
-(pdftex.def)             Requested size: 284.52756pt x 144.37465pt.
- <binar.png, id=207, 682.80093pt x 541.27219pt>
-File: binar.png Graphic file (type png)
-
-<use binar.png>
-Package pdftex.def Info: binar.png used on input line 327.
-(pdftex.def)             Requested size: 426.79134pt x 338.33557pt.
  [9 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/antich_ev
-klid.png> <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/evk
-l_prost.png>] <stein.png, id=216, 510.40688pt x 258.21469pt>
-File: stein.png Graphic file (type png)
+klid.png>] [10 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/exampl
+e/evkl_prost.png> <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/exa
+mple/evklid.png>]
+<perebor.png, id=203, 316.18124pt x 514.92375pt>
+File: perebor.png Graphic file (type png)
+ <use perebor.png>
+Package pdftex.def Info: perebor.png used on input line 346.
+(pdftex.def)             Requested size: 199.16928pt x 324.36438pt.
 
-<use stein.png>
-Package pdftex.def Info: stein.png used on input line 336.
+<perebor_alg.png, id=205, 508.90125pt x 258.21469pt>
+File: perebor_alg.png Graphic file (type png)
+ <use perebor_alg.png>
+Package pdftex.def Info: perebor_alg.png used on input line 355.
+(pdftex.def)             Requested size: 284.52756pt x 144.37465pt.
+
+<binar.png, id=208, 682.80093pt x 541.27219pt>
+File: binar.png Graphic file (type png)
+ <use binar.png>
+Package pdftex.def Info: binar.png used on input line 372.
+(pdftex.def)             Requested size: 426.79134pt x 338.33557pt.
+ [11 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/evkl_ost
+.png> <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/perebor
+.png>]
+<stein.png, id=216, 510.40688pt x 258.21469pt>
+File: stein.png Graphic file (type png)
+ <use stein.png>
+Package pdftex.def Info: stein.png used on input line 381.
 (pdftex.def)             Requested size: 284.52756pt x 143.94913pt.
- [10 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/evklid.p
-ng> <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/evkl_ost.
-png>] [11 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/per
-ebor.png> <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/per
-ebor_alg.png>] [12 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/ex
-ample/binar.png> <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/exam
-ple/stein.png>]
+ [12 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/perebor_
+alg.png> <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/bina
+r.png>]
 (C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\works-example
-.bbl [13]) [14
+.bbl [13 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/stei
+n.png>]) [14
 
 ]
-LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 396
+LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 441
 .
  (C:\PortableTEX\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
@@ -895,23 +905,23 @@ File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ] [22] [23] [24
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 504.
  [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 504.
 
 (C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\works-example
 .aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 504.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 504.
 Package rerunfilecheck Info: File `works-example.out' has not changed.
-(rerunfilecheck)             Checksum: 6F0B50EE8D1C27AAC7FFE6EDF4952478;7497.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
+(rerunfilecheck)             Checksum: 7EEA2D2645A77E9FEE7502D913665524;7563.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 504.
  ) 
 Here is how much of TeX's memory you used:
- 21254 strings out of 493921
- 350239 string characters out of 3149748
+ 21249 strings out of 493921
+ 350216 string characters out of 3149748
  408383 words of memory out of 3000000
- 24122 multiletter control sequences out of 15000+200000
+ 24120 multiletter control sequences out of 15000+200000
  13476 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  56i,7n,55p,946b,499s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -925,9 +935,9 @@ e1/public/amsfonts/cm/cmsy10.pfb><C:/PortableTEX/MiKTeX/fonts/type1/public/amsf
 onts/symbols/msam10.pfb><C:/PortableTEX/localtexmf/fonts/type1/public/pscyr/tim
 es.pfb><C:/PortableTEX/localtexmf/fonts/type1/public/pscyr/timesbd.pfb><C:/Port
 ableTEX/localtexmf/fonts/type1/public/pscyr/timesi.pfb>
-Output written on works-example.pdf (25 pages, 330358 bytes).
+Output written on works-example.pdf (25 pages, 326832 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 64 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 470 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

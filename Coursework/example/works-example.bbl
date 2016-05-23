@@ -15,12 +15,4 @@
   Кнут. "---
 \newblock М.: Вильямc, 2002.
 
-\bibitem{Stein}
-\selectlanguageifdefined{english}
-\BibAuthor{{Stein},~J.} \BibTitle{Computational problems associated with racah
-  algebra}~/ J.~{Stein}~// \emph{Journal of Computational Physics}. "---
-\newblock 1967. "---
-\newblock Vol.~1. "---
-\newblock P.~397.
-
 \end{thebibliography}
