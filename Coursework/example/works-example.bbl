@@ -15,12 +15,6 @@
   Кнут. "---
 \newblock М.: Вильямc, 2002.
 
-\bibitem{Kurant}
-\selectlanguageifdefined{russian}
-\BibAuthor{Курант,~Р.} \BibTitle{Что такое математика?}~/ Р.~Курант,
-  Г.~Роббинс. "---
-\newblock М.: МЦНМО, 2000.
-
 \bibitem{Stein}
 \selectlanguageifdefined{english}
 \BibAuthor{{Stein},~J.} \BibTitle{Computational problems associated with racah
@@ -28,13 +22,5 @@
 \newblock 1967. "---
 \newblock Vol.~1. "---
 \newblock P.~397.
-
-\bibitem{Acm}
-\selectlanguageifdefined{english}
-\BibAuthor{Герасименко,~М.~Ю.} \BibTitle{138. {П}оследовательность {Ф}ибоначчи
-  [{Э}лектронный ресурс]}. "---
-\newblock
-  URL:~\url{http://acm.sgu.ru/univer/problem.php?contest=0&problem=138}\ (Дата
-  обращения 27.05.2013) Загл. с экр. Яз. рус.
 
 \end{thebibliography}
