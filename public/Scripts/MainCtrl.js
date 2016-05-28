@@ -7,7 +7,8 @@
     App.controller('MainCtrl', function ($timeout, uiGmapGoogleMapApi) {
         var vm = this,
             intervalId,
-            showPosition;
+            showPosition,
+            wsReconnectInterval;
 
         vm.newMessage = '';
         vm.markers = [];
@@ -53,6 +54,7 @@
         }
 
         socket.onopen = function () {
+            clearInterval(wsReconnectInterval);
             socket.send(JSON.stringify({
                 type: 'ping',
                 id: myId
@@ -62,6 +64,13 @@
         socket.onmessage = function (event) {
             var data = JSON.parse(event.data);
             processData(data);
+        };
+
+        socket.onerror = function () {
+            clearInterval(wsReconnectInterval);
+            wsReconnectInterval = setInterval(function () {
+                socket = new WebSocket("ws://localhost:10000/ws/");
+            }, 5000);
         };
 
         subscribe();
