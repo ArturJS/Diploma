@@ -3,9 +3,9 @@ Implementation:  Microsoft(R) C/C++ for Win32
 Release version: 3.71 (31 May 2005)
 
 The 8-bit codepage and sorting file: cp1251.csf
-The top-level auxiliary file: works-example.aux
-I found no \bibdata command---while reading file works-example.aux
-I found no \bibstyle command---while reading file works-example.aux
+The top-level auxiliary file: pract-example.aux
+I found no \bibdata command---while reading file pract-example.aux
+I found no \bibstyle command---while reading file pract-example.aux
 
 Here's how much of BibTeX's memory you used:
  Cites:                 1 out of 750
