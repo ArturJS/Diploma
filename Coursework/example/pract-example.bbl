@@ -1,0 +1,59 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibAuthor\def\BibAuthor#1{\emph{#1}}\else\fi
+\ifx\undefined\BibTitle\def\BibTitle#1{#1}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\def\BibAnnote#1{}\else\fi
+\ifx\undefined\BibSection\def\BibSection#1#2#3{}\else\fi
+
+\bibitem{nodejs}
+\selectlanguageifdefined{russian}
+\BibAuthor{Сухов,~К.~К.} \BibTitle{Node.js. Путеводитель по технологии}~/ К.~К.
+  Сухов. "---
+\newblock М.: ДМК Пресс, 2015.
+
+\bibitem{Nginx}
+\selectlanguageifdefined{english}
+\BibAuthor{Бартенев,~В.~В.} \BibTitle{Nginx изнутри: рожден для
+  производительности и масштабирования [{Э}лектронный ресурс]}. "---
+\newblock URL:~\url{https://habrahabr.ru/post/260065/}\ (Дата обращения
+  25.05.2016) Загл. с экр. Яз. рус.
+
+\bibitem{ws}
+\selectlanguageifdefined{english}
+\BibAuthor{Адаменко,~И.~И.} \BibTitle{Websocket [{Э}лектронный ресурс]}. "---
+\newblock URL:~\url{https://learn.javascript.ru/websockets}\ (Дата обращения
+  21.05.2016) Загл. с экр. Яз. рус.
+
+\bibitem{ws2}
+\selectlanguageifdefined{english}
+\BibAuthor{Мельников,~А.~А.} \BibTitle{The websocket protocol [{Э}лектронный
+  ресурс]}. "---
+\newblock URL:~\url{https://tools.ietf.org/html/rfc6455}\ (Дата обращения
+  24.05.2016) Загл. с экр. Яз. англ.
+
+\bibitem{comet}
+\selectlanguageifdefined{english}
+\BibAuthor{Адаменко,~И.~И.} \BibTitle{Comet с xmlhttprequest: длинные опросы
+  [{Э}лектронный ресурс]}. "---
+\newblock URL:~\url{https://learn.javascript.ru/xhr-longpoll}\ (Дата обращения
+  25.05.2016) Загл. с экр. Яз. англ.
+
+\bibitem{iframe}
+\selectlanguageifdefined{english}
+\BibAuthor{Адаменко,~И.~И.} \BibTitle{Iframe для ajax и comet [{Э}лектронный
+  ресурс]}. "---
+\newblock URL:~\url{https://learn.javascript.ru/ajax-iframe}\ (Дата обращения
+  26.05.2016) Загл. с экр. Яз. англ.
+
+\bibitem{jsonp}
+\selectlanguageifdefined{english}
+\BibAuthor{Адаменко,~И.~И.} \BibTitle{Протокол jsonp [{Э}лектронный ресурс]}.
+  "---
+\newblock URL:~\url{https://learn.javascript.ru/ajax-jsonp}\ (Дата обращения
+  25.05.2016) Загл. с экр. Яз. рус.
+
+\end{thebibliography}
