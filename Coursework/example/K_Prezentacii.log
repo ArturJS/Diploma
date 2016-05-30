@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.14)  27 MAY 2013 11:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.23)  30 MAY 2016 14:52
 entering extended mode
 **K_Prezentacii.tex
 
-("C:\Users\Артур\Desktop\КУРСОВАЯ latex\!ИСТОЧНИКИ\Course
-work\example\K_Prezentacii.tex"
+(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\K_Prezentacii
+.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,9 +15,9 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\PortableTex\MiKTeX\tex\latex\base\article.cls
+(C:\PortableTEX\MiKTeX\tex\latex\base\article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(C:\PortableTex\MiKTeX\tex\latex\base\size10.clo
+(C:\PortableTEX\MiKTeX\tex\latex\base\size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -32,49 +32,49 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(C:\PortableTex\MiKTeX\tex\latex\base\fontenc.sty
+(C:\PortableTEX\MiKTeX\tex\latex\base\fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(C:\PortableTex\MiKTeX\tex\latex\cyrillic\t2aenc.def
+(C:\PortableTEX\MiKTeX\tex\latex\cyrillic\t2aenc.def
 File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
 )
 LaTeX Font Info:    Try loading font information for T2A+cmr on input line 100.
 
 
-(C:\PortableTex\MiKTeX\tex\latex\cyrillic\t2acmr.fd
+(C:\PortableTEX\MiKTeX\tex\latex\cyrillic\t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
-(C:\PortableTex\MiKTeX\tex\latex\base\inputenc.sty
+(C:\PortableTEX\MiKTeX\tex\latex\base\inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(C:\PortableTex\MiKTeX\tex\latex\cyrillic\cp1251.def
+(C:\PortableTEX\MiKTeX\tex\latex\cyrillic\cp1251.def
 File: cp1251.def 1999/11/16 v1.0d Input encoding file
 ))
-(C:\PortableTex\MiKTeX\tex\latex\cite\cite.sty
+(C:\PortableTEX\MiKTeX\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-(C:\PortableTex\MiKTeX\tex\latex\ams\math\amsmath.sty
+(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(C:\PortableTex\MiKTeX\tex\latex\ams\math\amstext.sty
+(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(C:\PortableTex\MiKTeX\tex\latex\ams\math\amsgen.sty
+(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen103
 ))
-(C:\PortableTex\MiKTeX\tex\latex\ams\math\amsbsy.sty
+(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-(C:\PortableTex\MiKTeX\tex\latex\ams\math\amsopn.sty
+(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count87
@@ -115,17 +115,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(C:\PortableTex\MiKTeX\tex\latex\amsfonts\amssymb.sty
+(C:\PortableTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-(C:\PortableTex\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+(C:\PortableTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(C:\PortableTex\MiKTeX\tex\latex\ams\classes\amsthm.sty
+(C:\PortableTEX\MiKTeX\tex\latex\ams\classes\amsthm.sty
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks21
 \thm@bodyfont=\toks22
@@ -137,11 +137,11 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip48
 \dth@everypar=\toks26
 )
-(C:\PortableTex\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
+(C:\PortableTEX\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
-<2008/02/07> (tvz) (C:\PortableTex\MiKTeX\tex\latex\graphics\keyval.sty
+<2008/02/07> (tvz) (C:\PortableTEX\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks27
 )
@@ -152,7 +152,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \FV@StepNumber=\count101
 \FV@OutFile=\write3
 )
-(C:\PortableTex\MiKTeX\tex\latex\tools\longtable.sty
+(C:\PortableTEX\MiKTeX\tex\latex\tools\longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip49
 \LTright=\skip50
@@ -170,7 +170,7 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count106
 \LT@p@ftn=\toks28
 )
-(C:\PortableTex\MiKTeX\tex\latex\tools\array.sty
+(C:\PortableTEX\MiKTeX\tex\latex\tools\array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen113
 \extrarowheight=\dimen114
@@ -178,19 +178,19 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip53
 \backup@length=\skip54
 )
-(C:\PortableTex\MiKTeX\tex\generic\babel\babel.sty
+(C:\PortableTEX\MiKTeX\tex\generic\babel\babel.sty
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\PortableTex\MiKTeX\tex\latex\00miktex\bblopts.cfg
+(C:\PortableTEX\MiKTeX\tex\latex\00miktex\bblopts.cfg
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-(C:\PortableTex\MiKTeX\tex\generic\babel\english.ldf
+(C:\PortableTEX\MiKTeX\tex\generic\babel\english.ldf
 Language: english 2005/03/30 v3.3o English support from the babel system
 
-(C:\PortableTex\MiKTeX\tex\generic\babel\babel.def
+(C:\PortableTEX\MiKTeX\tex\generic\babel\babel.def
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count107
 \U@D=\dimen115
@@ -199,18 +199,18 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-(C:\PortableTex\MiKTeX\tex\generic\babel\russianb.ldf
+(C:\PortableTEX\MiKTeX\tex\generic\babel\russianb.ldf
 Language: russianb 2008/03/21 v1.1r Russian support from the babel system
 Package babel Info: Making " an active character on input line 199.
 ))
-(C:\PortableTex\MiKTeX\tex\latex\hyperref\hyperref.sty
+(C:\PortableTEX\MiKTeX\tex\latex\hyperref\hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(C:\PortableTex\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty
+(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(C:\PortableTex\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty
+(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
@@ -251,29 +251,29 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(C:\PortableTex\MiKTeX\tex\generic\ifxetex\ifxetex.sty
+(C:\PortableTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(C:\PortableTex\MiKTeX\tex\latex\oberdiek\auxhook.sty
+(C:\PortableTEX\MiKTeX\tex\latex\oberdiek\auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(C:\PortableTex\MiKTeX\tex\latex\oberdiek\kvoptions.sty
+(C:\PortableTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen116
 \Hy@linkcounter=\count108
 \Hy@pagecounter=\count109
 
-(C:\PortableTex\MiKTeX\tex\latex\hyperref\pd1enc.def
+(C:\PortableTEX\MiKTeX\tex\latex\hyperref\pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count110
 Package hyperref Info: Option `unicode' set `true' on input line 3411.
 
-(C:\PortableTex\MiKTeX\tex\latex\hyperref\puenc.def
+(C:\PortableTEX\MiKTeX\tex\latex\hyperref\puenc.def
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 )
-(C:\PortableTex\MiKTeX\tex\latex\00miktex\hyperref.cfg
+(C:\PortableTEX\MiKTeX\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
@@ -286,7 +286,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count111
 
-(C:\PortableTex\MiKTeX\tex\latex\ltxmisc\url.sty
+(C:\PortableTEX\MiKTeX\tex\latex\ltxmisc\url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
@@ -311,20 +311,20 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(C:\PortableTex\MiKTeX\tex\latex\hyperref\hpdftex.def
+(C:\PortableTEX\MiKTeX\tex\latex\hyperref\hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count116
 \c@bookmark@seq@number=\count117
 
-(C:\PortableTex\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty
+(C:\PortableTEX\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip55
 )
-("C:\Users\Артур\Desktop\КУРСОВАЯ latex\!ИСТОЧНИКИ\Course
-work\example\K_Prezentacii.aux")
+(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\K_Prezentacii
+.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
@@ -344,20 +344,19 @@ LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 \AtBeginShipoutBox=\box33
-
-(C:\PortableTex\MiKTeX\tex\latex\graphics\color.sty
+ (C:\PortableTEX\MiKTeX\tex\latex\graphics\color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(C:\PortableTex\MiKTeX\tex\latex\00miktex\color.cfg
+(C:\PortableTEX\MiKTeX\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 
-(C:\PortableTex\MiKTeX\tex\latex\pdftex-def\pdftex.def
+(C:\PortableTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gread@gobject=\count118
 
-(C:\PortableTex\MiKTeX\tex\context\base\supp-pdf.mkii
+(C:\PortableTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count119
 \scratchdimen=\dimen120
@@ -372,10 +371,10 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \everyMPtoPDFconversion=\toks31
 )))
 Package hyperref Info: Link coloring ON on input line 16.
- (C:\PortableTex\MiKTeX\tex\latex\hyperref\nameref.sty
+ (C:\PortableTEX\MiKTeX\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(C:\PortableTex\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
+(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count125
@@ -384,29 +383,28 @@ LaTeX Info: Redefining \ref on input line 16.
 LaTeX Info: Redefining \pageref on input line 16.
 LaTeX Info: Redefining \nameref on input line 16.
 
-("C:\Users\Артур\Desktop\КУРСОВАЯ latex\!ИСТОЧНИКИ\Course
-work\example\K_Prezentacii.out")
-("C:\Users\Артур\Desktop\КУРСОВАЯ latex\!ИСТОЧНИКИ\Course
-work\example\K_Prezentacii.out")
+(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\K_Prezentacii
+.out)
+(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\K_Prezentacii
+.out)
 \@outlinefile=\write4
 LaTeX Font Info:    Try loading font information for U+msa on input line 23.
-
-(C:\PortableTex\MiKTeX\tex\latex\amsfonts\umsa.fd
+ (C:\PortableTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
-(C:\PortableTex\MiKTeX\tex\latex\amsfonts\umsb.fd
+(C:\PortableTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
-{C:/PortableTex/MiKTeX/pdftex/config/pdftex.map}]
+{C:/PortableTEX/MiKTeX/pdftex/config/pdftex.map}]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
  [2]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
 
-("C:\Users\Артур\Desktop\КУРСОВАЯ latex\!ИСТОЧНИКИ\Course
-work\example\K_Prezentacii.aux")
+(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\K_Prezentacii
+.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
 Package rerunfilecheck Info: File `K_Prezentacii.out' has not changed.
@@ -414,16 +412,16 @@ Package rerunfilecheck Info: File `K_Prezentacii.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 65.
  ) 
 Here is how much of TeX's memory you used:
- 10297 strings out of 493921
- 140690 string characters out of 3149748
+ 10294 strings out of 493921
+ 140297 string characters out of 3149748
  208656 words of memory out of 3000000
  13504 multiletter control sequences out of 15000+200000
  7747 words of font info for 25 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  29i,6n,24p,488b,430s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\PortableTex\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk><C:/Port
-ableTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/PortableTex/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/PortableTex/MiKTeX/fonts/type1/pu
+ <C:\PortableTEX\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk><C:/Port
+ableTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/PortableTEX/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/PortableTEX/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb>
 Output written on K_Prezentacii.pdf (2 pages, 53023 bytes).
 PDF statistics:
