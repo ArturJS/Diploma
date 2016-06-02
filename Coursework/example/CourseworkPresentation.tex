@@ -30,10 +30,10 @@
 {Разработка высоконагруженных приложений на языке JavaScript}
 \author{Преддипломная практика \\
     студента 411 группы А.~С.~Низамутдинова}
-\institute{{Саратовский государственный университет} \\
+\institute{{Саратовский национальный исследовательский государственный университет} \\
     им.~Н.~Г.~Чернышевского \\[5pt]
 Кафедра математической кибернетики\\ и компьютерных наук\\[5pt]
-Научный руководитель: к.~ф.-м.~н., доцент Миронов~С.~В.
+Научный руководитель: к.~ф.-м.~н., Андрейченко~Д.~К.
 }
 \date{2016г.}
 
@@ -60,125 +60,132 @@
 
 % Описание курсовой работы
 \begin{frame}
-    \frametitle{Основные понятия  \slnumber}
+    \frametitle{Общая схема работы процесса NodeJS  \slnumber}
     \Large
-   Наибольший общий делитель и наименьшее общее кратное:
+    \begin{figure}[t]
+        \centering
+        \includegraphics[width=1\textwidth]{nodejs.png}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Общая схема работы NGINX  \slnumber}
+    \Large
+    \begin{figure}[t]
+        \centering
+        \includegraphics[width=1\textwidth]{nginx.png}
+        \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Общая схема работы Comet соединения  \slnumber}
+    \Large
+    \begin{figure}[t]
+        \centering
+        \includegraphics[width=1\textwidth]{longpoll.png}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Общая схема работы IFrame соединения  \slnumber}
+    \Large
+    \begin{figure}[t]
+        \centering
+        \includegraphics[width=1\textwidth]{iframe.png}
+        \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Общая схема работы JSONP соединения  \slnumber}
     \begin{enumerate}
-        \item Наибольший общий делитель целых $a$, $b$ "--- это такой их общий делитель, который делится на любой общий делитель этих чисел.        
-       
-        \item  Наименьшее общее кратное целых $a$, $b$ --- это такое наименьшее натуральное число, которое делится на $a$ и $b$.
+        \item На клиентской стороне создается тег \verb!<script>! на специальный URL, в котором в качестве параметра передается имя функции обратного вызова, которая будет вызываться при получении данных;
+        \item В свою очередь сервер формирует ответ в виде вызова этой функции с данными переданными в ней в качестве параметров, и отправляет ответ клиенту;
+        \item Сразу после того как клиентская сторона получает ответ от сервера, полученный скрипт начинает немедленно выполняться, таким образом вызывая функцию обратного вызова, которая располагается на стороне клиента.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Общая схема работы WebSocket соединения  \slnumber}
+    \begin{enumerate}
+        \item Клиентская сторона отправляет \verb!GET!  запрос с заголовком \verb!Upgrade: websocket!, указывая, что хочет переключиться на WebSocket протокол;
+        \item Сервер возвращает ответ с заголовками \verb!HTTP/1.1 101 Switching Protocols! и
+        \verb!Upgrade: websocket!;
+        \item Затем данные передаются по специальному протоколу с использованием <<фреймов>>. И это уже совсем не HTTP.
+        \item При закрытии соединения сторона, желающая это сделать (обе стороны в WebSocket равноправны) отправляет закрывающий <<фрейм>> (c опкодом 0x8), в теле которого указывает причину закрытия.
     \end{enumerate}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Алгоритмы для нахождения наибольшего общего делителя  \slnumber}
+    \frametitle{Архитектура приложения и его работа  \slnumber}
     \Large
-    Для вычисления $\nod$ двух натуральных чисел существуют следующие алгоритмы:
-    \begin{enumerate}
-         \item Античный алгоритм Евклида (через разности); 
-         \item Алгоритм Евклида (через остатки);
-         \item Нахождение $\nod$ методом перебора;
-         \item Бинарный алгоритм Стейна.
-    \end{enumerate}
-    $\nok$ можно вычислить при помощи следующей формулы 
-    \[\nok=\frac{a  b}{\nod(a,b)}.\]
+    \begin{figure}[t]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Architecture.png}
+        \end{figure}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Античный алгоритм Евклида  \slnumber}
-    \Large
-    \begin{center}
-	\includegraphics[width=4.5cm]{antich_evklid.png}
-	\end{center}
-\end{frame}
 
-\begin{frame}
-    \frametitle{Алгоритм Евклида  \slnumber}
-    \Large
-    \begin{center}
-	\includegraphics[width=4.5cm]{evklid.png}
-	\end{center}
-\end{frame}
 
-\begin{frame}
-    \frametitle{Алгоритм нахождения НОД методом перебора  \slnumber}
-    \Large
-    \begin{center}
-	\includegraphics[width=4.5cm]{perebor.png}
-	\end{center}
-\end{frame}
 
-\begin{frame}
-    \frametitle{Бинарный алгоритм Стейна  \slnumber}
-    \Large
-    \begin{center}
-	\includegraphics[width=9cm]{binar.png}
-	\end{center}
-\end{frame}
 
-\begin{frame}
-    \frametitle{Результаты экспериментов  \slnumber}
-    \Large
-    \centering
-    \begin{figure}[!ht]
-    	\centering
-    	\includegraphics[width=10.5cm]{alg2.png}
-    %	\caption{}
-    \end{figure}
-\end{frame}
+
+
+
 
 % Описание результатов курсовой работы - обязательный слайд
-\begin{frame}
-    \frametitle{Результаты курсовой работы  \slnumber}
-    \large
-    Эксперименты показали:
-    \begin{enumerate}
-        \item на первом, третьем и четвертом тесте алгоритм Евклида показывает лучшее время относительно других алгоритмов;
-        \item на втором тесте время работы алгоритма Евклида равно времени выполнения бинарного алгоритма
-        Стейна и античного алгоритма Евклида.
-    \end{enumerate}   
-    Из этого следует, что алгоритм Евклида является наиболее эффективным из
-    рассмотренных. 
-\end{frame}
-
-%% список литературы - обязательно
 %\begin{frame}
-%    \frametitle{Список использованных источников  \slnumber}
-%    \small
-%    \begin{thebibliography}{9}
-%        \setbeamertemplate{bibliography item}[article]
-%    	\bibitem{Liagushki-art}
-%            Д.~А.~Шабанов, С.~Н.~Литвинчук
-%    		\newblock
-%    		Зелёные лягушки: жизнь без правил или особый способ эволюции?
-%      		\newblock\emph{Природа}. "---
-%    		2010. "--- 
-%    		\No~3. "---
-%    		С.~29--36.
-%        \setbeamertemplate{bibliography item}[online]
-%        \bibitem{el-Rana-temporaria}
-%            \verb"http://www.ecosystema.ru/08nature/amf/35.htm"
-%            \newblock Травяная лягушка — Rana temporaria Linnaeus
-%        \setbeamertemplate{bibliography item}[article]
-%        \bibitem{Monte-Carlo-art}
-%            N.~Metropolis, S.~Ulam
-%            \newblock The Monte Carlo Method
-%            \newblock \emph{J. Amer. statistical assoc.}. "---
-%            2049. "--- 
-%            Vol.~44, \No~247. "---
-%            Pp.~335--341.
-%        \setbeamertemplate{bibliography item}[book]
-%        \bibitem{Monte-Carlo-book}
-%            J.~M.~Hammersley, D.~C.~Handscomb
-%            \newblock Monte Carlo methods
-%            \newblock Methuen: 1964. "---
-%            178~p.
-%        \setbeamertemplate{bibliography item}[online]
-%        \bibitem{el-Pi-Monte-Carlo}
-%            \verb"http://habrahabr.ru/post/128454/"
-%            \newblock Вычисление числа Пи методом Монте-Карло
-%    \end{thebibliography}
+%    \frametitle{Результаты курсовой работы  \slnumber}
+%    \large
+%    Эксперименты показали:
+%    \begin{enumerate}
+%        \item на первом, третьем и четвертом тесте алгоритм Евклида показывает лучшее время относительно других алгоритмов;
+%        \item на втором тесте время работы алгоритма Евклида равно времени выполнения бинарного алгоритма
+%        Стейна и античного алгоритма Евклида.
+%    \end{enumerate}   
+%    Из этого следует, что алгоритм Евклида является наиболее эффективным из
+%    рассмотренных. 
 %\end{frame}
+
+% список литературы - обязательно
+\begin{frame}
+    \frametitle{Список использованных источников  \slnumber}
+    \small
+    \begin{thebibliography}{9}
+        \setbeamertemplate{bibliography item}[online]
+        \bibitem{el-Rana-temporaria}
+            \verb"https://learn.javascript.ru/ajax-jsonp"
+            \newblock Протокол JSONP
+                                          
+                        
+                                            \setbeamertemplate{bibliography item}[online]
+                                            \bibitem{el-Rana-temporaria}
+                                                \verb"https://tools.ietf.org/html/rfc6455"
+                                                \newblock The WebSocket Protocol
+                                                
+ 
+                                             \setbeamertemplate{bibliography item}[online]
+                                             \bibitem{el-Rana-temporaria}
+                                                 \verb"https://learn.javascript.ru/xhr-longpoll"
+                                                 \newblock COMET с XMLHttpRequest: длинные опросы
+                                        
+                                        
+                                        
+                                                                                     \setbeamertemplate{bibliography item}[online]
+                                                                                     \bibitem{el-Rana-temporaria}
+                                                                                         \verb"https://learn.javascript.ru/ajax-iframe"
+                                                                                         \newblock IFRAME для AJAX и COMET                            
+        \setbeamertemplate{bibliography item}[book]
+        \bibitem{Monte-Carlo-book}
+        Сухов К. К.
+            \newblock Node.js. Путеводитель по технологии
+            \newblock ДМК Пресс: 2015. 
+        \setbeamertemplate{bibliography item}[online]
+        \bibitem{el-Pi-Monte-Carlo}
+            \verb"https://habrahabr.ru/post/260065/"
+            \newblock NGINX изнутри: рожден для производительности и масштабирования
+    \end{thebibliography}
+\end{frame}
 
 
 
