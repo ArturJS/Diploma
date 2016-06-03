@@ -1,10 +1,13 @@
-//crazy run ======> node --max-old-space-size=4000 --expose-gc excel.js -i 91 100
 var fs = require('fs');
 var _ = require('lodash');
 var excelbuilder = require('msexcel-builder');
 
-parseTxt('comet-statistic');
-parseTxt('ws-statistic');
+////crazy run ======> node --max-old-space-size=4000 --expose-gc excel.js -i 91 100
+//parseTxt('comet-statistic');
+//parseTxt('ws-statistic');
+
+parseStatistic('comet-statistic');
+parseStatistic('ws-statistic');
 
 function parseTxt(txtName) {
 
@@ -34,7 +37,7 @@ function parseTxt(txtName) {
 
             testObjects[lineIndex] = testObjects[lineIndex] || [];
 
-            params.push(words.slice(3).join(' '));
+            params.push(words.slice(3).join(' '));//adding time
             testObjects[lineIndex].push(params);
         });
 
@@ -90,4 +93,57 @@ function parseTxt(txtName) {
             }
         });
     });
+}
+
+function parseStatistic(txtName) {
+
+    fs.readFile(txtName + '.txt', function (err, data) {
+        if (err) {
+            return console.error(err);
+        }
+
+        var linesArr = data.toString().split('\r\n'),
+            workbook = excelbuilder.createWorkbook('./', txtName + '.xlsx'),
+            sheet = workbook.createSheet(txtName, 10, 500),
+            testObjects = {},
+            finalStatistics = [],
+            i;
+
+        _.forEach(linesArr, function (line) {//map data from string to lists of arrays of params
+            var words = line.split(' '),
+                lineIndex = words[1];//instance id
+
+            testObjects[lineIndex] = testObjects[lineIndex] || [];
+
+            testObjects[lineIndex].push(parseInt(words[2], 10));//push only delay
+        });
+
+        for (i = 0; i < 100; i++) { //take the second hundred of statistics for clean results
+            finalStatistics.push(0);
+            _.forEach(testObjects, function (valuesArr, index) {
+
+                if (!_.isUndefined(valuesArr[i])) {
+                    finalStatistics[i] += valuesArr[i];
+                }
+
+            });
+            finalStatistics[i] /= 100;
+        }
+
+        for (i = 0; i < 100; i++) {
+            sheet.set(1, i + 1, finalStatistics[i]);
+        }
+
+        console.log(txtName);
+        console.dir(finalStatistics);
+
+        workbook.save(function (ok) {//save to excel file
+            if (!ok) {
+                workbook.cancel();
+                console.log('Error with saving in ' + txtName + '.xlsx file!')
+            }
+        });
+    });
+
+
 }
