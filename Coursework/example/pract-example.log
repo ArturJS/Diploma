@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.23)  2 JUN 2016 17:16
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.23)  7 JUN 2016 12:27
 entering extended mode
 **pract-example.tex
 
@@ -829,7 +829,7 @@ Overfull \hbox (20.47473pt too wide) in paragraph at lines 249--250
 что бра-у-зер хо-чет пе-рей-ти на websocket. 
  []
 
-[10] <WebSocket-frame.png, id=179, 599.23875pt x 400.49625pt>
+[10] <WebSocket-frame.png, id=186, 599.23875pt x 400.49625pt>
 File: WebSocket-frame.png Graphic file (type png)
 
 <use WebSocket-frame.png>
@@ -837,14 +837,14 @@ Package pdftex.def Info: WebSocket-frame.png used on input line 285.
 (pdftex.def)             Requested size: 435.32422pt x 290.95428pt.
  [11 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/WebSocke
 t-frame.png>]
-<iframe.png, id=190, 493.845pt x 228.855pt>
+<iframe.png, id=197, 493.845pt x 228.855pt>
 File: iframe.png Graphic file (type png)
  <use iframe.png>
 Package pdftex.def Info: iframe.png used on input line 338.
 (pdftex.def)             Requested size: 435.32422pt x 201.73523pt.
  [12] [13 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/ifr
 ame.png>] [14]
-<Architecture.png, id=217, 565.11125pt x 454.69875pt>
+<Architecture.png, id=224, 565.11125pt x 454.69875pt>
 File: Architecture.png Graphic file (type png)
  <use Architecture.png>
 Package pdftex.def Info: Architecture.png used on input line 374.
@@ -895,33 +895,37 @@ u / ajax-[]iframe$[] \T2A/ftm/m/n/14.4 (ƒата обращени€
 
 ) [18
 
+] [19
+
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 429.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 429.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 430.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 430.
 
 (C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\pract-example
 .aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 429.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 429.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 430.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 430.
 Package rerunfilecheck Info: File `pract-example.out' has not changed.
-(rerunfilecheck)             Checksum: F1C6919F66DCBA66C90F48A41966E69D;5447.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
+(rerunfilecheck)             Checksum: 92F88A7490A109730B5CC435866983FF;6110.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 430.
  ) 
 Here is how much of TeX's memory you used:
- 21210 strings out of 493921
- 349670 string characters out of 3149748
- 407383 words of memory out of 3000000
- 24092 multiletter control sequences out of 15000+200000
- 12087 words of font info for 32 fonts, out of 3000000 for 9000
+ 21224 strings out of 493921
+ 349807 string characters out of 3149748
+ 408383 words of memory out of 3000000
+ 24100 multiletter control sequences out of 15000+200000
+ 13476 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 56i,6n,55p,1108b,464s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/PortableTEX/MiKTeX/fonts/enc/t2/t2a.enc} <C:\PortableTEX\MiKTeX\fonts\pk\
-ljfour\lh\lh-t2a\dpi600\latt1440.pk><C:/PortableTEX/localtexmf/fonts/type1/publ
-ic/pscyr/times.pfb><C:/PortableTEX/localtexmf/fonts/type1/public/pscyr/timesbd.
-pfb><C:/PortableTEX/localtexmf/fonts/type1/public/pscyr/timesi.pfb>
-Output written on pract-example.pdf (18 pages, 181334 bytes).
+ 56i,6n,55p,1108b,499s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\PortableTEX\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk>{C:/Port
+ableTEX/MiKTeX/fonts/enc/t2/t2a.enc} <C:\PortableTEX\MiKTeX\fonts\pk\ljfour\lh\
+lh-t2a\dpi600\latt1440.pk><C:/PortableTEX/localtexmf/fonts/type1/public/pscyr/t
+imes.pfb><C:/PortableTEX/localtexmf/fonts/type1/public/pscyr/timesbd.pfb><C:/Po
+rtableTEX/localtexmf/fonts/type1/public/pscyr/timesi.pfb>
+Output written on pract-example.pdf (20 pages, 214513 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 212 words of extra memory for PDF output out of 10000 (max. 10000000)
 
