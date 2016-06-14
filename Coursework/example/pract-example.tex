@@ -362,10 +362,12 @@ COMET через протокол JSONP реализуется с использованием длинных запросов, то ест
 \section{Описание архитектуры приложения}
 Архитектура приложения состоит из следующих компонентов:
 \begin{itemize}
-\item NGINX (прокси-сервер и балансировщик нагрузки)
-\item 2 WebSocket сервера
-\item 2 Comet сервера
-\item Messaging сервис
+\item 2 Comet сервера~\ref{listing-nod-1}
+\item 2 WebSocket сервера~\ref{listing-nod-2}
+\item 1 Static сервер~\ref{listing-nod-3}
+\item Messaging сервис~\ref{listing-nod-4}
+\item Gulp task runner предназначенный для запуска приложения~\ref{listing-nod-5}
+\item NGINX (прокси-сервер и балансировщик нагрузки)~\ref{listing-nod-6}
 \end{itemize}
 
 На рисунке~\ref{fig:cluster} можно увидеть общую схему приложения.
@@ -419,6 +421,10 @@ COMET через протокол JSONP реализуется с использованием длинных запросов, то ест
 \VerbatimInput[fontsize=\small, numbers=left, numbersep=2pt]{gulpfile.js}
 
 
+\section{Конфигурационный файл NGINX}\label{listing-nod-6}
+Код приложения \verb"nginx.conf".
+
+\VerbatimInput[fontsize=\small, numbers=left, numbersep=2pt]{nginx.conf}
 
 %\section{Таблица}
 %\begin{table}[!ht]
