@@ -7,7 +7,7 @@ angular
             restrict: 'EA',
             templateUrl: 'ux-select.html',
             scope: {
-                isOpen: '=',
+                isOpen: '=?',
                 list: '=',
                 value: '=',
                 onChange: '&'
