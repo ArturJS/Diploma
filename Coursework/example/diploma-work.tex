@@ -671,6 +671,59 @@ gulp.task('serve', function () {
 Код приложения \verb"nginx.conf".
 
 \VerbatimInput[fontsize=\small, numbers=left, numbersep=2pt]{nginx.conf}
+
+
+
+\section{Содержимое диска и инструкция для запуска}\label{listing-nod-7}
+
+Содержимое диска включает в себя следующие компоненты:
+\begin{enumerate}
+\item папка \verb|config| содержит настройки для логгера приложения;
+\item папка \verb|logs| содержит в себе файлы логов с информацией о работе приложения;
+\item папка \verb|nginx-1.8.0| содержит NGINX сервер;
+\item папка \verb|public| содержит пользовательский интерфейс;
+\item файл \verb|readme.txt| содержит инструкции для установки и запуска приложения и нагрузочных тестов;
+\item файл \verb|comet-server.js| содержит код для comet сервера;
+\item файл \verb|ws-server.js| содержит код для websocket сервера;
+\item файл \verb|static-server.js| содержит код для static сервера;
+\item файл \verb|server-helper-util.js| содержит код для messaging сервиса;
+\item файл \verb|gulpfile.js| содержит код для gulp task runner;
+\item файлы \verb|test-comet.js| и  \verb|test-comet-send.js| содержат код нагрузочного тестирования comet соединения;
+\item файл \verb|test-comet-send.js| ;
+\item файл \verb|test-ws.js| и \verb|test-ws-send.js| содержат код для нагрузочного тестирования websocket соединения;
+\item файл \verb|test-helper-util.js| содержит код для сохранения данных о нагрузочном тестировании;
+\item файл \verb|package.json| содержит список nodejs модулей, которые необходимо установить после запуска \verb|npm install.bat|;
+\item файл \verb|gulp-serve.bat| содержит набор команд для запуска приложения;
+\item файл \verb|gulp-test-comet.bat| содержит набор команд для запуска нагрузочного тестирования comet соединения;
+\item файл \verb|gulp-test-ws.bat| содержит набор команд для запуска нагрузочного тестирования webcocket соединения;
+\item файл \verb|npm install global.bat| содержит набор команд для установки глобальных nodejs модулей;
+\item файл \verb|npm install.bat| содержит набор команд для установки локальных nodejs модулей;
+\item файл \verb|restart-nginx.bat| содержит набор команд для перезапуска NGINX сервера;
+\item файл \verb|stor-nginx.bat| содержит набор команд для остановки NGINX сервера .
+\end{enumerate}
+
+
+Инструкция для запуска приложения и нагрузочных тестов:
+\begin{enumerate}
+\item https://git-scm.com/downloads установить систему версионного контроля git 
+\item https://nodejs.org/en/ установить последнюю версию nodejs
+\item убедитесь, что в системной переменной path прописаны следующие пути:
+\begin{itemize}
+\item "C:\textbackslash Program Files \textbackslash nodejs \textbackslash" 
+\item "C:\textbackslash Files\textbackslash Git\textbackslash cmd" 
+\item "C:\textbackslash Users\textbackslash USERPROFILE\textbackslash AppData\textbackslash Roaming\textbackslash npm"
+\end{itemize}
+где USERPROFILE --- имя пользователя
+		
+\item запустить "npm install global.bat", чтобы установить команду gulp глобально
+\item запустить "npm install.bat", чтобы установить nodejs модули, необходимые для работы приложения
+\item запустить "gulp-serve.bat", чтобы запустить приложение
+\item открыть "gulp-test-comet.bat" для запуска нагрузочных тестов comet соединения
+\item открыть "gulp-test-ws.bat" для запуска нагрузочных тестов websocket соединения
+\end{enumerate}
+
+Вышеперечисленные действия необходимо проводить под профилем администратора.
+
 %\section{Листинг античного алгоритма Евклида, написанного на Microsoft Visual Studio C++ 2010}\label{listing-nod-1}
 %Код приложения \verb"obalg.cpp".
 
