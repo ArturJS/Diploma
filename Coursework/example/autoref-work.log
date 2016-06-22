@@ -1,9 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.23)  21 JUN 2016 11:20
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.14)  22 JUN 2016 23:21
 entering extended mode
 **autoref-work.tex
-
-(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\autoref-work.
-tex
+(C:\temp\Diplom\Diploma\Coursework\example\autoref-work.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,13 +13,13 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\SCWorks.cls
-(C:\PortableTEX\MiKTeX\tex\latex\extsizes\extarticle.cls
+(C:\temp\Diplom\Diploma\Coursework\example\SCWorks.cls
+(C:\PortableTex\MiKTeX\tex\latex\extsizes\extarticle.cls
 Document Class: extarticle 1996/10/08 v1.0 Non Standard LaTeX document class
-(C:\PortableTEX\MiKTeX\tex\latex\extsizes\size14.clo
+(C:\PortableTex\MiKTeX\tex\latex\extsizes\size14.clo
 File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 )
-(C:\PortableTEX\MiKTeX\tex\latex\base\exscale.sty
+(C:\PortableTex\MiKTeX\tex\latex\base\exscale.sty
 Package: exscale 2007/10/29 v2.1h Standard LaTeX package exscale
 LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 52.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
@@ -42,22 +40,22 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 \belowcaptionskip=\skip42
 \bibindent=\dimen103
 )
-(C:\PortableTEX\MiKTeX\tex\latex\geometry\geometry.sty
+(C:\PortableTex\MiKTeX\tex\latex\geometry\geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(C:\PortableTEX\MiKTeX\tex\latex\graphics\keyval.sty
+(C:\PortableTex\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\ifpdf.sty
+(C:\PortableTex\MiKTeX\tex\generic\oberdiek\ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\ifvtex.sty
+(C:\PortableTex\MiKTeX\tex\generic\oberdiek\ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(C:\PortableTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty
+(C:\PortableTex\MiKTeX\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count87
@@ -73,11 +71,11 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen111
 \Gm@dimlist=\toks15
 
-(C:\PortableTEX\MiKTeX\tex\latex\geometry\geometry.cfg))
-(C:\PortableTEX\MiKTeX\tex\latex\setspace\setspace.sty
+(C:\PortableTex\MiKTeX\tex\latex\geometry\geometry.cfg))
+(C:\PortableTex\MiKTeX\tex\latex\setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(C:\PortableTEX\MiKTeX\tex\latex\tools\calc.sty
+(C:\PortableTex\MiKTeX\tex\latex\tools\calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count90
 \calc@Bcount=\count91
@@ -90,7 +88,7 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count92
 \calc@Cskip=\skip45
 )
-(C:\PortableTEX\MiKTeX\tex\latex\titlesec\titlesec.sty
+(C:\PortableTex\MiKTeX\tex\latex\titlesec\titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box26
 \beforetitleunit=\skip46
@@ -102,14 +100,14 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen117
 \titlewidthfirst=\dimen118
 )
-(C:\PortableTEX\MiKTeX\tex\latex\titlesec\titletoc.sty
+(C:\PortableTex\MiKTeX\tex\latex\titlesec\titletoc.sty
 Package: titletoc 2011/12/15 v1.6 TOC entries
 \ttl@leftsep=\dimen119
 )
-(C:\PortableTEX\MiKTeX\tex\latex\caption\caption.sty
+(C:\PortableTex\MiKTeX\tex\latex\caption\caption.sty
 Package: caption 2013/02/03 v3.3-65 Customizing captions (AR)
 
-(C:\PortableTEX\MiKTeX\tex\latex\caption\caption3.sty
+(C:\PortableTex\MiKTeX\tex\latex\caption\caption3.sty
 Package: caption3 2013/02/03 v1.5-62 caption3 kernel (AR)
 \captionmargin=\dimen120
 \captionmargin@=\dimen121
@@ -121,7 +119,7 @@ Package: caption3 2013/02/03 v1.5-62 caption3 kernel (AR)
 )
 \c@ContinuedFloat=\count93
 )
-(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\enumitem.sty
+(C:\temp\Diplom\Diploma\Coursework\example\enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip48
 \enit@outerparindent=\dimen127
@@ -130,50 +128,51 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enitdp@description=\count94
 )
 \tmp=\skip49
-(C:\PortableTEX\MiKTeX\tex\latex\titlesec\block.tss
+
+(C:\PortableTex\MiKTeX\tex\latex\titlesec\block.tss
 File: block.tss 2011/12/15
 ))
-(C:\PortableTEX\MiKTeX\tex\latex\base\fontenc.sty
+(C:\PortableTex\MiKTeX\tex\latex\base\fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(C:\PortableTEX\MiKTeX\tex\latex\cyrillic\t2aenc.def
+(C:\PortableTex\MiKTeX\tex\latex\cyrillic\t2aenc.def
 File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
 )
 LaTeX Font Info:    Try loading font information for T2A+cmr on input line 100.
 
 
-(C:\PortableTEX\MiKTeX\tex\latex\cyrillic\t2acmr.fd
+(C:\PortableTex\MiKTeX\tex\latex\cyrillic\t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
-(C:\PortableTEX\MiKTeX\tex\latex\base\inputenc.sty
+(C:\PortableTex\MiKTeX\tex\latex\base\inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
 
-(C:\PortableTEX\MiKTeX\tex\latex\cyrillic\cp1251.def
+(C:\PortableTex\MiKTeX\tex\latex\cyrillic\cp1251.def
 File: cp1251.def 1999/11/16 v1.0d Input encoding file
 ))
-(C:\PortableTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+(C:\PortableTex\MiKTeX\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\PortableTEX\MiKTeX\tex\latex\graphics\graphics.sty
+(C:\PortableTex\MiKTeX\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\PortableTEX\MiKTeX\tex\latex\graphics\trig.sty
+(C:\PortableTex\MiKTeX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\PortableTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+(C:\PortableTex\MiKTeX\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(C:\PortableTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+(C:\PortableTex\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+(C:\PortableTex\MiKTeX\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+(C:\PortableTex\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count95
@@ -181,29 +180,29 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen128
 \Gin@req@width=\dimen129
 )
-(C:\PortableTEX\MiKTeX\tex\latex\cite\cite.sty
+(C:\PortableTex\MiKTeX\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+(C:\PortableTex\MiKTeX\tex\latex\ams\math\amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
-(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+(C:\PortableTex\MiKTeX\tex\latex\ams\math\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
+(C:\PortableTex\MiKTeX\tex\latex\ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks20
 \ex@=\dimen130
 ))
-(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
+(C:\PortableTex\MiKTeX\tex\latex\ams\math\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen131
 )
-(C:\PortableTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
+(C:\PortableTex\MiKTeX\tex\latex\ams\math\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count96
@@ -244,17 +243,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(C:\PortableTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+(C:\PortableTex\MiKTeX\tex\latex\amsfonts\amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-(C:\PortableTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+(C:\PortableTex\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(C:\PortableTEX\MiKTeX\tex\latex\ams\classes\amsthm.sty
+(C:\PortableTex\MiKTeX\tex\latex\ams\classes\amsthm.sty
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks25
 \thm@bodyfont=\toks26
@@ -266,7 +265,7 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip55
 \dth@everypar=\toks30
 )
-(C:\PortableTEX\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
+(C:\PortableTex\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
@@ -277,7 +276,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \c@FancyVerbLine=\count109
 \FV@StepNumber=\count110
 \FV@OutFile=\write3
-) (C:\PortableTEX\MiKTeX\tex\latex\tools\longtable.sty
+) (C:\PortableTex\MiKTeX\tex\latex\tools\longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip56
 \LTright=\skip57
@@ -295,7 +294,7 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count115
 \LT@p@ftn=\toks31
 )
-(C:\PortableTEX\MiKTeX\tex\latex\tools\array.sty
+(C:\PortableTex\MiKTeX\tex\latex\tools\array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen140
 \extrarowheight=\dimen141
@@ -303,19 +302,19 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip60
 \backup@length=\skip61
 )
-(C:\PortableTEX\MiKTeX\tex\generic\babel\babel.sty
+(C:\PortableTex\MiKTeX\tex\generic\babel\babel.sty
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\PortableTEX\MiKTeX\tex\latex\00miktex\bblopts.cfg
+(C:\PortableTex\MiKTeX\tex\latex\00miktex\bblopts.cfg
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-(C:\PortableTEX\MiKTeX\tex\generic\babel\english.ldf
+(C:\PortableTex\MiKTeX\tex\generic\babel\english.ldf
 Language: english 2005/03/30 v3.3o English support from the babel system
 
-(C:\PortableTEX\MiKTeX\tex\generic\babel\babel.def
+(C:\PortableTex\MiKTeX\tex\generic\babel\babel.def
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count116
 \U@D=\dimen142
@@ -324,37 +323,37 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-(C:\PortableTEX\MiKTeX\tex\generic\babel\russianb.ldf
+(C:\PortableTex\MiKTeX\tex\generic\babel\russianb.ldf
 Language: russianb 2008/03/21 v1.1r Russian support from the babel system
 Package babel Info: Making " an active character on input line 199.
 ))
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex
+(C:\PortableTex\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+(C:\PortableTex\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+(C:\PortableTex\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+(C:\PortableTex\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks33
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def
+(C:\PortableTex\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def
 \pgfutil@abb=\box35
 
-(C:\PortableTEX\MiKTeX\tex\latex\ms\everyshi.sty
+(C:\PortableTex\MiKTeX\tex\latex\ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
 Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
 ))
 Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
 
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+(C:\PortableTex\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+(C:\PortableTex\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+(C:\PortableTex\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
 Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks34
 \pgfkeys@temptoks=\toks35
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks36
 ))
 \pgf@x=\dimen143
@@ -372,29 +371,29 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 \c@pgf@countc=\count119
 \c@pgf@countd=\count120
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
+(C:\PortableTex\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+(C:\PortableTex\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+(C:\PortableTex\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
 \pgfsyssoftpath@smallbuffer@items=\count121
 \pgfsyssoftpath@bigbuffer@items=\count122
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(C:\PortableTEX\MiKTeX\tex\latex\xcolor\xcolor.sty
+(C:\PortableTex\MiKTeX\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(C:\PortableTEX\MiKTeX\tex\latex\00miktex\color.cfg
+(C:\PortableTex\MiKTeX\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -408,13 +407,13 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
 Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex)
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex)
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen151
 \pgfmath@count=\count123
 \pgfmath@box=\box36
@@ -422,19 +421,19 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 \pgfmath@stack@operand=\toks38
 \pgfmath@stack@operation=\toks39
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex)
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex)
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code
 .tex)
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex)
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.te
-x) (C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex)
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex)
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex)))
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex)
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.te
+x) (C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex)
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex)
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex)))
+(C:\PortableTex\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count124
 ))
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
 \pgf@picminx=\dimen152
 \pgf@picmaxx=\dimen153
@@ -451,93 +450,93 @@ File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
 \pgf@zx=\dimen164
 \pgf@zy=\dimen165
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
 \pgf@path@lastx=\dimen166
 \pgf@path@lasty=\dimen167
-) (C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+) (C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
 \pgf@shorten@end@additional=\dimen168
 \pgf@shorten@start@additional=\dimen169
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box37
 \pgf@hbox=\box38
 \pgf@layerbox@main=\box39
 \pgf@picture@serial@count=\count125
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
 \pgflinewidth=\dimen170
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.t
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.t
 ex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
 \pgf@pt@x=\dimen171
 \pgf@pt@y=\dimen172
 \pgf@pt@temp=\dimen173
-) (C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+) (C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.te
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.te
 x
 File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
-) (C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+) (C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen174
 \pgf@sys@shading@range@num=\count126
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
 \pgfexternal@startupbox=\box40
 ))
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
-) (C:\PortableTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+) (C:\PortableTex\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 )))
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
 \pgfnodeparttextbox=\box41
 )
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+(C:\PortableTex\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen175
 \pgf@nodesepend=\dimen176
 )
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+(C:\PortableTex\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 ))
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
-(C:\PortableTEX\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex))
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+(C:\PortableTex\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+(C:\PortableTex\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+(C:\PortableTex\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex))
+(C:\PortableTex\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
 \pgffor@iter=\dimen177
 \pgffor@skip=\dimen178
 \pgffor@stack=\toks40
 \pgffor@toks=\toks41
 ))
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+(C:\PortableTex\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
 Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.te
+(C:\PortableTex\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.te
 x
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \pgf@plot@mark@count=\count127
@@ -555,7 +554,7 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikznumberofchildren=\count129
 \tikznumberofcurrentchild=\count130
 \tikz@fig@count=\count131
- (C:\PortableTEX\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+ (C:\PortableTex\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 \pgfmatrixcurrentrow=\count132
 \pgfmatrixcurrentcolumn=\count133
@@ -563,17 +562,17 @@ File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 )
 \tikz@expandcount=\count135
 
-(C:\PortableTEX\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrary
+(C:\PortableTex\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrary
 topaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
-))) (C:\PortableTEX\MiKTeX\tex\latex\hyperref\hyperref.sty
+))) (C:\PortableTex\MiKTeX\tex\latex\hyperref\hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty
+(C:\PortableTex\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty
+(C:\PortableTex\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -612,26 +611,26 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(C:\PortableTEX\MiKTeX\tex\latex\oberdiek\auxhook.sty
+(C:\PortableTex\MiKTeX\tex\latex\oberdiek\auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(C:\PortableTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty
+(C:\PortableTex\MiKTeX\tex\latex\oberdiek\kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen186
 \Hy@linkcounter=\count136
 \Hy@pagecounter=\count137
 
-(C:\PortableTEX\MiKTeX\tex\latex\hyperref\pd1enc.def
+(C:\PortableTex\MiKTeX\tex\latex\hyperref\pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count138
 Package hyperref Info: Option `unicode' set `true' on input line 3411.
 
-(C:\PortableTEX\MiKTeX\tex\latex\hyperref\puenc.def
+(C:\PortableTex\MiKTeX\tex\latex\hyperref\puenc.def
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 )
-(C:\PortableTEX\MiKTeX\tex\latex\00miktex\hyperref.cfg
+(C:\PortableTex\MiKTeX\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 4319.
@@ -644,7 +643,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count139
 
-(C:\PortableTEX\MiKTeX\tex\latex\ltxmisc\url.sty
+(C:\PortableTex\MiKTeX\tex\latex\ltxmisc\url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
@@ -669,12 +668,12 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(C:\PortableTEX\MiKTeX\tex\latex\hyperref\hpdftex.def
+(C:\PortableTex\MiKTeX\tex\latex\hyperref\hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count144
 \c@bookmark@seq@number=\count145
 
-(C:\PortableTEX\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty
+(C:\PortableTex\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -683,8 +682,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \c@lem=\count146
 
-(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\autoref-work.
-aux)
+(C:\temp\Diplom\Diploma\Coursework\example\autoref-work.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
@@ -704,7 +702,8 @@ LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Try loading font information for T2A+ftm on input line 38.
- (C:\PortableTEX\localtexmf\tex\latex\pscyr\t2aftm.fd
+
+(C:\PortableTex\localtexmf\tex\latex\pscyr\t2aftm.fd
 File: t2aftm.fd 2001/03/03 v0.4c PS font definitions for T2A/TimesNewRomanPSMT/
 PSCyr
 )
@@ -745,12 +744,12 @@ PSCyr
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
-(C:\PortableTEX\MiKTeX\tex\latex\caption\ltcaption.sty
+(C:\PortableTex\MiKTeX\tex\latex\caption\ltcaption.sty
 Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 
-(C:\PortableTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+(C:\PortableTex\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count147
 \scratchdimen=\dimen190
@@ -767,10 +766,10 @@ Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box45
 Package hyperref Info: Link coloring OFF on input line 38.
 
-(C:\PortableTEX\MiKTeX\tex\latex\hyperref\nameref.sty
+(C:\PortableTex\MiKTeX\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(C:\PortableTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
+(C:\PortableTex\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count153
@@ -779,22 +778,21 @@ LaTeX Info: Redefining \ref on input line 38.
 LaTeX Info: Redefining \pageref on input line 38.
 LaTeX Info: Redefining \nameref on input line 38.
 
-(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\autoref-work.
-out)
-(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\autoref-work.
-out)
+(C:\temp\Diplom\Diploma\Coursework\example\autoref-work.out)
+(C:\temp\Diplom\Diploma\Coursework\example\autoref-work.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Try loading font information for U+msa on input line 103.
- (C:\PortableTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+
+(C:\PortableTex\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
-(C:\PortableTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
+(C:\PortableTex\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
-{C:/PortableTEX/MiKTeX/pdftex/config/pdftex.map}] [2
+{C:/PortableTex/MiKTeX/pdftex/config/pdftex.map}] [2
 
 ] [3
 
@@ -806,17 +804,16 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 222
 .
 
-(C:\PortableTEX\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
+(C:\PortableTex\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-<iframe.png, id=96, 493.845pt x 228.855pt>
+<iframe.png, id=110, 493.845pt x 228.855pt>
 File: iframe.png Graphic file (type png)
  <use iframe.png>
 Package pdftex.def Info: iframe.png used on input line 241.
 (pdftex.def)             Requested size: 435.32422pt x 201.73523pt.
- [7] [8 <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/ifram
-e.png>]
-<Architecture.png, id=115, 565.11125pt x 454.69875pt>
+ [7] [8 <C:/temp/Diplom/Diploma/Coursework/example/iframe.png>]
+<Architecture.png, id=133, 565.11125pt x 454.69875pt>
 File: Architecture.png Graphic file (type png)
  <use Architecture.png>
 Package pdftex.def Info: Architecture.png used on input line 268.
@@ -824,14 +821,13 @@ Package pdftex.def Info: Architecture.png used on input line 268.
 
 [9
 
- <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/Architecture
-.png>]
+ <C:/temp/Diplom/Diploma/Coursework/example/Architecture.png>]
 Overfull \hbox (0.632pt too wide) in paragraph at lines 290--291
 []\T2A/ftm/m/n/14.4 В си-ту-а-ции, ес-ли поль-зо-ва-тель вы-брал WebSocket со-е
 ди-не-ние, то NGINX,
  []
 
-[10] <averaged-statistics.jpg, id=134, 651.3936pt x 348.3414pt>
+[10] <averaged-statistics.jpg, id=152, 651.3936pt x 348.3414pt>
 File: averaged-statistics.jpg Graphic file (type jpg)
 
 <use averaged-statistics.jpg>
@@ -839,43 +835,81 @@ Package pdftex.def Info: averaged-statistics.jpg used on input line 301.
 (pdftex.def)             Requested size: 435.32422pt x 232.79753pt.
  [11
 
- <C:/Users/Artur_Nizamutdinov/Documents/Diploma/Coursework/example/averaged-sta
-tistics.jpg>] [12]
+ <C:/temp/Diplom/Diploma/Coursework/example/averaged-statistics.jpg>] [12]
+(C:\temp\Diplom\Diploma\Coursework\example\autoref-work.bbl [13
+
+]
+Underfull \hbox (badness 1205) in paragraph at lines 20--24
+[]\T2A/ftm/m/it/14.4 Бартенев, В. В. \T2A/ftm/m/n/14.4 Ng-inx изнутри: рожден д
+ля производительности и
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 33--37
+[]\T2A/ftm/m/it/14.4 Мельников, А. А. \T2A/ftm/m/n/14.4 The web-sock-et pro-to-
+col [Электронный ресурс]. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--37
+\T2A/ftm/m/n/14.4 URL: []$\T2A/cmtt/m/n/14.4 https : / / tools . ietf . org / h
+tml / rfc6455$[] \T2A/ftm/m/n/14.4 (Дата обращения
+ []
+
+
+Underfull \hbox (badness 2460) in paragraph at lines 40--44
+\T2A/ftm/m/n/14.4 ресурс].   URL: []$\T2A/cmtt/m/n/14.4 https : / / learn . ja
+vascript . ru / xhr-[]longpoll$[] \T2A/ftm/m/n/14.4 (Дата
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 47--51
+[]\T2A/ftm/m/it/14.4 Адаменко, И. И. \T2A/ftm/m/n/14.4 Iframe для ajax и comet 
+[Электронный ресурс]. 
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 47--51
+\T2A/ftm/m/n/14.4 URL: []$\T2A/cmtt/m/n/14.4 https : / / learn . javascript . r
+u / ajax-[]iframe$[] \T2A/ftm/m/n/14.4 (Дата обращения
+ []
+
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 318.
- [13
+ [14
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 318.
-
-(C:\Users\Artur_Nizamutdinov\Documents\Diploma\Coursework\example\autoref-work.
-aux
+ (C:\temp\Diplom\Diploma\Coursework\example\autoref-work.aux
 LaTeX Font Info:    Try loading font information for OT1+ftm on input line 20.
- (C:\PortableTEX\localtexmf\tex\latex\pscyr\ot1ftm.fd
+
+(C:\PortableTex\localtexmf\tex\latex\pscyr\ot1ftm.fd
 File: ot1ftm.fd 2001/03/03 Fontinst v1.801 font definitions for OT1/ftm.
 ))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 318.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 318.
 Package rerunfilecheck Info: File `autoref-work.out' has not changed.
-(rerunfilecheck)             Checksum: EE0BF7E7FA9EFCEEF0E985A9488ACBBF;3266.
+(rerunfilecheck)             Checksum: 117C7D71173C16A0DED4E2C46D023CFF;3568.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 318.
  ) 
 Here is how much of TeX's memory you used:
- 21165 strings out of 493921
- 348865 string characters out of 3149748
+ 21197 strings out of 493921
+ 349007 string characters out of 3149748
  408391 words of memory out of 3000000
- 24070 multiletter control sequences out of 15000+200000
- 10987 words of font info for 31 fonts, out of 3000000 for 9000
+ 24086 multiletter control sequences out of 15000+200000
+ 12087 words of font info for 32 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  56i,6n,55p,799b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\PortableTEX\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1440.pk>{C:/Port
-ableTEX/MiKTeX/fonts/enc/t2/t2a.enc}<C:/PortableTEX/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmmi12.pfb><C:/PortableTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-12.pfb><C:/PortableTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Por
-tableTEX/localtexmf/fonts/type1/public/pscyr/times.pfb><C:/PortableTEX/localtex
-mf/fonts/type1/public/pscyr/timesbd.pfb>
-Output written on autoref-work.pdf (13 pages, 209976 bytes).
+{C:/PortableTex/MiKTeX/fonts/enc/t2/t2a.enc} <C:\PortableTex\MiKTeX\fonts\pk\
+ljfour\lh\lh-t2a\dpi600\latt1440.pk><C:/PortableTex/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb><C:/PortableTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+12.pfb><C:/PortableTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Por
+tableTex/localtexmf/fonts/type1/public/pscyr/times.pfb><C:/PortableTex/localtex
+mf/fonts/type1/public/pscyr/timesbd.pfb><C:/PortableTex/localtexmf/fonts/type1/
+public/pscyr/timesi.pfb>
+Output written on autoref-work.pdf (14 pages, 227616 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 148 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 270 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
