@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.14)  2 JUN 2016 10:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.14)  26 JUN 2016 19:07
 entering extended mode
 **CourseworkPresentation.tex
 (C:\temp\Diplom\Diploma\Coursework\example\CourseworkPresentation.tex
@@ -1092,7 +1092,7 @@ LaTeX Font Warning: Font shape `T2A/cmss/m/n' in size <4> not available
 <nodejs.png, id=80, 755.07094pt x 422.32782pt>
 File: nodejs.png Graphic file (type png)
  <use nodejs.png>
-Package pdftex.def Info: nodejs.png used on input line 69.
+Package pdftex.def Info: nodejs.png used on input line 70.
 (pdftex.def)             Requested size: 307.28987pt x 171.87312pt.
  [3
 
@@ -1100,7 +1100,7 @@ Package pdftex.def Info: nodejs.png used on input line 69.
 <nginx.png, id=106, 549.55313pt x 319.1925pt>
 File: nginx.png Graphic file (type png)
  <use nginx.png>
-Package pdftex.def Info: nginx.png used on input line 78.
+Package pdftex.def Info: nginx.png used on input line 79.
 (pdftex.def)             Requested size: 307.28987pt x 178.48357pt.
  [4
 
@@ -1108,7 +1108,7 @@ Package pdftex.def Info: nginx.png used on input line 78.
 <longpoll.png, id=132, 501.875pt x 231.86626pt>
 File: longpoll.png Graphic file (type png)
  <use longpoll.png>
-Package pdftex.def Info: longpoll.png used on input line 88.
+Package pdftex.def Info: longpoll.png used on input line 89.
 (pdftex.def)             Requested size: 307.28987pt x 141.97597pt.
  [5
 
@@ -1116,7 +1116,7 @@ Package pdftex.def Info: longpoll.png used on input line 88.
 <iframe.png, id=159, 493.845pt x 228.855pt>
 File: iframe.png Graphic file (type png)
  <use iframe.png>
-Package pdftex.def Info: iframe.png used on input line 97.
+Package pdftex.def Info: iframe.png used on input line 98.
 (pdftex.def)             Requested size: 307.28987pt x 142.40195pt.
  [6
 
@@ -1135,26 +1135,37 @@ File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 <Architecture.png, id=238, 565.11125pt x 454.69875pt>
 File: Architecture.png Graphic file (type png)
  <use Architecture.png>
-Package pdftex.def Info: Architecture.png used on input line 126.
+Package pdftex.def Info: Architecture.png used on input line 127.
 (pdftex.def)             Requested size: 276.559pt x 222.52681pt.
 
 [9
 
- <C:/temp/Diplom/Diploma/Coursework/example/Architecture.png>] [10
+ <C:/temp/Diplom/Diploma/Coursework/example/Architecture.png>]
+<averaged-statistics.jpg, id=266, 651.3936pt x 348.3414pt>
+File: averaged-statistics.jpg Graphic file (type jpg)
+
+<use averaged-statistics.jpg>
+Package pdftex.def Info: averaged-statistics.jpg used on input line 138.
+(pdftex.def)             Requested size: 307.28987pt x 164.32642pt.
+ [10
+
+ <C:/temp/Diplom/Diploma/Coursework/example/averaged-statistics.jpg>] [11
+
+] [12
 
  <C:/PortableTex/MiKTeX/tex/latex/beamer/base/art/beamericononline.pdf> <C:/Por
-tableTex/MiKTeX/tex/latex/beamer/base/art/beamericonbook.pdf>] [11
+tableTex/MiKTeX/tex/latex/beamer/base/art/beamericonbook.pdf>] [13
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
 
 (C:\temp\Diplom\Diploma\Coursework\example\CourseworkPresentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
 Package rerunfilecheck Info: File `CourseworkPresentation.out' has not changed.
 
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1163,13 +1174,13 @@ Package rerunfilecheck Info: File `CourseworkPresentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
  ) 
 Here is how much of TeX's memory you used:
- 29044 strings out of 493921
- 622492 string characters out of 3149748
- 787601 words of memory out of 3000000
- 31695 multiletter control sequences out of 15000+200000
+ 29058 strings out of 493921
+ 622700 string characters out of 3149748
+ 788601 words of memory out of 3000000
+ 31703 multiletter control sequences out of 15000+200000
  11427 words of font info for 26 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  50i,14n,74p,719b,648s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1180,9 +1191,9 @@ s\pk\ljfour\lh\lh-t2a\dpi600\latt1095.pk> <C:\PortableTex\MiKTeX\fonts\pk\ljfou
 r\lh\lh-t2a\dpi600\lasx0600.pk> <C:\PortableTex\MiKTeX\fonts\pk\ljfour\lh\lh-t2
 a\dpi600\lass1095.pk> <C:\PortableTex\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\l
 ass1440.pk>
-Output written on CourseworkPresentation.pdf (11 pages, 496297 bytes).
+Output written on CourseworkPresentation.pdf (13 pages, 571043 bytes).
 PDF statistics:
- 727 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 796 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
